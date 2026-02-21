@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch, onUnmounted } from 'vue'
+import { computed, nextTick, onMounted, ref, watch, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLearnStore } from '@/stores/learn'
 import { useQuizStore } from '@/stores/quiz'
+import { progressApi } from '@/api/client'
 import CardView from '@/components/CardView.vue'
+import MultipleChoiceQuestion from '@/components/MultipleChoiceQuestion.vue'
 import type { QuizQuestion } from '@/types'
 
 const router = useRouter()
@@ -40,6 +42,9 @@ interface WrongAnswer {
 
 const wrongAnswers = ref<WrongAnswer[]>([])
 
+// 完成后的实际剩余词数（全局剩余量）
+const actualRemainingCount = ref<number>(0)
+
 onMounted(() => {
   learnStore.startLearning()
 })
@@ -57,14 +62,46 @@ watch(() => learnStore.isFinished, (isFinished) => {
 })
 
 // 监听测试索引变化，清理定时器和重置反馈状态
-watch(() => currentTestIndex.value, () => {
+watch(() => currentTestIndex.value, async () => {
   clearAutoAdvance()
+  // 先重置状态
   feedbackState.value = {
     status: 'waiting',
     selectedOption: null,
     autoAdvanceTimer: null
   }
+  // 等待 Vue 更新完成
+  await nextTick()
 })
+
+// Fisher-Yates shuffle 算法
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
+
+// 从其他词中随机选取释义作为干扰项
+function getRandomDistractors(excludeWordId: string, count: number, allWords: any[]): string[] {
+  const distractors: string[] = []
+  const used = new Set<string>()
+
+  for (const word of allWords) {
+    if (word.word_id === excludeWordId) continue
+    for (const meaning of (word.back?.meanings || [])) {
+      if (!used.has(meaning) && distractors.length < count) {
+        distractors.push(meaning)
+        used.add(meaning)
+      }
+    }
+    if (distractors.length >= count) break
+  }
+
+  return distractors
+}
 
 async function startTesting() {
   // 开始对刚才学习的词进行测试
@@ -80,16 +117,32 @@ async function startTesting() {
 
   // 为每个学习的词生成单选题
   const words = learnStore.session?.words || []
-  testQuestions.value = words.map((card) => ({
-    word_id: card.word_id,
-    word: card.word,
-    question_type: 'multiple_choice' as const,
-    example_sentence: card.front.sentence,
-    example_source: card.front.source,
-    options: card.back.meanings,  // meanings 已经是 string[] 类型
-    correct_answer: card.back.meanings[0] || '',
-    correct_meaning_id: '',  // CardQuestion 类型没有 meaning_id，暂时留空
-  }))
+  const allWords = words  // 本次学习的所有词，用于获取干扰项
+
+  testQuestions.value = words.map((card) => {
+    const meanings = card.back.meanings || []
+    let options: string[]
+
+    if (meanings.length >= 2) {
+      // 多义词：使用该词的其他释义作为干扰项
+      options = shuffleArray([...meanings])
+    } else {
+      // 单义词：从其他学习的词中随机选取释义作为干扰项
+      const distractors = getRandomDistractors(card.word_id, 3, allWords)
+      options = shuffleArray([meanings[0], ...distractors])
+    }
+
+    return {
+      word_id: card.word_id,
+      word: card.word,
+      question_type: 'multiple_choice' as const,
+      example_sentence: card.front.sentence,
+      example_source: card.front.source,
+      options,
+      correct_answer: meanings[0] || '',
+      correct_meaning_id: '',
+    }
+  })
 }
 
 function handleTestAnswer(answer: string) {
@@ -170,6 +223,15 @@ async function submitTestResults() {
 
   // 完成学习
   await learnStore.completeLearning()
+
+  // 获取全局剩余词数
+  try {
+    const progress = await progressApi.get()
+    actualRemainingCount.value = progress.total_words - progress.learned_words
+  } catch (e) {
+    // 如果获取失败，使用 session 的剩余量作为备选
+    actualRemainingCount.value = learnStore.remainingCount
+  }
 
   // 进入完成状态
   learnPhase.value = 'finished'
@@ -264,37 +326,17 @@ const correctRate = computed(() => {
       <!-- 测试阶段 -->
       <template v-else-if="learnPhase === 'testing'">
         <div v-if="currentTestQuestion" class="test-question">
-          <div class="question-label">请选择正确的释义</div>
-          <div class="word">{{ currentTestQuestion.word }}</div>
-          <div class="example">
-            {{ currentTestQuestion.example_sentence }}
-          </div>
-          <div class="source">{{ currentTestQuestion.example_source }}</div>
-
-          <div class="options">
-            <button
-              v-for="(option, index) in currentTestQuestion.options"
-              :key="index"
-              class="option-btn"
-              :class="{
-                'selected': feedbackState.selectedOption === option,
-                'correct': feedbackState.status === 'showing_correct' && feedbackState.selectedOption === option,
-                'wrong': feedbackState.status === 'showing_wrong' && feedbackState.selectedOption === option,
-                'correct-answer': feedbackState.status === 'showing_wrong' && option === currentTestQuestion.correct_answer,
-                'disabled': feedbackState.status !== 'waiting'
-              }"
-              @click="handleTestAnswer(option)"
-            >
-              <span class="option-letter">{{ String.fromCharCode(65 + index) }}</span>
-              <span class="option-text">{{ option }}</span>
-              <span v-if="feedbackState.status === 'showing_correct' && feedbackState.selectedOption === option"
-                    class="feedback-icon correct-icon">✓</span>
-              <span v-if="feedbackState.status === 'showing_wrong' && feedbackState.selectedOption === option"
-                    class="feedback-icon wrong-icon">✗</span>
-              <span v-if="feedbackState.status === 'showing_wrong' && option === currentTestQuestion.correct_answer"
-                    class="feedback-icon correct-icon">✓</span>
-            </button>
-          </div>
+          <MultipleChoiceQuestion
+            :word="currentTestQuestion.word"
+            :example-sentence="currentTestQuestion.example_sentence"
+            :example-source="currentTestQuestion.example_source"
+            :options="currentTestQuestion.options"
+            :correct-answer="currentTestQuestion.correct_answer"
+            mode="learning"
+            :feedback="feedbackState"
+            :disabled="feedbackState.status !== 'waiting'"
+            @answer="handleTestAnswer"
+          />
 
           <!-- 下一题按钮，只在答错时显示 -->
           <button
@@ -316,7 +358,7 @@ const correctRate = computed(() => {
           <p v-if="testAnswers.length > 0" class="test-result">
             测试正确率：{{ correctRate }}%
           </p>
-          <p class="remaining">剩余新词：{{ learnStore.remainingCount }} 个</p>
+          <p class="remaining">剩余新词：{{ actualRemainingCount }} 个</p>
 
           <!-- 错题汇总 -->
           <div v-if="wrongAnswers.length > 0" class="wrong-answers-summary">
@@ -475,120 +517,6 @@ const correctRate = computed(() => {
 .test-question {
   width: 100%;
   max-width: 500px;
-}
-
-.question-label {
-  font-size: 14px;
-  color: #999;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.word {
-  font-size: 48px;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.example {
-  font-size: 20px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-.source {
-  font-size: 12px;
-  color: #999;
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.option-btn {
-  width: 100%;
-  padding: 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  background: white;
-  font-size: 16px;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.option-btn:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
-}
-
-/* 选项按钮状态 */
-.option-btn.disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.option-btn.selected {
-  border-color: #667eea;
-}
-
-.option-btn.correct {
-  background: #e8f5e9;
-  border-color: #4caf50;
-  color: #2e7d32;
-}
-
-.option-btn.wrong {
-  background: #ffebee;
-  border-color: #f44336;
-  color: #c62828;
-}
-
-.option-btn.correct-answer {
-  background: #e8f5e9;
-  border-color: #4caf50;
-  color: #2e7d32;
-}
-
-/* 选项按钮内部布局 */
-.option-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.option-letter {
-  font-weight: 600;
-  color: #667eea;
-  flex-shrink: 0;
-  font-size: 14px;
-}
-
-.option-text {
-  flex: 1;
-}
-
-/* 反馈图标 */
-.feedback-icon {
-  margin-left: auto;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.correct-icon {
-  color: #4caf50;
-}
-
-.wrong-icon {
-  color: #f44336;
 }
 
 /* 下一题按钮 */

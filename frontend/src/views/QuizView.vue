@@ -2,6 +2,7 @@
 import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
+import MultipleChoiceQuestion from '@/components/MultipleChoiceQuestion.vue'
 import type { QuizQuestion } from '@/types'
 
 const router = useRouter()
@@ -86,28 +87,16 @@ function getQuestionTitle(question: QuizQuestion): string {
       </div>
 
       <!-- Multiple Choice Question -->
-      <div
+      <MultipleChoiceQuestion
         v-else-if="currentQuestion && currentQuestion.question_type === 'multiple_choice'"
-        class="question multiple-choice"
-      >
-        <div class="question-title">{{ getQuestionTitle(currentQuestion) }}</div>
-        <div class="word">{{ currentQuestion.word }}</div>
-        <div class="example">
-          {{ currentQuestion.example_sentence }}
-        </div>
-        <div class="source">{{ currentQuestion.example_source }}</div>
-
-        <div class="options">
-          <button
-            v-for="(option, index) in currentQuestion.options"
-            :key="index"
-            class="option-btn"
-            @click="selectAnswer(option)"
-          >
-            {{ String.fromCharCode(65 + index) }}. {{ option }}
-          </button>
-        </div>
-      </div>
+        :word="currentQuestion.word"
+        :example-sentence="currentQuestion.example_sentence"
+        :example-source="currentQuestion.example_source"
+        :options="currentQuestion.options"
+        :correct-answer="currentQuestion.correct_answer"
+        mode="review"
+        @answer="selectAnswer"
+      />
 
       <!-- True/False Question -->
       <div
@@ -290,43 +279,6 @@ function getQuestionTitle(question: QuizQuestion): string {
 .statement-label {
   font-weight: 600;
   color: #667eea;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.option-btn {
-  width: 100%;
-  padding: 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  background: white;
-  font-size: 16px;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.option-btn:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
-}
-
-.option-btn.correct {
-  text-align: center;
-  background: #e8f5e9;
-  border-color: #4caf50;
-  color: #2e7d32;
-}
-
-.option-btn.wrong {
-  text-align: center;
-  background: #ffebee;
-  border-color: #f44336;
-  color: #c62828;
 }
 
 .flashcard-actions {
