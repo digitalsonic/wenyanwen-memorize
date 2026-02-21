@@ -21,7 +21,7 @@ export const useQuizStore = defineStore('quiz', () => {
   })
 
   const progress = computed(() => {
-    if (!session.value) return 0
+    if (!session.value || session.value.total_count === 0) return 0
     return (currentIndex.value / session.value.total_count) * 100
   })
 
@@ -52,6 +52,11 @@ export const useQuizStore = defineStore('quiz', () => {
 
   function submitAnswer(answer: QuizAnswer) {
     answers.value.push(answer)
+    // 不要在这里增加 currentIndex，应该在进入下一题时才增加
+  }
+
+  // 进入下一题
+  function goToNext() {
     currentIndex.value++
   }
 
@@ -121,6 +126,7 @@ export const useQuizStore = defineStore('quiz', () => {
     submitAnswer,
     submitSession,
     submitDirectAnswers,
+    goToNext,
     reset,
   }
 })

@@ -10,7 +10,7 @@ interface Props {
   mode?: 'review' | 'learning'
   feedback?: {
     status: 'waiting' | 'showing_correct' | 'showing_wrong'
-    selectedOption: string | null
+    selectedOption: string | boolean | null
   }
   disabled?: boolean
 }
@@ -38,36 +38,24 @@ function handleClick(option: string) {
   emit('answer', option)
 }
 
-function getOptionClass(option: string): Record<string, boolean> {
-  const classes: Record<string, boolean> = {
-    disabled: props.disabled
-  }
-
-  if (props.mode === 'learning' && props.feedback) {
-    // 学习模式：显示反馈状态
-    return {
-      ...classes,
-      selected: props.feedback.status !== 'waiting' && props.feedback.selectedOption === option,
-      correct: props.feedback.status === 'showing_correct' && props.feedback.selectedOption === option,
-      wrong: props.feedback.status === 'showing_wrong' && props.feedback.selectedOption === option,
-      'correct-answer': props.feedback.status === 'showing_wrong' && option === props.correctAnswer
-    }
-  }
-
-  // 复习模式：无特殊样式
-  return classes
+// 判断是否是正确答案
+function isCorrectAnswer(option: string): boolean {
+  return option === props.correctAnswer
 }
 
-function shouldShowCorrectIcon(option: string): boolean {
-  if (props.mode !== 'learning' || !props.feedback) return false
-  if (props.feedback.status === 'showing_correct' && props.feedback.selectedOption === option) return true
-  if (props.feedback.status === 'showing_wrong' && option === props.correctAnswer) return true
-  return false
+// 判断用户是否选了此选项
+function isUserSelected(option: string): boolean {
+  return props.feedback?.selectedOption === option
 }
 
-function shouldShowWrongIcon(option: string): boolean {
-  if (props.mode !== 'learning' || !props.feedback) return false
-  return props.feedback.status === 'showing_wrong' && props.feedback.selectedOption === option
+// 判断是否应该显示正确答案徽章
+function shouldShowCorrectBadge(option: string): boolean {
+  return props.feedback?.status !== 'waiting' && isCorrectAnswer(option)
+}
+
+// 判断用户是否选错了
+function isUserWrong(option: string): boolean {
+  return props.feedback?.status === 'showing_wrong' && isUserSelected(option)
 }
 </script>
 
@@ -78,20 +66,30 @@ function shouldShowWrongIcon(option: string): boolean {
     <div class="example">{{ exampleSentence }}</div>
     <div class="source">{{ exampleSource }}</div>
 
+    <!-- 反馈状态提示 -->
+    <div v-if="feedback && feedback.status !== 'waiting'" class="feedback-message">
+      <span v-if="feedback.status === 'showing_correct'" class="correct-text">回答正确！</span>
+      <span v-else class="wrong-text">回答错误</span>
+    </div>
+
     <div class="options">
       <button
         v-for="(option, index) in options"
         :key="`${questionKey}-${index}`"
         class="option-btn"
-        :class="getOptionClass(option)"
+        :class="{
+          'disabled': disabled,
+          'is-correct-answer': feedback && feedback.status !== 'waiting' && isCorrectAnswer(option),
+          'user-selected': feedback && isUserSelected(option),
+          'user-wrong': feedback && isUserWrong(option) && !isCorrectAnswer(option)
+        }"
         @click="handleClick(option)"
       >
         <span class="option-letter">{{ String.fromCharCode(65 + index) }}</span>
         <span class="option-text">{{ option }}</span>
 
-        <!-- 学习模式的反馈图标 -->
-        <span v-if="shouldShowCorrectIcon(option)" class="feedback-icon correct-icon">✓</span>
-        <span v-if="shouldShowWrongIcon(option)" class="feedback-icon wrong-icon">✗</span>
+        <!-- 正确答案徽章 -->
+        <span v-if="shouldShowCorrectBadge(option)" class="correct-answer-badge">正确答案</span>
       </button>
     </div>
   </div>
@@ -135,6 +133,22 @@ function shouldShowWrongIcon(option: string): boolean {
   margin-bottom: 32px;
 }
 
+/* 反馈消息 */
+.feedback-message {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.correct-text {
+  color: #4caf50;
+}
+
+.wrong-text {
+  color: #f44336;
+}
+
 .options {
   display: flex;
   flex-direction: column;
@@ -154,6 +168,7 @@ function shouldShowWrongIcon(option: string): boolean {
   text-align: left;
   cursor: pointer;
   transition: all 0.2s;
+  position: relative;
 }
 
 .option-btn:hover:not(.disabled) {
@@ -166,27 +181,37 @@ function shouldShowWrongIcon(option: string): boolean {
   pointer-events: none;
 }
 
-/* 学习模式 - 选中状态（反馈中） */
-.option-btn.selected {
-  border-color: #667eea;
-}
-
-.option-btn.correct {
+/* 正确答案标识 - 绿色背景和边框 */
+.option-btn.is-correct-answer {
   background: #e8f5e9;
   border-color: #4caf50;
   color: #2e7d32;
 }
 
-.option-btn.wrong {
+/* 用户选错时的标识 - 红色背景和边框 */
+.option-btn.user-wrong {
   background: #ffebee;
   border-color: #f44336;
   color: #c62828;
 }
 
-.option-btn.correct-answer {
-  background: #e8f5e9;
-  border-color: #4caf50;
-  color: #2e7d32;
+/* 用户选中但不是正确答案（等待状态时） */
+.option-btn.user-selected:not(.is-correct-answer):not(.user-wrong) {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+/* 正确答案徽章 */
+.correct-answer-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #4caf50;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
 .option-letter {
@@ -198,19 +223,5 @@ function shouldShowWrongIcon(option: string): boolean {
 
 .option-text {
   flex: 1;
-}
-
-.feedback-icon {
-  margin-left: auto;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.correct-icon {
-  color: #4caf50;
-}
-
-.wrong-icon {
-  color: #f44336;
 }
 </style>

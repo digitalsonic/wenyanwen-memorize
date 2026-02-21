@@ -33,7 +33,7 @@ def get_review_list(
     stmt = select(LearningProgress).where(
         LearningProgress.user_id == user_id,
         LearningProgress.current_level > 0,
-        not LearningProgress.is_mastered,
+        LearningProgress.is_mastered == False,
     )
     progress_list = session.exec(stmt).all()
 

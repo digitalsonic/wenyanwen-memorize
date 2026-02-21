@@ -1,45 +1,103 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, onMounted, ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useQuizStore } from '@/stores/quiz'
 import MultipleChoiceQuestion from '@/components/MultipleChoiceQuestion.vue'
 import type { QuizQuestion } from '@/types'
+import { useQuizFeedbackWithIndex } from '@/composables/useQuizFeedback'
 
 const router = useRouter()
+const route = useRoute()
 const quizStore = useQuizStore()
 
+// 错题收集
+interface WrongAnswer {
+  word_id: string
+  word: string
+  user_answer: string
+  correct_answer: string
+  example_sentence: string
+}
+
+const wrongAnswers = ref<WrongAnswer[]>([])
+
+// 保存会话中的题目，用于错题展示
+const sessionQuestions = ref<QuizQuestion[]>([])
+
 onMounted(() => {
-  quizStore.startReview()
+  quizStore.startReview(level.value)
+})
+
+// 监听 session 变化，保存题目用于错题展示
+const session = computed(() => quizStore.session)
+watch(session, (newSession) => {
+  if (newSession) {
+    sessionQuestions.value = newSession.questions
+  }
+}, { immediate: true })
+
+// Get mode from query param
+const mode = computed(() => route.query.mode as string | null)
+const level = computed(() => {
+  const levelParam = route.query.level
+  return levelParam ? Number(levelParam) : null
+})
+
+onMounted(() => {
+  quizStore.startReview(level.value)
 })
 
 const currentQuestion = computed(() => quizStore.currentQuestion)
 const progress = computed(() => quizStore.progress)
 
+const title = computed(() => {
+  return mode.value === 'review' ? '今日复习' : '复习'
+})
+
 function goBack() {
   router.push('/')
 }
 
-function selectAnswer(answer: string | boolean) {
+// 提交答案到 store
+function submitAnswer(answer: string | boolean, isCorrect: boolean) {
   const q = currentQuestion.value
   if (!q) return
-
-  let isCorrect = false
-  if (q.question_type === 'multiple_choice') {
-    isCorrect = answer === q.correct_answer
-  } else if (q.question_type === 'true_false') {
-    isCorrect = answer === q.is_correct
-  } else if (q.question_type === 'flashcard') {
-    isCorrect = true // Self-graded
-  }
 
   quizStore.submitAnswer({
     word_id: q.word_id,
     question_type: q.question_type,
     user_answer: answer,
-    is_correct,
+    is_correct: isCorrect,
   })
 
-  // Check if finished
+  // 收集错题
+  if (!isCorrect) {
+    if (q.question_type === 'multiple_choice') {
+      wrongAnswers.value.push({
+        word_id: q.word_id,
+        word: q.word,
+        user_answer: String(answer),
+        correct_answer: (q as any).correct_answer,
+        example_sentence: q.example_sentence,
+      })
+    } else if (q.question_type === 'true_false') {
+      const tfq = q as any
+      const correctAnswer = tfq.is_correct ? '正确' : '错误'
+      const userAnswer = answer ? '正确' : '错误'
+      wrongAnswers.value.push({
+        word_id: q.word_id,
+        word: q.word,
+        user_answer: userAnswer,
+        correct_answer: correctAnswer,
+        example_sentence: `${q.example_sentence}（释义：${tfq.given_meaning}）`,
+      })
+    }
+  }
+}
+
+// 进入下一题
+function goToNext() {
+  quizStore.goToNext()
   if (quizStore.isFinished) {
     submitQuiz()
   }
@@ -48,8 +106,46 @@ function selectAnswer(answer: string | boolean) {
 async function submitQuiz() {
   await quizStore.submitSession()
   if (quizStore.wrongAnswerIds.length > 0) {
-    // Handle retry logic
     alert(`有 ${quizStore.wrongAnswerIds.length} 道题答错，请重做`)
+  }
+}
+
+// 使用 composable 管理反馈状态
+const feedback = useQuizFeedbackWithIndex(
+  computed(() => quizStore.currentIndex),
+  {
+    onAnswer: submitAnswer,
+    onNext: goToNext,
+    onCorrectAutoAdvance: true,
+    autoAdvanceDelay: 1000
+  }
+)
+
+// 调试：打印反馈状态
+console.log('feedback.feedbackState:', feedback.feedbackState.value)
+
+// 处理选项点击
+function selectAnswer(answer: string | boolean) {
+  console.log('selectAnswer called:', answer, 'feedback status:', feedback.feedbackState.value.status)
+  const q = currentQuestion.value
+  if (!q) return
+
+  // 判断答案是否正确
+  let isCorrect: boolean = false
+
+  if (q.question_type === 'multiple_choice') {
+    const mcq = q as any
+    isCorrect = (answer as string) === mcq.correct_answer
+    feedback.handleAnswer(answer, isCorrect)
+  } else if (q.question_type === 'true_false') {
+    const tfq = q as any
+    isCorrect = (answer as boolean) === tfq.is_correct
+    feedback.handleAnswer(answer, isCorrect)
+  } else if (q.question_type === 'flashcard') {
+    isCorrect = true
+    // 闪卡：直接提交并进入下一题
+    submitAnswer(answer, isCorrect)
+    goToNext()
   }
 }
 
@@ -69,7 +165,7 @@ function getQuestionTitle(question: QuizQuestion): string {
   <div class="quiz-view">
     <header class="header">
       <button class="back-btn" @click="goBack">← 返回</button>
-      <div class="title">复习</div>
+      <div class="title">{{ title }}</div>
       <div class="progress">{{ Math.round(progress) }}%</div>
     </header>
 
@@ -87,42 +183,95 @@ function getQuestionTitle(question: QuizQuestion): string {
       </div>
 
       <!-- Multiple Choice Question -->
-      <MultipleChoiceQuestion
-        v-else-if="currentQuestion && currentQuestion.question_type === 'multiple_choice'"
-        :word="currentQuestion.word"
-        :example-sentence="currentQuestion.example_sentence"
-        :example-source="currentQuestion.example_source"
-        :options="currentQuestion.options"
-        :correct-answer="currentQuestion.correct_answer"
-        mode="review"
-        @answer="selectAnswer"
-      />
+      <div v-else-if="currentQuestion && currentQuestion.question_type === 'multiple_choice'" class="question-wrapper">
+        <MultipleChoiceQuestion
+          :word="currentQuestion.word"
+          :example-sentence="currentQuestion.example_sentence"
+          :example-source="currentQuestion.example_source"
+          :options="currentQuestion.options"
+          :correct-answer="currentQuestion.correct_answer"
+          mode="learning"
+          :feedback="feedback.feedbackState.value"
+          :disabled="feedback.feedbackState.value.status !== 'waiting'"
+          @answer="selectAnswer"
+        />
+
+        <!-- 下一题按钮，只在答错时显示 -->
+        <button
+          v-if="feedback.feedbackState.value.status === 'showing_wrong'"
+          class="next-btn"
+          @click="feedback.advanceToNext"
+        >
+          下一题 →
+        </button>
+      </div>
 
       <!-- True/False Question -->
       <div
         v-else-if="currentQuestion && currentQuestion.question_type === 'true_false'"
-        class="question true-false"
+        class="question-wrapper"
       >
-        <div class="question-title">{{ getQuestionTitle(currentQuestion) }}</div>
-        <div class="word">{{ currentQuestion.word }}</div>
-        <div class="example">
-          {{ currentQuestion.example_sentence }}
-        </div>
-        <div class="source">{{ currentQuestion.example_source }}</div>
+        <div class="question true-false">
+          <div class="question-title">{{ getQuestionTitle(currentQuestion) }}</div>
+          <div class="word">{{ currentQuestion.word }}</div>
+          <div class="example">
+            {{ currentQuestion.example_sentence }}
+          </div>
+          <div class="source">{{ currentQuestion.example_source }}</div>
 
-        <div class="statement">
-          <span class="statement-label">释义：</span>
-          {{ currentQuestion.given_meaning }}
+          <div class="statement">
+            <span class="statement-label">释义：</span>
+            {{ currentQuestion.given_meaning }}
+          </div>
+
+          <!-- 反馈状态提示 -->
+          <div v-if="feedback.feedbackState.value.status !== 'waiting'" class="feedback-message">
+            <span v-if="feedback.feedbackState.value.status === 'showing_correct'" class="correct-text">回答正确！</span>
+            <span v-else class="wrong-text">回答错误</span>
+          </div>
+
+          <div class="options">
+            <button
+              class="option-btn correct-option"
+              :class="{
+                'disabled': feedback.feedbackState.value.status !== 'waiting',
+                'is-correct-answer': feedback.feedbackState.value.status !== 'waiting' && currentQuestion.is_correct === true,
+                'user-selected': feedback.feedbackState.value.selectedOption === true,
+                'user-wrong': feedback.feedbackState.value.status === 'showing_wrong' &&
+                             feedback.feedbackState.value.selectedOption === true
+              }"
+              @click="selectAnswer(true)"
+            >
+              <span class="option-icon">✓</span>
+              正确
+              <span v-if="feedback.feedbackState.value.status !== 'waiting' && currentQuestion.is_correct === true" class="correct-answer-badge">正确答案</span>
+            </button>
+            <button
+              class="option-btn wrong-option"
+              :class="{
+                'disabled': feedback.feedbackState.value.status !== 'waiting',
+                'is-correct-answer': feedback.feedbackState.value.status !== 'waiting' && currentQuestion.is_correct === false,
+                'user-selected': feedback.feedbackState.value.selectedOption === false,
+                'user-wrong': feedback.feedbackState.value.status === 'showing_wrong' &&
+                             feedback.feedbackState.value.selectedOption === false
+              }"
+              @click="selectAnswer(false)"
+            >
+              <span class="option-icon">✗</span>
+              错误
+              <span v-if="feedback.feedbackState.value.status !== 'waiting' && currentQuestion.is_correct === false" class="correct-answer-badge">正确答案</span>
+            </button>
+          </div>
         </div>
 
-        <div class="options">
-          <button class="option-btn correct" @click="selectAnswer(true)">
-            ✓ 正确
-          </button>
-          <button class="option-btn wrong" @click="selectAnswer(false)">
-            ✗ 错误
-          </button>
-        </div>
+        <!-- 下一题按钮，只在答错时显示 -->
+        <button
+          v-if="feedback.feedbackState.value.status === 'showing_wrong'"
+          class="next-btn"
+          @click="feedback.advanceToNext"
+        >
+          下一题 →
+        </button>
       </div>
 
       <!-- Flashcard Question -->
@@ -149,6 +298,24 @@ function getQuestionTitle(question: QuizQuestion): string {
         <div class="finished-icon">📝</div>
         <h2>复习完成！</h2>
         <p>正确 {{ quizStore.correctCount }} / {{ quizStore.answers.length }} 题</p>
+
+        <!-- 错题汇总 -->
+        <div v-if="wrongAnswers.length > 0" class="wrong-answers-summary">
+          <h3>答错的词</h3>
+          <div class="wrong-answers-list">
+            <div v-for="(answer, index) in wrongAnswers" :key="index" class="wrong-answer-item">
+              <div class="wrong-word">{{ answer.word }}</div>
+              <div class="wrong-details">
+                <div class="wrong-example">"{{ answer.example_sentence }}"</div>
+                <div class="wrong-answers-comparison">
+                  <span class="user-answer">你的答案：{{ answer.user_answer }}</span>
+                  <span class="correct-answer-highlight">正确答案：{{ answer.correct_answer }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <button class="btn primary" @click="goBack">返回首页</button>
       </div>
 
@@ -281,6 +448,94 @@ function getQuestionTitle(question: QuizQuestion): string {
   color: #667eea;
 }
 
+.options {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.option-btn {
+  padding: 14px 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.option-btn:hover:not(.disabled) {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+.option-btn.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 判断题专用样式 */
+.feedback-message {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.correct-text {
+  color: #4caf50;
+}
+
+.wrong-text {
+  color: #f44336;
+}
+
+.option-btn {
+  position: relative;
+}
+
+.option-icon {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* 正确答案标识 - 绿色背景和边框 */
+.option-btn.is-correct-answer {
+  background: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+/* 用户选错时的标识 - 红色背景和边框 */
+.option-btn.user-wrong {
+  background: #ffebee;
+  border-color: #f44336;
+  color: #c62828;
+}
+
+/* 用户选中的视觉反馈（用于正确答案或非正确答案按钮） */
+.option-btn.user-selected:not(.is-correct-answer):not(.user-wrong) {
+  border-color: #667eea;
+  background: #f8f9ff;
+}
+
+/* 正确答案徽章 */
+.correct-answer-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #4caf50;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
 .flashcard-actions {
   display: flex;
   justify-content: center;
@@ -289,6 +544,34 @@ function getQuestionTitle(question: QuizQuestion): string {
 .flashcard-actions .option-btn {
   text-align: center;
   min-width: 200px;
+}
+
+.question-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+.next-btn {
+  width: 100%;
+  max-width: 300px;
+  margin: 24px auto 0;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.next-btn:hover {
+  transform: scale(1.05);
 }
 
 .finished h2,
@@ -321,5 +604,68 @@ function getQuestionTitle(question: QuizQuestion): string {
 .btn.primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+}
+
+/* 错题汇总 */
+.wrong-answers-summary {
+  width: 100%;
+  max-width: 500px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.wrong-answers-summary h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.wrong-answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.wrong-answer-item {
+  background: #fff5f5;
+  border-radius: 12px;
+  padding: 16px;
+  border-left: 4px solid #f44336;
+}
+
+.wrong-word {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.wrong-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wrong-example {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+.wrong-answers-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.user-answer {
+  color: #f44336;
+}
+
+.correct-answer-highlight {
+  color: #4caf50;
+  font-weight: 600;
 }
 </style>

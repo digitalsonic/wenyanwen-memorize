@@ -17,6 +17,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('../views/ReviewView.vue'),
   },
   {
+    path: '/quiz',
+    name: 'quiz',
+    component: () => import('../views/QuizView.vue'),
+  },
+  {
     path: '/progress',
     name: 'progress',
     component: () => import('../views/ProgressView.vue'),

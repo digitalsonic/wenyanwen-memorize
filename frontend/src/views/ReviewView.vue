@@ -28,9 +28,9 @@ async function fetchReviewList() {
   }
 }
 
-function startReview(level: number | null = null) {
-  // Navigate to quiz view with level filter
-  router.push(`/?level=${level}`)
+function startReviewAll() {
+  // Navigate to quiz view for all review items
+  router.push('/quiz?mode=review')
 }
 
 function goBack() {
@@ -94,6 +94,10 @@ const groupedEntries = computed(() => {
           共 <strong>{{ reviewList.total_count }}</strong> 个词需要复习
         </div>
 
+        <button class="start-all-btn" @click="startReviewAll">
+          开始复习全部 →
+        </button>
+
         <!-- No items in grouped -->
         <div v-if="groupedEntries.length === 0" class="empty-groups">
           <p>没有找到分组数据</p>
@@ -129,17 +133,13 @@ const groupedEntries = computed(() => {
 
               <div class="meanings-preview">
                 <div
-                  v-for="meaning in (item.word_data?.meanings || []).slice(0, 2)"
+                  v-for="meaning in (item.word_data?.meanings || [])"
                   :key="meaning.id"
                   class="meaning-item"
                 >
                   {{ meaning.definition }}
                 </div>
               </div>
-
-              <button class="start-btn" @click="startReview(level)">
-                开始复习 →
-              </button>
             </div>
           </div>
         </div>
@@ -223,6 +223,25 @@ const groupedEntries = computed(() => {
   border-radius: 12px;
 }
 
+.start-all-btn {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.start-all-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
 .level-group {
   margin-bottom: 24px;
 }
@@ -301,23 +320,6 @@ const groupedEntries = computed(() => {
   color: #666;
   padding: 4px 0;
   line-height: 1.4;
-}
-
-.start-btn {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.start-btn:hover {
-  opacity: 0.9;
 }
 
 .btn {

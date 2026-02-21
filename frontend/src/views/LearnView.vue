@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, watch, onUnmounted } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLearnStore } from '@/stores/learn'
 import { useQuizStore } from '@/stores/quiz'
@@ -7,6 +7,7 @@ import { progressApi } from '@/api/client'
 import CardView from '@/components/CardView.vue'
 import MultipleChoiceQuestion from '@/components/MultipleChoiceQuestion.vue'
 import type { QuizQuestion } from '@/types'
+import { useQuizFeedbackWithIndex } from '@/composables/useQuizFeedback'
 
 const router = useRouter()
 const learnStore = useLearnStore()
@@ -17,19 +18,6 @@ const learnPhase = ref<'learning' | 'testing' | 'finished'>('learning')
 const testQuestions = ref<QuizQuestion[]>([])
 const currentTestIndex = ref(0)
 const testAnswers = ref<Array<{ word_id: string; question_type: string; user_answer: string | boolean; is_correct: boolean }>>([])
-
-// 反馈状态
-interface FeedbackState {
-  status: 'waiting' | 'showing_correct' | 'showing_wrong'
-  selectedOption: string | null
-  autoAdvanceTimer: ReturnType<typeof setTimeout> | null
-}
-
-const feedbackState = ref<FeedbackState>({
-  status: 'waiting',
-  selectedOption: null,
-  autoAdvanceTimer: null
-})
 
 // 错题收集
 interface WrongAnswer {
@@ -49,11 +37,6 @@ onMounted(() => {
   learnStore.startLearning()
 })
 
-// 清理定时器
-onUnmounted(() => {
-  clearAutoAdvance()
-})
-
 // 监听学习完成，自动进入测试阶段
 watch(() => learnStore.isFinished, (isFinished) => {
   if (isFinished && learnStore.learnedWordIds.length > 0) {
@@ -61,18 +44,44 @@ watch(() => learnStore.isFinished, (isFinished) => {
   }
 })
 
-// 监听测试索引变化，清理定时器和重置反馈状态
-watch(() => currentTestIndex.value, async () => {
-  clearAutoAdvance()
-  // 先重置状态
-  feedbackState.value = {
-    status: 'waiting',
-    selectedOption: null,
-    autoAdvanceTimer: null
+// 使用 composable 管理测试阶段的反馈
+const testFeedback = useQuizFeedbackWithIndex(
+  currentTestIndex,
+  {
+    onAnswer: (answer: string | boolean) => {
+      // 记录答案
+      const question = testQuestions.value[currentTestIndex.value]
+      const is_correct = (answer as string) === question.correct_answer
+
+      testAnswers.value.push({
+        word_id: question.word_id,
+        question_type: question.question_type,
+        user_answer: answer as string,
+        is_correct,
+      })
+
+      // 收集错题
+      if (!is_correct) {
+        wrongAnswers.value.push({
+          word_id: question.word_id,
+          word: question.word,
+          user_answer: answer as string,
+          correct_answer: question.correct_answer,
+          example_sentence: question.example_sentence,
+        })
+      }
+    },
+    onNext: () => {
+      // 进入下一题
+      currentTestIndex.value++
+
+      // 检查是否完成
+      if (currentTestIndex.value >= testQuestions.value.length) {
+        submitTestResults()
+      }
+    },
   }
-  // 等待 Vue 更新完成
-  await nextTick()
-})
+)
 
 // Fisher-Yates shuffle 算法
 function shuffleArray<T>(array: T[]): T[] {
@@ -109,11 +118,7 @@ async function startTesting() {
   currentTestIndex.value = 0
   testAnswers.value = []
   wrongAnswers.value = []
-  feedbackState.value = {
-    status: 'waiting',
-    selectedOption: null,
-    autoAdvanceTimer: null
-  }
+  testFeedback.resetFeedback()
 
   // 为每个学习的词生成单选题
   const words = learnStore.session?.words || []
@@ -146,73 +151,11 @@ async function startTesting() {
 }
 
 function handleTestAnswer(answer: string) {
-  // 防止重复点击
-  if (feedbackState.value.status !== 'waiting') return
-
   const question = testQuestions.value[currentTestIndex.value]
   const is_correct = answer === question.correct_answer
 
-  // 清理现有定时器
-  clearAutoAdvance()
-
-  // 更新反馈状态
-  feedbackState.value = {
-    status: is_correct ? 'showing_correct' : 'showing_wrong',
-    selectedOption: answer,
-    autoAdvanceTimer: null
-  }
-
-  // 记录答案
-  testAnswers.value.push({
-    word_id: question.word_id,
-    question_type: question.question_type,
-    user_answer: answer,
-    is_correct,
-  })
-
-  // 收集错题
-  if (!is_correct) {
-    wrongAnswers.value.push({
-      word_id: question.word_id,
-      word: question.word,
-      user_answer: answer,
-      correct_answer: question.correct_answer,
-      example_sentence: question.example_sentence,
-    })
-  }
-
-  // 答对时1秒后自动跳转
-  if (is_correct) {
-    feedbackState.value.autoAdvanceTimer = setTimeout(() => {
-      advanceToNext()
-    }, 1000)
-  }
-}
-
-function advanceToNext() {
-  clearAutoAdvance()
-
-  // 重置反馈状态
-  feedbackState.value = {
-    status: 'waiting',
-    selectedOption: null,
-    autoAdvanceTimer: null
-  }
-
-  // 进入下一题
-  currentTestIndex.value++
-
-  // 检查是否完成
-  if (currentTestIndex.value >= testQuestions.value.length) {
-    submitTestResults()
-  }
-}
-
-function clearAutoAdvance() {
-  if (feedbackState.value.autoAdvanceTimer) {
-    clearTimeout(feedbackState.value.autoAdvanceTimer)
-    feedbackState.value.autoAdvanceTimer = null
-  }
+  // 使用 composable 处理反馈
+  testFeedback.handleAnswer(answer, is_correct)
 }
 
 async function submitTestResults() {
@@ -333,16 +276,16 @@ const correctRate = computed(() => {
             :options="currentTestQuestion.options"
             :correct-answer="currentTestQuestion.correct_answer"
             mode="learning"
-            :feedback="feedbackState"
-            :disabled="feedbackState.status !== 'waiting'"
+            :feedback="testFeedback.feedbackState.value"
+            :disabled="testFeedback.feedbackState.value.status !== 'waiting'"
             @answer="handleTestAnswer"
           />
 
           <!-- 下一题按钮，只在答错时显示 -->
           <button
-            v-if="feedbackState.status === 'showing_wrong'"
+            v-if="testFeedback.feedbackState.value.status === 'showing_wrong'"
             class="next-btn"
-            @click="advanceToNext"
+            @click="testFeedback.advanceToNext"
           >
             下一题 →
           </button>
