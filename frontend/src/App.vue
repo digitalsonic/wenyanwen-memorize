@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <header class="app-header">
-      <h1>文言文实词虚词记忆工具</h1>
+      <h1>文言文记忆工具</h1>
       <nav class="app-nav">
         <RouterLink to="/">练习</RouterLink>
         <RouterLink to="/review">复习</RouterLink>
