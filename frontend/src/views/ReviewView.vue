@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { reviewApi } from '@/api/client'
 import type { ReviewList } from '@/types'
@@ -17,8 +17,11 @@ async function fetchReviewList() {
   isLoading.value = true
   error.value = null
   try {
-    reviewList.value = await reviewApi.getList()
+    const data = await reviewApi.getList()
+    console.log('Review data:', data)
+    reviewList.value = data
   } catch (e) {
+    console.error('Failed to fetch review list:', e)
     error.value = e instanceof Error ? e.message : '加载失败'
   } finally {
     isLoading.value = false
@@ -26,8 +29,8 @@ async function fetchReviewList() {
 }
 
 function startReview(level: number | null = null) {
-  router.push('/')
   // Navigate to quiz view with level filter
+  router.push(`/?level=${level}`)
 }
 
 function goBack() {
@@ -43,6 +46,27 @@ function getQuizTypeName(type: string): string {
   }
   return names[type] || type
 }
+
+function getLevelName(level: number): string {
+  const names: Record<number, string> = {
+    0: '初学',
+    1: '第1天复习',
+    2: '第2天复习',
+    3: '第4天复习',
+    4: '第7天复习',
+    5: '第15天复习',
+    6: '第30天复习',
+  }
+  return names[level] || `第${level}级`
+}
+
+// Get grouped entries as array for easier iteration
+const groupedEntries = computed(() => {
+  if (!reviewList.value?.grouped) return []
+  return Object.entries(reviewList.value.grouped)
+    .map(([level, items]) => ({ level: Number(level), items }))
+    .sort((a, b) => a.level - b.level)
+})
 </script>
 
 <template>
@@ -70,9 +94,14 @@ function getQuizTypeName(type: string): string {
           共 <strong>{{ reviewList.total_count }}</strong> 个词需要复习
         </div>
 
+        <!-- No items in grouped -->
+        <div v-if="groupedEntries.length === 0" class="empty-groups">
+          <p>没有找到分组数据</p>
+        </div>
+
         <!-- Group by level -->
         <div
-          v-for="(items, level) in reviewList.grouped"
+          v-for="{ level, items } in groupedEntries"
           :key="level"
           class="level-group"
         >
@@ -100,7 +129,7 @@ function getQuizTypeName(type: string): string {
 
               <div class="meanings-preview">
                 <div
-                  v-for="meaning in item.word_data.meanings.slice(0, 2)"
+                  v-for="meaning in (item.word_data?.meanings || []).slice(0, 2)"
                   :key="meaning.id"
                   class="meaning-item"
                 >
@@ -177,6 +206,12 @@ function getQuizTypeName(type: string): string {
 .empty p {
   color: #999;
   margin-bottom: 24px;
+}
+
+.empty-groups {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
 }
 
 .summary {

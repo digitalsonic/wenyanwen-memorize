@@ -4,7 +4,6 @@ import type {
   AnswerSubmission,
   ReviewList,
   LearnSession,
-  LearnRequest,
   LearningProgressSummary,
   APIResponse,
 } from '@/types'

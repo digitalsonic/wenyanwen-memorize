@@ -74,6 +74,27 @@ export const useQuizStore = defineStore('quiz', () => {
     }
   }
 
+  // Directly submit answers without a session (for initial learning test)
+  async function submitDirectAnswers(directAnswers: QuizAnswer[]) {
+    isLoading.value = true
+    error.value = null
+    try {
+      const result = await quizApi.submit({
+        level: 1, // Level 1 for first review after learning
+        answers: directAnswers,
+      })
+      if (result?.wrong_answer_ids) {
+        wrongAnswerIds.value = result.wrong_answer_ids
+      }
+      return result
+    } catch (e) {
+      error.value = e instanceof Error ? e.message : 'Failed to submit answers'
+      throw e
+    } finally {
+      isLoading.value = false
+    }
+  }
+
   function reset() {
     session.value = null
     currentIndex.value = 0
@@ -99,6 +120,7 @@ export const useQuizStore = defineStore('quiz', () => {
     startReview,
     submitAnswer,
     submitSession,
+    submitDirectAnswers,
     reset,
   }
 })

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import type { LearnSession, CardQuestion } from '@/types'
+import type { LearnSession } from '@/types'
 import { learnApi } from '@/api/client'
 
 export const useLearnStore = defineStore('learn', () => {
