@@ -28,15 +28,19 @@ const cardHeight = computed(() => {
   return Math.max(baseHeight, 280)
 })
 
-// Measure a specific element's scroll height
+// Measure a specific element by temporarily removing height constraint
 const measureElement = (el: HTMLElement | null) => {
   if (!el) return 280
-  // Get the actual content height
   const inner = el.querySelector('.card-inner') as HTMLElement
-  if (inner) {
-    return inner.scrollHeight
-  }
-  return el.scrollHeight
+  if (!inner) return 280
+
+  // Temporarily remove any height constraints to get natural content height
+  const previousHeight = inner.style.height
+  inner.style.height = 'auto'
+  const naturalHeight = inner.scrollHeight
+  inner.style.height = previousHeight
+
+  return naturalHeight
 }
 
 // Measure heights on mount and when content changes
@@ -52,13 +56,15 @@ const measureHeights = async () => {
 
 // Watch for card changes
 watch(() => props.card, async () => {
-  // Reset to default height first to allow proper shrinkage
+  // Reset to default height first
   frontHeight.value = 280
   backHeight.value = 280
-  // Wait for DOM to update with new height
+  // Wait for DOM to update with new height and new content
   await nextTick()
-  // Then measure actual content height
-  measureHeights()
+  // Small delay to ensure CSS transition starts and content reflows
+  setTimeout(() => {
+    measureHeights()
+  }, 50)
 }, { immediate: true })
 
 // Also measure after flip to ensure accuracy
