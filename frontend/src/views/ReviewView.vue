@@ -1,166 +1,306 @@
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { reviewApi } from '@/api/client'
+import type { ReviewList } from '@/types'
+
+const router = useRouter()
+const reviewList = ref<ReviewList | null>(null)
+const isLoading = ref(false)
+const error = ref<string | null>(null)
+
+onMounted(() => {
+  fetchReviewList()
+})
+
+async function fetchReviewList() {
+  isLoading.value = true
+  error.value = null
+  try {
+    reviewList.value = await reviewApi.getList()
+  } catch (e) {
+    error.value = e instanceof Error ? e.message : '加载失败'
+  } finally {
+    isLoading.value = false
+  }
+}
+
+function startReview(level: number | null = null) {
+  router.push('/')
+  // Navigate to quiz view with level filter
+}
+
+function goBack() {
+  router.push('/')
+}
+
+function getQuizTypeName(type: string): string {
+  const names: Record<string, string> = {
+    card: '卡片',
+    flashcard: '闪卡',
+    multiple_choice: '单选',
+    true_false: '判断',
+  }
+  return names[type] || type
+}
+</script>
+
 <template>
   <div class="review-view">
-    <div class="review-header">
-      <h2>复习列表</h2>
-      <button @click="userStore.fetchReviewList()" class="refresh-button">刷新</button>
-    </div>
+    <header class="header">
+      <button class="back-btn" @click="goBack">← 返回</button>
+      <div class="title">今日复习</div>
+      <button class="refresh-btn" @click="fetchReviewList">刷新</button>
+    </header>
 
-    <div v-if="userStore.isLoading" class="review-loading">
-      <p>加载中...</p>
-    </div>
+    <main class="main-content">
+      <div v-if="isLoading" class="loading">加载中...</div>
 
-    <div v-if="userStore.error" class="review-error">
-      <p>{{ userStore.error }}</p>
-    </div>
+      <div v-else-if="error" class="error">{{ error }}</div>
 
-    <div v-if="userStore.reviewList" class="review-info">
-      <p>总计：{{ userStore.reviewList.total_count }} 项</p>
-      <p>待复习：{{ userStore.reviewList.due_now }} 项</p>
-    </div>
+      <div v-else-if="!reviewList || reviewList.total_count === 0" class="empty">
+        <div class="icon">😊</div>
+        <h2>暂无到期复习</h2>
+        <p>目前没有需要复习的词语</p>
+        <button class="btn primary" @click="goBack">返回首页</button>
+      </div>
 
-    <div v-if="userStore.reviewList?.items.length === 0 && !userStore.isLoading" class="review-empty">
-      <p>暂无需要复习的内容</p>
-    </div>
-
-    <div class="review-list">
-      <div
-        v-for="item in userStore.reviewList?.items"
-        :key="item.word"
-        class="review-card"
-      >
-        <h3>{{ item.word }}</h3>
-        <div class="review-meta">
-          <span>错误次数：{{ item.error_count }}</span>
+      <div v-else class="review-content">
+        <div class="summary">
+          共 <strong>{{ reviewList.total_count }}</strong> 个词需要复习
         </div>
-        <div class="review-meanings">
-          <div v-for="(meaning, index) in item.weak_meanings" :key="index" class="meaning-item">
-            <p>{{ meaning.meaning }}</p>
-            <div v-if="meaning.examples.length > 0" class="examples">
-              <p v-for="(example, i) in meaning.examples" :key="i" class="example">
-                {{ example }}
-              </p>
+
+        <!-- Group by level -->
+        <div
+          v-for="(items, level) in reviewList.grouped"
+          :key="level"
+          class="level-group"
+        >
+          <div class="level-header">
+            <span class="level-title">{{ getLevelName(level) }}</span>
+            <span class="level-count">{{ items.length }} 个词</span>
+          </div>
+
+          <div class="review-cards">
+            <div
+              v-for="item in items"
+              :key="item.word_id"
+              class="review-card"
+            >
+              <div class="card-header">
+                <span class="word">{{ item.word }}</span>
+                <span class="quiz-type-badge">{{ getQuizTypeName(item.quiz_type) }}</span>
+              </div>
+
+              <div class="card-meta">
+                <span class="error-count" v-if="item.error_count > 0">
+                  错误 {{ item.error_count }} 次
+                </span>
+              </div>
+
+              <div class="meanings-preview">
+                <div
+                  v-for="meaning in item.word_data.meanings.slice(0, 2)"
+                  :key="meaning.id"
+                  class="meaning-item"
+                >
+                  {{ meaning.definition }}
+                </div>
+              </div>
+
+              <button class="start-btn" @click="startReview(level)">
+                开始复习 →
+              </button>
             </div>
           </div>
         </div>
-        <button @click="userStore.acknowledgeReview(item.word)" class="acknowledge-button">
-          确认已复习
-        </button>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 
-<script setup lang="ts">
-import { onMounted } from 'vue'
-import { useUserStore } from '@/stores/user'
-
-const userStore = useUserStore()
-
-onMounted(() => {
-  userStore.fetchReviewList()
-})
-</script>
-
 <style scoped>
 .review-view {
+  min-height: 100vh;
+  padding: 16px;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.review-header {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.back-btn,
+.refresh-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #667eea;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.loading,
+.error,
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.empty p {
+  color: #999;
+  margin-bottom: 24px;
+}
+
+.summary {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 12px;
+}
+
+.level-group {
+  margin-bottom: 24px;
+}
+
+.level-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 12px;
+  padding: 0 4px;
 }
 
-.refresh-button {
-  padding: 0.5rem 1rem;
-  border: 1px solid #e5e7eb;
-  background: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.2s;
+.level-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
 }
 
-.refresh-button:hover {
-  background: #f9fafb;
-  border-color: #667eea;
+.level-count {
+  font-size: 14px;
+  color: #999;
 }
 
-.review-loading,
-.review-error,
-.review-empty {
-  text-align: center;
-  padding: 2rem;
-  color: #6b7280;
-}
-
-.review-info {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-  color: #6b7280;
-}
-
-.review-list {
+.review-cards {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
 }
 
 .review-card {
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
 }
 
-.review-card h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.5rem;
-  color: #1f2937;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
-.review-meta {
-  color: #6b7280;
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
+.word {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
 }
 
-.review-meanings {
-  margin-bottom: 1rem;
+.quiz-type-badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  color: #666;
+}
+
+.card-meta {
+  margin-bottom: 12px;
+}
+
+.error-count {
+  font-size: 12px;
+  color: #f44336;
+}
+
+.meanings-preview {
+  flex: 1;
+  margin-bottom: 12px;
 }
 
 .meaning-item {
-  padding: 0.75rem;
-  background: #f9fafb;
+  font-size: 14px;
+  color: #666;
+  padding: 4px 0;
+  line-height: 1.4;
+}
+
+.start-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
   border-radius: 8px;
-  margin-bottom: 0.5rem;
-}
-
-.meaning-item > p {
-  margin: 0 0 0.5rem 0;
-  font-weight: 500;
-}
-
-.example {
-  margin: 0.25rem 0;
-  padding-left: 1rem;
-  color: #6b7280;
-  font-size: 0.875rem;
-}
-
-.acknowledge-button {
-  padding: 0.5rem 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  border: none;
-  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   transition: opacity 0.2s;
 }
 
-.acknowledge-button:hover {
+.start-btn:hover {
   opacity: 0.9;
+}
+
+.btn {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 </style>

@@ -8,6 +8,7 @@ export const useQuizStore = defineStore('quiz', () => {
   const session = ref<QuizSession | null>(null)
   const currentIndex = ref(0)
   const answers = ref<QuizAnswer[]>([])
+  const wrongAnswerIds = ref<string[]>([])
   const isLoading = ref(false)
   const error = ref<string | null>(null)
 
@@ -34,15 +35,16 @@ export const useQuizStore = defineStore('quiz', () => {
   })
 
   // Actions
-  async function startQuiz(count: number = 10) {
+  async function startReview(level: number | null = null) {
     isLoading.value = true
     error.value = null
     try {
-      session.value = await quizApi.start(count)
+      session.value = await quizApi.review(level)
       currentIndex.value = 0
       answers.value = []
+      wrongAnswerIds.value = []
     } catch (e) {
-      error.value = e instanceof Error ? e.message : 'Failed to start quiz'
+      error.value = e instanceof Error ? e.message : 'Failed to start review'
     } finally {
       isLoading.value = false
     }
@@ -58,9 +60,12 @@ export const useQuizStore = defineStore('quiz', () => {
     isLoading.value = true
     try {
       const result = await quizApi.submit({
-        session_id: session.value.session_id,
+        level: session.value.level,
         answers: answers.value,
       })
+      if (result?.wrong_answer_ids) {
+        wrongAnswerIds.value = result.wrong_answer_ids
+      }
       return result
     } catch (e) {
       error.value = e instanceof Error ? e.message : 'Failed to submit answers'
@@ -73,6 +78,7 @@ export const useQuizStore = defineStore('quiz', () => {
     session.value = null
     currentIndex.value = 0
     answers.value = []
+    wrongAnswerIds.value = []
     error.value = null
   }
 
@@ -81,6 +87,7 @@ export const useQuizStore = defineStore('quiz', () => {
     session,
     currentIndex,
     answers,
+    wrongAnswerIds,
     isLoading,
     error,
     // Computed
@@ -89,7 +96,7 @@ export const useQuizStore = defineStore('quiz', () => {
     isFinished,
     correctCount,
     // Actions
-    startQuiz,
+    startReview,
     submitAnswer,
     submitSession,
     reset,

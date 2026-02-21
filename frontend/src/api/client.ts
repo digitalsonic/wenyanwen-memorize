@@ -1,5 +1,13 @@
 import axios from 'axios'
-import type { QuizSession, QuizQuestion, AnswerSubmission, ReviewList } from '@/types'
+import type {
+  QuizSession,
+  AnswerSubmission,
+  ReviewList,
+  LearnSession,
+  LearnRequest,
+  LearningProgressSummary,
+  APIResponse,
+} from '@/types'
 
 const api = axios.create({
   baseURL: '/api/v1',
@@ -9,28 +17,44 @@ const api = axios.create({
   },
 })
 
-// Quiz API
+// Quiz API (Review session)
 export const quizApi = {
-  start: async (count: number = 10) => {
-    const { data } = await api.get<QuizSession>('/quiz/start', { params: { count } })
+  review: async (level: number | null = null) => {
+    const { data } = await api.get<QuizSession>('/quiz/review', { params: { level } })
     return data
   },
 
   submit: async (submission: AnswerSubmission) => {
-    const { data } = await api.post('/quiz/submit', submission)
+    const { data } = await api.post<APIResponse>('/quiz/submit', submission)
     return data
   },
 }
 
-// Review API
+// Learn API (New words)
+export const learnApi = {
+  start: async (count: number = 10, mode: 'sequential' | 'random' = 'sequential') => {
+    const { data } = await api.post<LearnSession>('/quiz/learn', { count, mode })
+    return data
+  },
+
+  complete: async (wordIds: string[]) => {
+    const { data } = await api.post<APIResponse>('/quiz/learn/complete', wordIds)
+    return data
+  },
+}
+
+// Review API (List)
 export const reviewApi = {
   getList: async () => {
     const { data } = await api.get<ReviewList>('/review/list')
     return data
   },
+}
 
-  acknowledge: async (word: string) => {
-    const { data } = await api.post('/review/acknowledge', null, { params: { word } })
+// Progress API
+export const progressApi = {
+  get: async () => {
+    const { data } = await api.get<LearningProgressSummary>('/review/progress')
     return data
   },
 }

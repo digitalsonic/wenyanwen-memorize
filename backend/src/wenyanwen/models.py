@@ -1,7 +1,8 @@
 """SQLModel database models."""
 
 from datetime import datetime
-from typing import Optional
+from enum import Enum
+
 from sqlmodel import Field, SQLModel
 
 
@@ -28,6 +29,56 @@ class UserPublic(UserBase):
     id: int
 
 
+class QuizType(str, Enum):
+    """Quiz question types."""
+
+    CARD = "card"  # 双面卡片（初学）
+    FLASHCARD = "flashcard"  # 闪卡（主动回忆）
+    MULTIPLE_CHOICE = "multiple_choice"  # 单选题
+    TRUE_FALSE = "true_false"  # 判断题
+
+
+class LearningProgress(SQLModel, table=True):
+    """Learning progress tracking with cycle-based spaced repetition."""
+
+    id: int | None = Field(default=None, primary_key=True)
+    user_id: int = Field(foreign_key="user.id", index=True)
+    word_id: str = Field(index=True, description="Word ID from words.json")
+    cycle: int = Field(default=1, description="Current learning cycle (1, 2, 3...)")
+
+    current_level: int = Field(default=0, description="0=new, 1-6=review levels")
+    error_count: int = Field(default=0, description="Error count at current level")
+    is_mastered: bool = Field(default=False, description="Whether word is mastered in this cycle")
+
+    last_review_at: datetime | None = None
+    next_review_at: datetime | None = Field(index=True)
+
+    created_at: datetime = Field(default_factory=datetime.now)
+    updated_at: datetime = Field(default_factory=datetime.now)
+
+
+class LearningProgressCreate(SQLModel):
+    """Model for creating learning progress."""
+
+    user_id: int
+    word_id: str
+    cycle: int = 1
+
+
+class LearningProgressPublic(SQLModel):
+    """Public learning progress model."""
+
+    id: int
+    user_id: int
+    word_id: str
+    cycle: int
+    current_level: int
+    error_count: int
+    is_mastered: bool
+    last_review_at: datetime | None
+    next_review_at: datetime | None
+
+
 class QuizRecordBase(SQLModel):
     """Base quiz record model."""
 
@@ -37,7 +88,7 @@ class QuizRecordBase(SQLModel):
 
 
 class QuizRecord(QuizRecordBase, table=True):
-    """Quiz record database model."""
+    """Quiz record database model (legacy, kept for compatibility)."""
 
     id: int | None = Field(default=None, primary_key=True)
     user_id: int = Field(foreign_key="user.id", index=True)
@@ -62,7 +113,7 @@ class QuizRecordPublic(QuizRecordBase):
 
 
 class WeakMeaning(SQLModel, table=True):
-    """Weak meaning tracking for spaced repetition."""
+    """Weak meaning tracking for spaced repetition (legacy, kept for compatibility)."""
 
     id: int | None = Field(default=None, primary_key=True)
     user_id: int = Field(foreign_key="user.id", index=True)

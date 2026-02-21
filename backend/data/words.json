@@ -1,148 +1,319 @@
 {
   "words": [
     {
+      "id": "word_001",
       "word": "之",
       "type": "虚词",
+      "pinyin": "zhī",
       "meanings": [
         {
-          "meaning": "代词：代人、代事、代物",
+          "id": "m_001_01",
+          "definition": "代词：代人、代事、代物",
           "examples": [
-            "作《师说》以贻之。（韩愈《师说》）——代词，指人",
-            "人非生而知之者。（韩愈《师说》）——代词，指道理"
+            {"sentence": "作《师说》以贻之", "source": "韩愈•师说 （九上）", "level": "core"},
+            {"sentence": "人非生而知之者", "source": "韩愈•师说 （九上）", "level": "core"}
           ]
         },
         {
-          "meaning": "助词：的",
+          "id": "m_001_02",
+          "definition": "助词：的",
           "examples": [
-            "古之学者必有师。（韩愈《师说》）"
+            {"sentence": "古之学者必有师", "source": "韩愈•师说 （九上）", "level": "core"}
           ]
         },
         {
-          "meaning": "动词：往、到……去",
+          "id": "m_001_03",
+          "definition": "动词：往、到……去",
           "examples": [
-            "杳不知其所之也。（杜牧《阿房宫赋》）"
+            {"sentence": "杳不知其所之也", "source": "杜牧•阿房宫赋", "level": "secondary"}
           ]
         },
         {
-          "meaning": "助词：主谓之间，取消句子独立性",
+          "id": "m_001_04",
+          "definition": "助词：主谓之间，取消句子独立性",
           "examples": [
-            "师道之不传也久矣。（韩愈《师说》）"
+            {"sentence": "师道之不传也久矣", "source": "韩愈•师说 （九上）", "level": "core"}
           ]
         }
       ],
-      "level": "common"
+      "mnemonics": "之字用法多，代词助词动词"
     },
     {
+      "id": "word_002",
       "word": "其",
       "type": "虚词",
+      "pinyin": "qí",
       "meanings": [
         {
-          "meaning": "代词：代人、代事、代物",
+          "id": "m_002_01",
+          "definition": "代词：代人、代事、代物",
           "examples": [
-            "圣人之所以为圣，愚人之所以为愚，其皆出于此乎？（韩愈《师说》）"
+            {"sentence": "圣人之所以为圣，愚人之所以为愚，其皆出于此乎", "source": "韩愈•师说 （九上）", "level": "core"}
           ]
         },
         {
-          "meaning": "副词：大概、恐怕",
+          "id": "m_002_02",
+          "definition": "副词：大概、恐怕",
           "examples": [
-            "其皆出于此乎？（韩愈《师说》）"
+            {"sentence": "其皆出于此乎", "source": "韩愈•师说 （九上）", "level": "core"}
           ]
         },
         {
-          "meaning": "连词：如果、还是",
+          "id": "m_002_03",
+          "definition": "连词：如果、还是",
           "examples": [
-            "其若是，孰能御之？（《孟子》）"
+            {"sentence": "其若是，孰能御之", "source": "孟子", "level": "secondary"}
           ]
         }
       ],
-      "level": "common"
+      "mnemonics": "其作代词代人，作副表推测"
     },
     {
+      "id": "word_003",
       "word": "而",
       "type": "虚词",
+      "pinyin": "ér",
       "meanings": [
         {
-          "meaning": "连词：表并列",
+          "id": "m_003_01",
+          "definition": "连词：表并列",
           "examples": [
-            "蟹六跪而二螯。（《荀子·劝学》）"
+            {"sentence": "蟹六跪而二螯", "source": "荀子•劝学", "level": "secondary"}
           ]
         },
         {
-          "meaning": "连词：表递进",
+          "id": "m_003_02",
+          "definition": "连词：表递进",
           "examples": [
-            "君子博学而日参省乎己。（《荀子·劝学》）"
+            {"sentence": "君子博学而日参省乎己", "source": "荀子•劝学", "level": "secondary"}
           ]
         },
         {
-          "meaning": "连词：表转折",
+          "id": "m_003_03",
+          "definition": "连词：表转折",
           "examples": [
-            "青，取之于蓝，而青于蓝。（《荀子·劝学》）"
+            {"sentence": "青，取之于蓝，而青于蓝", "source": "荀子•劝学", "level": "core"}
           ]
         },
         {
-          "meaning": "连词：表因果",
+          "id": "m_003_04",
+          "definition": "连词：表因果",
           "examples": [
-            "余亦悔其随之而不得极夫游之乐也。（王安石《游褒禅山记》）"
+            {"sentence": "余亦悔其随之而不得极夫游之乐也", "source": "王安石•游褒禅山记", "level": "secondary"}
           ]
         }
       ],
-      "level": "common"
+      "mnemonics": "而表并列递转折，因果关系也常见"
     },
     {
+      "id": "word_004",
       "word": "道",
       "type": "实词",
+      "pinyin": "dào",
       "meanings": [
         {
-          "meaning": "路，道路",
+          "id": "m_004_01",
+          "definition": "路，道路",
           "examples": [
-            "有碑仆道，其文漫灭。（王安石《游褒禅山记》）"
+            {"sentence": "有碑仆道，其文漫灭", "source": "王安石•游褒禅山记", "level": "secondary"}
           ]
         },
         {
-          "meaning": "道理，规律",
+          "id": "m_004_02",
+          "definition": "道理，规律",
           "examples": [
-            "师道之不传也久矣。（韩愈《师说》）"
+            {"sentence": "师道之不传也久矣", "source": "韩愈•师说 （九上）", "level": "core"}
           ]
         },
         {
-          "meaning": "风尚",
+          "id": "m_004_03",
+          "definition": "风尚",
           "examples": [
-            "师道之不传也久矣。（韩愈《师说》）"
+            {"sentence": "师道之不传也久矣", "source": "韩愈•师说 （九上）", "level": "secondary"}
           ]
         },
         {
-          "meaning": "从师学习",
+          "id": "m_004_04",
+          "definition": "从师学习",
           "examples": [
-            "道相似也。（韩愈《师说》）"
+            {"sentence": "道相似也", "source": "韩愈•师说 （九上）", "level": "secondary"}
           ]
         }
       ],
-      "level": "common"
+      "mnemonics": "道本道路，引申道理风尚"
     },
     {
+      "id": "word_005",
       "word": "师",
       "type": "实词",
+      "pinyin": "shī",
       "meanings": [
         {
-          "meaning": "老师",
+          "id": "m_005_01",
+          "definition": "老师",
           "examples": [
-            "古之学者必有师。（韩愈《师说》）"
+            {"sentence": "古之学者必有师", "source": "韩愈•师说 （九上）", "level": "core"}
           ]
         },
         {
-          "meaning": "军队",
+          "id": "m_005_02",
+          "definition": "军队",
           "examples": [
-            "十年春，齐师伐我。（《左传·曹刿论战》）"
+            {"sentence": "十年春，齐师伐我", "source": "左传•曹刿论战 （九下）", "level": "core"}
           ]
         },
         {
-          "meaning": "学习",
+          "id": "m_005_03",
+          "definition": "学习",
           "examples": [
-            "不耻相师。（韩愈《师说》）"
+            {"sentence": "不耻相师", "source": "韩愈•师说 （九上）", "level": "secondary"}
           ]
         }
       ],
-      "level": "common"
+      "mnemonics": "师本老师，引申军队学习"
+    },
+    {
+      "id": "word_006",
+      "word": "比",
+      "type": "实词",
+      "pinyin": "bǐ",
+      "meanings": [
+        {
+          "id": "m_006_01",
+          "definition": "靠近",
+          "examples": [
+            {"sentence": "其两膝相比者，各隐卷底衣褶中", "source": "魏学洢•核舟记 （八下）", "level": "core"}
+          ]
+        },
+        {
+          "id": "m_006_02",
+          "definition": "及，等到（……时候）",
+          "examples": [
+            {"sentence": "比至陈，车六七百乘", "source": "史记•陈涉世家 （九下）（非考试篇目）", "level": "secondary"}
+          ]
+        },
+        {
+          "id": "m_006_03",
+          "definition": "比较",
+          "examples": [
+            {"sentence": "心却比，男儿烈", "source": "秋瑾•满江红•小住京华 （九下）（非考试篇目）", "level": "secondary"}
+          ]
+        }
+      ],
+      "mnemonics": null
+    },
+    {
+      "id": "word_007",
+      "word": "鄙",
+      "type": "实词",
+      "pinyin": "bǐ",
+      "meanings": [
+        {
+          "id": "m_007_01",
+          "definition": "浅陋，目光短浅",
+          "examples": [
+            {"sentence": "肉食者鄙，未能远谋", "source": "左传•曹刿论战 （九下）", "level": "core"},
+            {"sentence": "先帝不以臣卑鄙", "source": "诸葛亮•出师表 （九下）", "level": "core"}
+          ]
+        }
+      ],
+      "mnemonics": "鄙原指边远地方，引申浅陋"
+    },
+    {
+      "id": "word_008",
+      "word": "兵",
+      "type": "实词",
+      "pinyin": "bīng",
+      "meanings": [
+        {
+          "id": "m_008_01",
+          "definition": "兵器，武器",
+          "examples": [
+            {"sentence": "今南方已定，兵甲已足", "source": "诸葛亮•出师表 （九下）", "level": "core"}
+          ]
+        },
+        {
+          "id": "m_008_02",
+          "definition": "军队",
+          "examples": [
+            {"sentence": "可汗大点兵", "source": "木兰诗 （七下）", "level": "core"}
+          ]
+        },
+        {
+          "id": "m_008_03",
+          "definition": "士兵",
+          "examples": [
+            {"sentence": "一老河兵闻之", "source": "纪昀•河中石兽 （七下）", "level": "secondary"}
+          ]
+        },
+        {
+          "id": "m_008_04",
+          "definition": "战争",
+          "examples": [
+            {"sentence": "况乃未休兵", "source": "杜甫•月夜忆舍弟 （九上）", "level": "secondary"}
+          ]
+        }
+      ],
+      "mnemonics": "兵本兵器，引申军队士兵战争"
+    },
+    {
+      "id": "word_009",
+      "word": "病",
+      "type": "实词",
+      "pinyin": "bìng",
+      "meanings": [
+        {
+          "id": "m_009_01",
+          "definition": "生病",
+          "examples": [
+            {"sentence": "未果，寻病终", "source": "陶渊明•桃花源记 （八下）", "level": "core"}
+          ]
+        },
+        {
+          "id": "m_009_02",
+          "definition": "枯萎",
+          "examples": [
+            {"sentence": "病树前头万木春", "source": "刘禹锡•酬乐天扬州初逢席上见赠 （九上）", "level": "secondary"}
+          ]
+        }
+      ],
+      "mnemonics": null
+    },
+    {
+      "id": "word_010",
+      "word": "乘",
+      "type": "实词",
+      "pinyin": "chéng",
+      "meanings": [
+        {
+          "id": "m_010_01",
+          "definition": "坐、驾（车）",
+          "examples": [
+            {"sentence": "公与之乘", "source": "左传•曹刿论战 （九下）", "level": "core"}
+          ]
+        },
+        {
+          "id": "m_010_02",
+          "definition": "趁着，冒着",
+          "examples": [
+            {"sentence": "从今若许闲乘月", "source": "陆游•游山西村 （七下）", "level": "secondary"}
+          ]
+        },
+        {
+          "id": "m_010_03",
+          "definition": "辆（用以计算车子）",
+          "examples": [
+            {"sentence": "车六七百乘", "source": "史记•陈涉世家 （九下）（非考试篇目）", "level": "secondary"}
+          ]
+        }
+      ],
+      "mnemonics": null
     }
-  ]
+  ],
+  "metadata": {
+    "version": "2.0",
+    "total_words": 10,
+    "last_updated": "2025-01-21",
+    "description": "文言文实词虚词词库 - 天级间隔重复版本"
+  }
 }

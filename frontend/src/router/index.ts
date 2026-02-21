@@ -3,13 +3,23 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'quiz',
-    component: () => import('../views/QuizView.vue'),
+    name: 'home',
+    component: () => import('../views/HomeView.vue'),
+  },
+  {
+    path: '/learn',
+    name: 'learn',
+    component: () => import('../views/LearnView.vue'),
   },
   {
     path: '/review',
     name: 'review',
     component: () => import('../views/ReviewView.vue'),
+  },
+  {
+    path: '/progress',
+    name: 'progress',
+    component: () => import('../views/ProgressView.vue'),
   },
 ]
 
