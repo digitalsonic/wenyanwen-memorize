@@ -1,6 +1,12 @@
 """Application configuration using pydantic-settings."""
 
+import os
+from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+# Get the backend directory (parent of src/)
+BACKEND_DIR = Path(__file__).parent.parent.parent
 
 
 class Settings(BaseSettings):
@@ -17,8 +23,8 @@ class Settings(BaseSettings):
     port: int = 8000
     reload: bool = True
 
-    # Database
-    database_url: str = "sqlite:///./data/wenyanwen.db"
+    # Database - use absolute path relative to backend directory
+    database_url: str = f"sqlite:///{BACKEND_DIR}/data/wenyanwen.db"
 
     # CORS
     cors_origins: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]

@@ -41,9 +41,9 @@ async function startTesting() {
     question_type: 'multiple_choice' as const,
     example_sentence: card.front.sentence,
     example_source: card.front.source,
-    options: card.back.meanings.map((m: { definition: string }) => m.definition),
-    correct_answer: card.back.meanings[0]?.definition || '',
-    correct_meaning_id: card.back.meanings[0]?.id || '',
+    options: card.back.meanings,  // meanings 已经是 string[] 类型
+    correct_answer: card.back.meanings[0] || '',
+    correct_meaning_id: '',  // CardQuestion 类型没有 meaning_id，暂时留空
   }))
 }
 

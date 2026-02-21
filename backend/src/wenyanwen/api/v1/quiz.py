@@ -114,10 +114,8 @@ def generate_card(word_data) -> CardQuestion:
     first_meaning = word_data.meanings[0]
     front_example = random.choice(first_meaning.examples)
 
-    # Format meanings for back
-    meanings_list = []
-    for i, m in enumerate(word_data.meanings, 1):
-        meanings_list.append(f"{i}. {m.definition}")
+    # Format meanings for back (no numbering - frontend will handle display)
+    meanings_list = [m.definition for m in word_data.meanings]
 
     return CardQuestion(
         word_id=word_data.id,
