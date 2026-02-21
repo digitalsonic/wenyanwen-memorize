@@ -2,318 +2,6714 @@
   "words": [
     {
       "id": "word_001",
-      "word": "之",
-      "type": "虚词",
-      "pinyin": "zhī",
-      "meanings": [
-        {
-          "id": "m_001_01",
-          "definition": "代词：代人、代事、代物",
-          "examples": [
-            {"sentence": "作《师说》以贻之", "source": "韩愈•师说 （九上）", "level": "core"},
-            {"sentence": "人非生而知之者", "source": "韩愈•师说 （九上）", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_001_02",
-          "definition": "助词：的",
-          "examples": [
-            {"sentence": "古之学者必有师", "source": "韩愈•师说 （九上）", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_001_03",
-          "definition": "动词：往、到……去",
-          "examples": [
-            {"sentence": "杳不知其所之也", "source": "杜牧•阿房宫赋", "level": "secondary"}
-          ]
-        },
-        {
-          "id": "m_001_04",
-          "definition": "助词：主谓之间，取消句子独立性",
-          "examples": [
-            {"sentence": "师道之不传也久矣", "source": "韩愈•师说 （九上）", "level": "core"}
-          ]
-        }
-      ],
-      "mnemonics": "之字用法多，代词助词动词"
-    },
-    {
-      "id": "word_002",
-      "word": "其",
-      "type": "虚词",
-      "pinyin": "qí",
-      "meanings": [
-        {
-          "id": "m_002_01",
-          "definition": "代词：代人、代事、代物",
-          "examples": [
-            {"sentence": "圣人之所以为圣，愚人之所以为愚，其皆出于此乎", "source": "韩愈•师说 （九上）", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_002_02",
-          "definition": "副词：大概、恐怕",
-          "examples": [
-            {"sentence": "其皆出于此乎", "source": "韩愈•师说 （九上）", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_002_03",
-          "definition": "连词：如果、还是",
-          "examples": [
-            {"sentence": "其若是，孰能御之", "source": "孟子", "level": "secondary"}
-          ]
-        }
-      ],
-      "mnemonics": "其作代词代人，作副表推测"
-    },
-    {
-      "id": "word_003",
-      "word": "而",
-      "type": "虚词",
-      "pinyin": "ér",
-      "meanings": [
-        {
-          "id": "m_003_01",
-          "definition": "连词：表并列",
-          "examples": [
-            {"sentence": "蟹六跪而二螯", "source": "荀子•劝学", "level": "secondary"}
-          ]
-        },
-        {
-          "id": "m_003_02",
-          "definition": "连词：表递进",
-          "examples": [
-            {"sentence": "君子博学而日参省乎己", "source": "荀子•劝学", "level": "secondary"}
-          ]
-        },
-        {
-          "id": "m_003_03",
-          "definition": "连词：表转折",
-          "examples": [
-            {"sentence": "青，取之于蓝，而青于蓝", "source": "荀子•劝学", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_003_04",
-          "definition": "连词：表因果",
-          "examples": [
-            {"sentence": "余亦悔其随之而不得极夫游之乐也", "source": "王安石•游褒禅山记", "level": "secondary"}
-          ]
-        }
-      ],
-      "mnemonics": "而表并列递转折，因果关系也常见"
-    },
-    {
-      "id": "word_004",
-      "word": "道",
-      "type": "实词",
-      "pinyin": "dào",
-      "meanings": [
-        {
-          "id": "m_004_01",
-          "definition": "路，道路",
-          "examples": [
-            {"sentence": "有碑仆道，其文漫灭", "source": "王安石•游褒禅山记", "level": "secondary"}
-          ]
-        },
-        {
-          "id": "m_004_02",
-          "definition": "道理，规律",
-          "examples": [
-            {"sentence": "师道之不传也久矣", "source": "韩愈•师说 （九上）", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_004_03",
-          "definition": "风尚",
-          "examples": [
-            {"sentence": "师道之不传也久矣", "source": "韩愈•师说 （九上）", "level": "secondary"}
-          ]
-        },
-        {
-          "id": "m_004_04",
-          "definition": "从师学习",
-          "examples": [
-            {"sentence": "道相似也", "source": "韩愈•师说 （九上）", "level": "secondary"}
-          ]
-        }
-      ],
-      "mnemonics": "道本道路，引申道理风尚"
-    },
-    {
-      "id": "word_005",
-      "word": "师",
-      "type": "实词",
-      "pinyin": "shī",
-      "meanings": [
-        {
-          "id": "m_005_01",
-          "definition": "老师",
-          "examples": [
-            {"sentence": "古之学者必有师", "source": "韩愈•师说 （九上）", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_005_02",
-          "definition": "军队",
-          "examples": [
-            {"sentence": "十年春，齐师伐我", "source": "左传•曹刿论战 （九下）", "level": "core"}
-          ]
-        },
-        {
-          "id": "m_005_03",
-          "definition": "学习",
-          "examples": [
-            {"sentence": "不耻相师", "source": "韩愈•师说 （九上）", "level": "secondary"}
-          ]
-        }
-      ],
-      "mnemonics": "师本老师，引申军队学习"
-    },
-    {
-      "id": "word_006",
       "word": "比",
       "type": "实词",
       "pinyin": "bǐ",
       "meanings": [
         {
-          "id": "m_006_01",
+          "id": "m_001_01",
           "definition": "靠近",
           "examples": [
-            {"sentence": "其两膝相比者，各隐卷底衣褶中", "source": "魏学洢•核舟记 （八下）", "level": "core"}
+            {
+              "sentence": "其两膝相比者，各隐卷底衣褶中",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
           ]
         },
         {
-          "id": "m_006_02",
+          "id": "m_001_02",
           "definition": "及，等到（……时候）",
           "examples": [
-            {"sentence": "比至陈，车六七百乘", "source": "史记•陈涉世家 （九下）（非考试篇目）", "level": "secondary"}
+            {
+              "sentence": "比至陈，车六七百乘",
+              "source": "陈涉世家（九下）（非 考试篇目）",
+              "level": "secondary"
+            }
           ]
         },
         {
-          "id": "m_006_03",
+          "id": "m_001_03",
           "definition": "比较",
           "examples": [
-            {"sentence": "心却比，男儿烈", "source": "秋瑾•满江红•小住京华 （九下）（非考试篇目）", "level": "secondary"}
+            {
+              "sentence": "心却比，男儿烈",
+              "source": "满江红•小住京华 （九下）（非考试篇目）",
+              "level": "secondary"
+            }
           ]
         }
       ],
-      "mnemonics": null
+      "mnemonics": "比邻而居→靠近，比及到达→等到，比高下→比较"
     },
     {
-      "id": "word_007",
+      "id": "word_002",
       "word": "鄙",
       "type": "实词",
       "pinyin": "bǐ",
       "meanings": [
         {
-          "id": "m_007_01",
+          "id": "m_002_01",
           "definition": "浅陋，目光短浅",
           "examples": [
-            {"sentence": "肉食者鄙，未能远谋", "source": "左传•曹刿论战 （九下）", "level": "core"},
-            {"sentence": "先帝不以臣卑鄙", "source": "诸葛亮•出师表 （九下）", "level": "core"}
+            {
+              "sentence": "刿曰：“肉食者鄙，未能远谋。”",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "先帝不以臣卑鄙",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
           ]
         }
       ],
-      "mnemonics": "鄙原指边远地方，引申浅陋"
+      "mnemonics": "鄙人目光浅，肉食者亦然"
     },
     {
-      "id": "word_008",
+      "id": "word_003",
       "word": "兵",
       "type": "实词",
       "pinyin": "bīng",
       "meanings": [
         {
-          "id": "m_008_01",
+          "id": "m_003_01",
           "definition": "兵器，武器",
           "examples": [
-            {"sentence": "今南方已定，兵甲已足", "source": "诸葛亮•出师表 （九下）", "level": "core"}
+            {
+              "sentence": "今南方已定，兵甲已足",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            }
           ]
         },
         {
-          "id": "m_008_02",
+          "id": "m_003_02",
           "definition": "军队",
           "examples": [
-            {"sentence": "可汗大点兵", "source": "木兰诗 （七下）", "level": "core"}
+            {
+              "sentence": "可汗大点兵",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
           ]
         },
         {
-          "id": "m_008_03",
+          "id": "m_003_03",
           "definition": "士兵",
           "examples": [
-            {"sentence": "一老河兵闻之", "source": "纪昀•河中石兽 （七下）", "level": "secondary"}
+            {
+              "sentence": "一老河兵闻之",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            }
           ]
         },
         {
-          "id": "m_008_04",
+          "id": "m_003_04",
           "definition": "战争",
           "examples": [
-            {"sentence": "况乃未休兵", "source": "杜甫•月夜忆舍弟 （九上）", "level": "secondary"}
+            {
+              "sentence": "况乃未休兵",
+              "source": "月夜忆舍弟（九上）",
+              "level": "core"
+            }
           ]
         }
       ],
-      "mnemonics": "兵本兵器，引申军队士兵战争"
+      "mnemonics": "兵分四义：兵器武器，军队士兵，战争不停"
     },
     {
-      "id": "word_009",
+      "id": "word_004",
       "word": "病",
       "type": "实词",
       "pinyin": "bìng",
       "meanings": [
         {
-          "id": "m_009_01",
+          "id": "m_004_01",
           "definition": "生病",
           "examples": [
-            {"sentence": "未果，寻病终", "source": "陶渊明•桃花源记 （八下）", "level": "core"}
+            {
+              "sentence": "未果,寻病终",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
           ]
         },
         {
-          "id": "m_009_02",
+          "id": "m_004_02",
           "definition": "枯萎",
           "examples": [
-            {"sentence": "病树前头万木春", "source": "刘禹锡•酬乐天扬州初逢席上见赠 （九上）", "level": "secondary"}
+            {
+              "sentence": "病树前头万木春",
+              "source": "酬乐天扬州初逢席上见赠（九上）",
+              "level": "core"
+            }
           ]
         }
       ],
-      "mnemonics": null
+      "mnemonics": "病有两义：生病终老，枯树逢春"
     },
     {
-      "id": "word_010",
+      "id": "word_005",
       "word": "乘",
       "type": "实词",
       "pinyin": "chéng",
       "meanings": [
         {
-          "id": "m_010_01",
+          "id": "m_005_01",
           "definition": "坐、驾（车）",
           "examples": [
-            {"sentence": "公与之乘", "source": "左传•曹刿论战 （九下）", "level": "core"}
+            {
+              "sentence": "公与之乘",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_005_02",
+          "definition": "趁着，冒着",
+          "examples": [
+            {
+              "sentence": "从今若许闲乘月",
+              "source": "游山西村（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_005_03",
+          "definition": "辆（用以计算车子）",
+          "examples": [
+            {
+              "sentence": "车六七百乘",
+              "source": "陈涉世家（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "乘有三义：乘车作战，乘月闲游，车辆计数"
+    },
+    {
+      "id": "word_006",
+      "word": "持",
+      "type": "实词",
+      "pinyin": "chí",
+      "meanings": [
+        {
+          "id": "m_006_01",
+          "definition": "拉",
+          "examples": [
+            {
+              "sentence": "锐兵刃，散弓弩，持满",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_006_02",
+          "definition": "拿着",
+          "examples": [
+            {
+              "sentence": "屠乃奔倚其下，弛担持刀",
+              "source": "狼（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "持有两种：拉弓持满，持刀杀狼"
+    },
+    {
+      "id": "word_007",
+      "word": "从",
+      "type": "实词",
+      "pinyin": "cóng",
+      "meanings": [
+        {
+          "id": "m_007_01",
+          "definition": "跟从，跟随",
+          "examples": [
+            {
+              "sentence": "一狼得骨止，一狼仍从",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "隶而从者，崔氏二小生",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "太守归而宾客从也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "战则请从",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_007_02",
+          "definition": "听从，顺从",
+          "examples": [
+            {
+              "sentence": "七十而从心所欲",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "择其善者而从之",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "小惠未遍，民弗从也",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_007_03",
+          "definition": "采取某一种办法",
+          "examples": [
+            {
+              "sentence": "无从致书以观",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_007_04",
+          "definition": "自，由",
+          "examples": [
+            {
+              "sentence": "愿为市鞍马，从此替爷征",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "从小丘西行百二十步",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "乃大惊，问所从来",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_007_05",
+          "definition": "与“容”连用:舒缓安闲, 不慌不忙",
+          "examples": [
+            {
+              "sentence": "鲸鱼出游从容",
+              "source": "庄子与惠子游于濠梁之上（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "从字五义：跟从杀狼，听从论语，无从致书，从小丘行，从容出游"
+    },
+    {
+      "id": "word_008",
+      "word": "达",
+      "type": "实词",
+      "pinyin": "dá",
+      "meanings": [
+        {
+          "id": "m_008_01",
+          "definition": "到达",
+          "examples": [
+            {
+              "sentence": "指通豫南，达于汉阴",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_008_02",
+          "definition": "得志，显贵",
+          "examples": [
+            {
+              "sentence": "不求闻达于诸侯",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_008_03",
+          "definition": "有道德,有学问（的人）",
+          "examples": [
+            {
+              "sentence": "从乡之先达执经叩问",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_008_04",
+          "definition": "通顺，通畅",
+          "examples": [
+            {
+              "sentence": "辞甚畅达",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "达有四义：到达汉阴，闻达诸侯，先达执经，文辞畅达"
+    },
+    {
+      "id": "word_009",
+      "word": "当",
+      "type": "实词",
+      "pinyin": "dāng",
+      "meanings": [
+        {
+          "id": "m_009_01",
+          "definition": "在（某时、某处）",
+          "examples": [
+            {
+              "sentence": "陈康肃公善射，当世无双",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_009_02",
+          "definition": "应当，应该",
+          "examples": [
+            {
+              "sentence": "咨臣以当世之事",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "耕当问奴，织当问婢",
+              "source": "书戴嵩画牛（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "日月星宿，不当坠耶",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "但当涉猎，见往事耳",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_009_03",
+          "definition": "将要，就要",
+          "examples": [
+            {
+              "sentence": "凡河中失石,当求之于上流",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "当奖率三军",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "今当远离",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_009_04",
+          "definition": "对着，面对",
+          "examples": [
+            {
+              "sentence": "木兰当户织",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "当户理红妆",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_009_05",
+          "definition": "掌管，主持",
+          "examples": [
+            {
+              "sentence": "卿今当涂掌事",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "当字五义：当世无双，应当问奴，当求上流，当户织麻，当涂掌事"
+    },
+    {
+      "id": "word_010",
+      "word": "道",
+      "type": "实词",
+      "pinyin": "dào",
+      "meanings": [
+        {
+          "id": "m_010_01",
+          "definition": "路;途",
+          "examples": [
+            {
+              "sentence": "伐竹取道，下见小潭,水尤清冽",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
           ]
         },
         {
           "id": "m_010_02",
-          "definition": "趁着，冒着",
+          "definition": "道理，规律，方法 （儒家推崇的上古时代的政治制度）",
           "examples": [
-            {"sentence": "从今若许闲乘月", "source": "陆游•游山西村 （七下）", "level": "secondary"}
+            {
+              "sentence": "先帝创业未半而中道崩殂",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "行道之人弗受",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "虽有至道，弗学，不知其善也",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "以咨迎善道，察纳雅言",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
           ]
         },
         {
           "id": "m_010_03",
-          "definition": "辆（用以计算车子）",
+          "definition": "正道",
           "examples": [
-            {"sentence": "车六七百乘", "source": "史记•陈涉世家 （九下）（非考试篇目）", "level": "secondary"}
+            {
+              "sentence": "大道之行也",
+              "source": "大道之行也（八下）（非考试篇目）",
+              "level": "secondary"
+            },
+            {
+              "sentence": "得道者多助，失道者寡助",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_010_04",
+          "definition": "说，讲",
+          "examples": [
+            {
+              "sentence": "国人道之，闻之于宋君",
+              "source": "穿井得一人（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "不足为外人道也",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
           ]
         }
       ],
-      "mnemonics": null
+      "mnemonics": "道有四义：伐竹取道，治国之道，得道多助，道听途说"
+    },
+    {
+      "id": "word_011",
+      "word": "得",
+      "type": "实词",
+      "pinyin": "dé",
+      "meanings": [
+        {
+          "id": "m_011_01",
+          "definition": "得到，获得（取得） （看到，看见） （领会） （找到）",
+          "examples": [
+            {
+              "sentence": "穿井得一人",
+              "source": "穿井得一人（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "一狼得骨止",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "得道者多助，失道者寡助",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "夫环而攻之，必有得天时者矣",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "故不为苟得也",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "林尽水源，便得一山",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "得之心而寓之酒也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "求二石兽于水中，竟不可得",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "如其言，果得于数里外",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "既出，得其船",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "遂迷，不复得路",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "天子先驱至,不得入",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_011_02",
+          "definition": "能够，可以",
+          "examples": []
+        },
+        {
+          "id": "m_011_03",
+          "definition": "同“德”，感恩",
+          "examples": [
+            {
+              "sentence": "所识穷乏者得我与",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "得有三义：得一人骨，得道多助，得之心寓"
+    },
+    {
+      "id": "word_012",
+      "word": "尔",
+      "type": "实词",
+      "pinyin": "ěr",
+      "meanings": [
+        {
+          "id": "m_012_01",
+          "definition": "同“耳”相当于 “罢了”",
+          "examples": [
+            {
+              "sentence": "无他，但手熟尔",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_012_02",
+          "definition": "助词，附在形容词、动词、副词或拟声词后，用作后缀",
+          "examples": [
+            {
+              "sentence": "呼尔而与之,行道之人弗受",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_012_03",
+          "definition": "尾，相当于“地”“然”",
+          "examples": [
+            {
+              "sentence": "俶尔远逝",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_012_04",
+          "definition": "代词，你（你们）",
+          "examples": [
+            {
+              "sentence": "尔安敢轻吾射",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "尔辈不能究物理",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_012_05",
+          "definition": "指示代词，这，那",
+          "examples": [
+            {
+              "sentence": "尔来二十有一年矣",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "尔字五义：但手熟耳，呼尔而予，俶尔远逝，尔安敢射，尔来廿一"
+    },
+    {
+      "id": "word_013",
+      "word": "伐",
+      "type": "实词",
+      "pinyin": "fá",
+      "meanings": [
+        {
+          "id": "m_013_01",
+          "definition": "砍伐",
+          "examples": [
+            {
+              "sentence": "伐竹取道，下见小潭，水尤清冽",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_013_02",
+          "definition": "攻打，讨伐",
+          "examples": [
+            {
+              "sentence": "十年春，齐师伐我",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "伐木砍竹，伐齐师我"
+    },
+    {
+      "id": "word_014",
+      "word": "犯",
+      "type": "实词",
+      "pinyin": "fàn",
+      "meanings": [
+        {
+          "id": "m_014_01",
+          "definition": "侵害，危害",
+          "examples": [
+            {
+              "sentence": "至于亚夫，可得而犯邪",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_014_02",
+          "definition": "触犯，违犯",
+          "examples": [
+            {
+              "sentence": "若有作奸犯科及为忠善者",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "犯有两义：侵犯亚夫，犯科为善"
+    },
+    {
+      "id": "word_015",
+      "word": "方",
+      "type": "实词",
+      "pinyin": "fāng",
+      "meanings": [
+        {
+          "id": "m_015_01",
+          "definition": "方圆，周围",
+          "examples": [
+            {
+              "sentence": "太行、王屋二山，方七百里",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_015_02",
+          "definition": "区域，地方",
+          "examples": [
+            {
+              "sentence": "今齐地方千里，百二十城",
+              "source": "邹忌讽齐王纳谏（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "有朋自远方来，不亦乐乎",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_015_03",
+          "definition": "将，将要",
+          "examples": [
+            {
+              "sentence": "今南方已定，兵甲已足",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "方欲行，转视积薪后",
+              "source": "狼（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_015_04",
+          "definition": "表示时间、相当于 “始” “才”",
+          "examples": [
+            {
+              "sentence": "方鼓琴而志在太山",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "方有四义：方七百里，地方千里，方欲行，方鼓琴"
+    },
+    {
+      "id": "word_016",
+      "word": "负",
+      "type": "实词",
+      "pinyin": "fù",
+      "meanings": [
+        {
+          "id": "m_016_01",
+          "definition": "背，以背载物",
+          "examples": [
+            {
+              "sentence": "帝感其诚,命夸娥氏二子负二山",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "至于负者歌于途，行者休于树",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_016_02",
+          "definition": "凭借，依仗，倚靠",
+          "examples": [
+            {
+              "sentence": "皆生寒树，负势竞上",
+              "source": "与朱元思书（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "负有两义：负山歌途，负势竞上"
+    },
+    {
+      "id": "word_017",
+      "word": "赋",
+      "type": "实词",
+      "pinyin": "fù",
+      "meanings": [
+        {
+          "id": "m_017_01",
+          "definition": "一种文体",
+          "examples": [
+            {
+              "sentence": "刻唐贤今人诗赋于其上",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_017_02",
+          "definition": "写作",
+          "examples": [
+            {
+              "sentence": "为陈同甫赋壮词以寄之",
+              "source": "破阵子•为陈同甫赋壮词以寄之（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "赋有两义：刻诗赋于，赋壮词寄"
+    },
+    {
+      "id": "word_018",
+      "word": "更",
+      "type": "实词",
+      "pinyin": "gèng",
+      "meanings": [
+        {
+          "id": "m_018_01",
+          "definition": "另，另外",
+          "examples": [
+            {
+              "sentence": "士别三日，即更刮目相待",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_018_02",
+          "definition": "再",
+          "examples": [
+            {
+              "sentence": "室中更无人，惟有乳下孙",
+              "source": "石壕吏（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_018_03",
+          "definition": "又，还",
+          "examples": [
+            {
+              "sentence": "求之地中，不更颠乎",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "湖中焉得更有此人",
+              "source": "湖心亭看雪（九上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_018_04",
+          "definition": "夜间计时的单位",
+          "examples": [
+            {
+              "sentence": "是日更定矣",
+              "source": "湖心亭看雪（九上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "更字四义：更刮目相，更无人，更颠乎，更定矣"
+    },
+    {
+      "id": "word_019",
+      "word": "苟",
+      "type": "实词",
+      "pinyin": "gǒu",
+      "meanings": [
+        {
+          "id": "m_019_01",
+          "definition": "随便，苟且",
+          "examples": [
+            {
+              "sentence": "苟全性命于乱世",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "故不为苟得也",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "苟全性命，不为苟得"
+    },
+    {
+      "id": "word_020",
+      "word": "故",
+      "type": "实词",
+      "pinyin": "gù",
+      "meanings": [
+        {
+          "id": "m_020_01",
+          "definition": "过去，原来，照旧",
+          "examples": [
+            {
+              "sentence": "温故而知新，可以为师矣",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "骨已尽矣，而两狼之并驱如故",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "愿驰千里足，送儿还故乡",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_020_02",
+          "definition": "原因，缘故",
+          "examples": [
+            {
+              "sentence": "见两小儿辩斗，问其故",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "既克，公问其故",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_020_03",
+          "definition": "所以，因此",
+          "examples": [
+            {
+              "sentence": "故君子有不战，战必胜矣",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "故天将降大任于是人也",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "是故学然后知不足",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "故曰：教学相长也",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "故自号曰醉翁也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "故临崩寄臣以大事也",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "故五月渡泸，深入不毛",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "故克之",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "余故道为学之难以告之",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_020_04",
+          "definition": "特意",
+          "examples": []
+        }
+      ],
+      "mnemonics": "故有四义：温故知新，问其故，故曰教学，故道为学"
+    },
+    {
+      "id": "word_021",
+      "word": "顾",
+      "type": "实词",
+      "pinyin": "gù",
+      "meanings": [
+        {
+          "id": "m_021_01",
+          "definition": "回头看，看，视 （环顾，四顾）",
+          "examples": [
+            {
+              "sentence": "元方入门不顾",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "顾野有麦场",
+              "source": "狼（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_021_02",
+          "definition": "拜访",
+          "examples": [
+            {
+              "sentence": "三顾臣于草庐之中",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "顾有两义：入门不顾，三顾草庐"
+    },
+    {
+      "id": "word_022",
+      "word": "观",
+      "type": "实词",
+      "pinyin": "guān",
+      "meanings": [
+        {
+          "id": "m_022_01",
+          "definition": "看,仔细看 （观赏）",
+          "examples": [
+            {
+              "sentence": "启窗而观",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "可远观而不可亵玩焉",
+              "source": "爱莲说（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "予观夫巴陵胜状",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_022_02",
+          "definition": "景象",
+          "examples": [
+            {
+              "sentence": "此则岳阳楼之大观也",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "观有两义：启窗观莲，岳阳大观"
+    },
+    {
+      "id": "word_023",
+      "word": "归",
+      "type": "实词",
+      "pinyin": "guī",
+      "meanings": [
+        {
+          "id": "m_023_01",
+          "definition": "归来，返回",
+          "examples": [
+            {
+              "sentence": "一屠晚归，担中肉尽",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "朝而往，暮而归",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "太守归而宾客从也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_023_02",
+          "definition": "归属，归依 （聚拢）",
+          "examples": [
+            {
+              "sentence": "噫！微斯人，吾谁与归",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "云归而岩穴暝",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_023_03",
+          "definition": "女子出嫁",
+          "examples": [
+            {
+              "sentence": "男有分，女有归",
+              "source": "大道之行也（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "归有三义：晚归暮归，吾谁与归，女有归"
+    },
+    {
+      "id": "word_024",
+      "word": "过",
+      "type": "实词",
+      "pinyin": "guò",
+      "meanings": [
+        {
+          "id": "m_024_01",
+          "definition": "犯错",
+          "examples": [
+            {
+              "sentence": "人恒过，然后能改",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_024_02",
+          "definition": "过分，过于",
+          "examples": [
+            {
+              "sentence": "以其境过清，不可久居",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_024_03",
+          "definition": "过了，超过",
+          "examples": [
+            {
+              "sentence": "过中不至，太丘舍去",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "况才之过于余者乎",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_024_04",
+          "definition": "经过",
+          "examples": [
+            {
+              "sentence": "及鲁肃过寻阳，与蒙论议",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "过有四义：人恒过，境过清，过中不至，过寻阳"
+    },
+    {
+      "id": "word_025",
+      "word": "好",
+      "type": "实词",
+      "pinyin": "hǎo",
+      "meanings": [
+        {
+          "id": "m_025_01",
+          "definition": "美丽的",
+          "examples": [
+            {
+              "sentence": "好鸟相鸣，嘤嘤成韵",
+              "source": "与朱元思书（八上）（非考试篇目）",
+              "level": "secondary"
+            },
+            {
+              "sentence": "窈窕淑女，君子好逑",
+              "source": "关雎（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_025_02",
+          "definition": "使人满意，与“坏”相对",
+          "examples": []
+        },
+        {
+          "id": "m_025_03",
+          "definition": "爱好，喜爱",
+          "examples": [
+            {
+              "sentence": "蜀中有杜处士，好书画",
+              "source": "书戴嵩画牛（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "知之者不如好之者",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "好有三义：好鸟相鸣，窈窕淑女，好书画好之者"
+    },
+    {
+      "id": "word_026",
+      "word": "号",
+      "type": "实词",
+      "pinyin": "háo",
+      "meanings": [
+        {
+          "id": "m_026_01",
+          "definition": "大叫，呼啸",
+          "examples": [
+            {
+              "sentence": "阴风怒号，浊浪排空",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_026_02",
+          "definition": "取名号",
+          "examples": [
+            {
+              "sentence": "故自号曰醉翁也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "号有两义：阴风怒号，自号醉翁"
+    },
+    {
+      "id": "word_027",
+      "word": "还",
+      "type": "实词",
+      "pinyin": "huán",
+      "meanings": [
+        {
+          "id": "m_027_01",
+          "definition": "返回，回到",
+          "examples": [
+            {
+              "sentence": "愿驰千里足，送儿还故乡",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "兴复汉室，还于旧都",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_027_02",
+          "definition": "交还，归还",
+          "examples": [
+            {
+              "sentence": "便要还家,设酒杀鸡作食",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "计日以还",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "还有两义：还故乡，还家还书"
+    },
+    {
+      "id": "word_028",
+      "word": "会",
+      "type": "实词",
+      "pinyin": "huì",
+      "meanings": [
+        {
+          "id": "m_028_01",
+          "definition": "会合，聚会，集会",
+          "examples": [
+            {
+              "sentence": "迁客骚人，多会于此",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_028_02",
+          "definition": "适逢，恰巧遇到",
+          "examples": [
+            {
+              "sentence": "会天大雨",
+              "source": "陈涉世家（九下）（非 考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_028_03",
+          "definition": "终将",
+          "examples": [
+            {
+              "sentence": "会当凌绝顶",
+              "source": "望岳（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "长风破浪会有时",
+              "source": "行路难（其一）（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "会挽雕弓如满月",
+              "source": "江城子•密州出猎（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "会字三义：多会于此，会天大雨，会当凌绝"
+    },
+    {
+      "id": "word_029",
+      "word": "惠",
+      "type": "实词",
+      "pinyin": "huì",
+      "meanings": [
+        {
+          "id": "m_029_01",
+          "definition": "恩惠，（给人以）好处",
+          "examples": [
+            {
+              "sentence": "小惠未遍，民弗从也",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_029_02",
+          "definition": "同“慧”，聪明",
+          "examples": [
+            {
+              "sentence": "甚矣，汝之不惠",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "惠有两义：小惠未遍，汝之不惠"
+    },
+    {
+      "id": "word_030",
+      "word": "及",
+      "type": "实词",
+      "pinyin": "jí",
+      "meanings": [
+        {
+          "id": "m_030_01",
+          "definition": "到，到了，待，等到",
+          "examples": [
+            {
+              "sentence": "及日中则如盘盂",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "及其家穿井",
+              "source": "穿井得一人（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "及鲁肃过寻阳，与蒙论议",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "及郡下，诣太守,说如此",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_030_02",
+          "definition": "比得上,来得及",
+          "examples": [
+            {
+              "sentence": "悲守穷庐，将复何及",
+              "source": "诫子书（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_030_03",
+          "definition": "以及，和,与",
+          "examples": [
+            {
+              "sentence": "若有作奸犯科及为忠善者",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "及字三义：及日中，及郡下，将复何及"
+    },
+    {
+      "id": "word_031",
+      "word": "极",
+      "type": "实词",
+      "pinyin": "jí",
+      "meanings": [
+        {
+          "id": "m_031_01",
+          "definition": "尽头",
+          "examples": [
+            {
+              "sentence": "其远而无所至极邪",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_031_02",
+          "definition": "极点 （到达）",
+          "examples": [
+            {
+              "sentence": "渔歌互答，此乐何极",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "感极而悲者矣",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "然则北通巫峡，南极潇湘",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_031_03",
+          "definition": "很，非常",
+          "examples": [
+            {
+              "sentence": "初极狭，才通人",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "北冥至极（尽头），岳阳何极（极点），初极狭（很）"
+    },
+    {
+      "id": "word_032",
+      "word": "计",
+      "type": "实词",
+      "pinyin": "jì",
+      "meanings": [
+        {
+          "id": "m_032_01",
+          "definition": "计算，计量，总计",
+          "examples": [
+            {
+              "sentence": "通计一舟,为人五",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "而计其长曾不盈寸",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "则汉室之隆,可计日而待也",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "通计核舟五人，计长不盈寸，计日待汉隆"
+    },
+    {
+      "id": "word_033",
+      "word": "济",
+      "type": "实词",
+      "pinyin": "jì",
+      "meanings": [
+        {
+          "id": "m_033_01",
+          "definition": "渡",
+          "examples": [
+            {
+              "sentence": "欲济无舟楫",
+              "source": "望洞庭湖赠张丞相 （八下）（非考试篇目）",
+              "level": "secondary"
+            },
+            {
+              "sentence": "直挂云帆济沧海",
+              "source": "行路难（其一）（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "欲济无楫，直挂云帆济沧海"
+    },
+    {
+      "id": "word_034",
+      "word": "假",
+      "type": "实词",
+      "pinyin": "jiǎ",
+      "meanings": [
+        {
+          "id": "m_034_01",
+          "definition": "不真实的，假装。与“真”相对",
+          "examples": [
+            {
+              "sentence": "乃悟前狼假寐",
+              "source": "狼（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_034_02",
+          "definition": "借",
+          "examples": [
+            {
+              "sentence": "以是人多以书假余",
+              "source": "送东阳马生序（九下） （非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "前狼假寐（假装），以书假余（借）"
+    },
+    {
+      "id": "word_035",
+      "word": "间",
+      "type": "实词",
+      "pinyin": "jiān",
+      "meanings": [
+        {
+          "id": "m_035_01",
+          "definition": "中间",
+          "examples": [
+            {
+              "sentence": "尾搐入两股间",
+              "source": "书戴嵩画牛（六上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_035_02",
+          "definition": "期间",
+          "examples": [
+            {
+              "sentence": "傅说举于版筑之间",
+              "source": "生于忧患，死于安乐 （八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "山间之朝暮也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "颓然乎其间者",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "少选之间而志在流水",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "奉命于危难之间",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_035_03",
+          "definition": "参与",
+          "examples": [
+            {
+              "sentence": "肉食者谋之，又何间焉",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_035_04",
+          "definition": "隔开，不连接",
+          "examples": [
+            {
+              "sentence": "遂与外人间隔",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "两股间（中间），版筑间（期间），又何间焉（参与），间隔外人（隔开）"
+    },
+    {
+      "id": "word_036",
+      "word": "简",
+      "type": "实词",
+      "pinyin": "jiǎn",
+      "meanings": [
+        {
+          "id": "m_036_01",
+          "definition": "挑选，选拔",
+          "examples": [
+            {
+              "sentence": "盖简桃核修狭者为之",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "是以先帝简拔以遗陛下",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "简桃核修狭，简拔遗陛下"
+    },
+    {
+      "id": "word_037",
+      "word": "见",
+      "type": "实词",
+      "pinyin": "jiàn",
+      "meanings": [
+        {
+          "id": "m_037_01",
+          "definition": "看见，看到 （了解） （领悟，知晓）",
+          "examples": [
+            {
+              "sentence": "一日曝书画,有一牧童见之",
+              "source": "书戴嵩画牛（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "孔子东游,见两小儿辩斗",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "昨夜见军帖,可汗大点兵",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "见其发矢十中八九",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "高峰入云，清流见底",
+              "source": "答谢中书书（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "斗折蛇行，明灭可见",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "见渔人，乃大惊",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "但当涉猎，见往事耳",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "大兄何见事之晚乎",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_037_02",
+          "definition": "拜见，谒见",
+          "examples": [
+            {
+              "sentence": "归来见天子",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "曹刿请见",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_037_03",
+          "definition": "同“现”，表露",
+          "examples": [
+            {
+              "sentence": "食不饱，力不足，才美不外见",
+              "source": "马说（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "见牧童辩斗（看见），见天子请见（拜见），才美不外见（表露）"
+    },
+    {
+      "id": "word_038",
+      "word": "竭",
+      "type": "实词",
+      "pinyin": "jié",
+      "meanings": [
+        {
+          "id": "m_038_01",
+          "definition": "穷尽（耗尽，消失） （全部用上）",
+          "examples": [
+            {
+              "sentence": "一鼓作气，再而衰,三而竭",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "彼竭我盈",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "庶竭驽钝，攘除奸凶",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "一鼓三竭，彼竭我盈，庶竭驽钝"
+    },
+    {
+      "id": "word_039",
+      "word": "尽",
+      "type": "实词",
+      "pinyin": "jìn",
+      "meanings": [
+        {
+          "id": "m_039_01",
+          "definition": "完,没有了 （吃完） （发挥完）",
+          "examples": [
+            {
+              "sentence": "一屠晚归，担中肉尽，止有剩骨",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "骨已尽矣",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "林尽水源，便得一山",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "马之千里者，一食或尽粟一石",
+              "source": "马说（八下）（非考试篇目）",
+              "level": "secondary"
+            },
+            {
+              "sentence": "策之不以其道，食之不能尽其材",
+              "source": "马说（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_039_02",
+          "definition": "全部，都（毫无保留）",
+          "examples": [
+            {
+              "sentence": "至于斟酌损益，进尽忠言",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "肉尽骨尽，林尽水源，尽粟一石，尽忠言"
+    },
+    {
+      "id": "word_040",
+      "word": "进",
+      "type": "实词",
+      "pinyin": "jìn",
+      "meanings": [
+        {
+          "id": "m_040_01",
+          "definition": "到朝廷做官",
+          "examples": [
+            {
+              "sentence": "是进亦忧,退亦忧",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_040_02",
+          "definition": "进献，奉献",
+          "examples": [
+            {
+              "sentence": "进尽忠言",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "进亦忧（做官），进尽忠言（进献）"
+    },
+    {
+      "id": "word_041",
+      "word": "居",
+      "type": "实词",
+      "pinyin": "jū",
+      "meanings": [
+        {
+          "id": "m_041_01",
+          "definition": "停留",
+          "examples": [
+            {
+              "sentence": "以其境过清，不可久居",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_041_02",
+          "definition": "居住，安居",
+          "examples": [
+            {
+              "sentence": "面山而居",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_041_03",
+          "definition": "处在，处于（某种地位或某个地方）",
+          "examples": [
+            {
+              "sentence": "佛印居右，鲁直居左",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "居右者椎髻仰面",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "居庙堂之高则忧其民",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_041_04",
+          "definition": "经过，表示相隔一段时间",
+          "examples": [
+            {
+              "sentence": "居无何，上至，又不得入",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "不可久居（停留），面山而居（居住），居右居庙堂（处在），居无何（经过）"
+    },
+    {
+      "id": "word_042",
+      "word": "举",
+      "type": "实词",
+      "pinyin": "jǔ",
+      "meanings": [
+        {
+          "id": "m_042_01",
+          "definition": "选拔，推举",
+          "examples": [
+            {
+              "sentence": "胶鬲举于鱼盐之中",
+              "source": "生于忧患，死于安乐 （八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "是以众议举宠为督",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "胶鬲举于鱼盐，众议举宠为督"
+    },
+    {
+      "id": "word_043",
+      "word": "具",
+      "type": "实词",
+      "pinyin": "jù",
+      "meanings": [
+        {
+          "id": "m_043_01",
+          "definition": "具备，具有",
+          "examples": [
+            {
+              "sentence": "罔不因势象形，各具情态",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_043_02",
+          "definition": "通“俱”，全部,详细地",
+          "examples": [
+            {
+              "sentence": "具答之",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "此人一一为具言所闻，皆叹惋",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "百废具兴",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "各具情态（具备），具答之（详细），百废具兴（全部）"
+    },
+    {
+      "id": "word_044",
+      "word": "俱",
+      "type": "实词",
+      "pinyin": "jù",
+      "meanings": [
+        {
+          "id": "m_044_01",
+          "definition": "全，都",
+          "examples": [
+            {
+              "sentence": "青林翠竹，四时俱备",
+              "source": "答谢中书书（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "宫中府中，俱为一体",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_044_02",
+          "definition": "一起",
+          "examples": [
+            {
+              "sentence": "虽与之俱学",
+              "source": "学弈（六下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "四时俱备（都），俱为一体（都），与之俱学（一起）"
+    },
+    {
+      "id": "word_045",
+      "word": "聚",
+      "type": "实词",
+      "pinyin": "jù",
+      "meanings": [
+        {
+          "id": "m_045_01",
+          "definition": "集合",
+          "examples": [
+            {
+              "sentence": "聚室而谋曰",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_045_02",
+          "definition": "聚拢",
+          "examples": [
+            {
+              "sentence": "峰峦如聚",
+              "source": "山坡羊•潼关怀古 （九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "聚室谋（集合），峰峦如聚（聚拢）"
+    },
+    {
+      "id": "word_046",
+      "word": "遽",
+      "type": "实词",
+      "pinyin": "jù",
+      "meanings": [
+        {
+          "id": "m_046_01",
+          "definition": "就",
+          "examples": [
+            {
+              "sentence": "其父虽善游，其子岂遽善游哉",
+              "source": "《吕氏春秋》（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "其父善游，其子岂遽善游（就）"
+    },
+    {
+      "id": "word_047",
+      "word": "决",
+      "type": "实词",
+      "pinyin": "jué",
+      "meanings": [
+        {
+          "id": "m_047_01",
+          "definition": "分辨，判断",
+          "examples": [
+            {
+              "sentence": "孔子不能决也",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_047_02",
+          "definition": "裂开",
+          "examples": [
+            {
+              "sentence": "决眦入归鸟",
+              "source": "望岳（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "孔子不能决（判断），决眦入鸟（裂开）"
+    },
+    {
+      "id": "word_048",
+      "word": "绝",
+      "type": "实词",
+      "pinyin": "jué",
+      "meanings": [
+        {
+          "id": "m_048_01",
+          "definition": "断",
+          "examples": [
+            {
+              "sentence": "伯牙破琴绝弦",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_048_02",
+          "definition": "与世隔绝的",
+          "examples": [
+            {
+              "sentence": "率妻子邑人来此绝境",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_048_03",
+          "definition": "独一无二的，独特的",
+          "examples": [
+            {
+              "sentence": "奇山异水，天下独绝",
+              "source": "与朱元思书（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_048_04",
+          "definition": "极，非常",
+          "examples": [
+            {
+              "sentence": "佛印绝类弥勒",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_048_05",
+          "definition": "停止，消失",
+          "examples": [
+            {
+              "sentence": "空谷传响，哀转久绝",
+              "source": "三峡（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "破琴绝弦（断），来此绝境（隔绝），天下独绝（独特），绝类弥勒（极），哀转久绝（停止）"
+    },
+    {
+      "id": "word_049",
+      "word": "类",
+      "type": "实词",
+      "pinyin": "lèi",
+      "meanings": [
+        {
+          "id": "m_049_01",
+          "definition": "类似，像",
+          "examples": [
+            {
+              "sentence": "佛印绝类弥勒",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "佛印绝类弥勒（类似）"
+    },
+    {
+      "id": "word_050",
+      "word": "临",
+      "type": "实词",
+      "pinyin": "lín",
+      "meanings": [
+        {
+          "id": "m_050_01",
+          "definition": "靠近（居高临下）",
+          "examples": [
+            {
+              "sentence": "沧州南一寺临河干",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "有亭翼然临于泉上者,醉翁亭也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "临溪而渔",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_050_02",
+          "definition": "来到",
+          "examples": []
+        },
+        {
+          "id": "m_050_03",
+          "definition": "面对，对着",
+          "examples": [
+            {
+              "sentence": "把酒临风,其喜洋洋者矣",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_050_04",
+          "definition": "正当，将要，就要",
+          "examples": [
+            {
+              "sentence": "今当远离，临表涕零",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "故临崩寄臣以大事也",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "临河干（靠近），临溪渔（靠近），把酒临风（面对），临表涕零（将要）"
+    },
+    {
+      "id": "word_051",
+      "word": "虑",
+      "type": "实词",
+      "pinyin": "lǜ",
+      "meanings": [
+        {
+          "id": "m_051_01",
+          "definition": "思虑，思绪，心思",
+          "examples": [
+            {
+              "sentence": "困于心，衡于虑,而后作",
+              "source": "生于忧患，死于安乐 （八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "此皆良实，志虑忠纯",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "衡于虑（思虑），志虑忠纯（心思）"
+    },
+    {
+      "id": "word_052",
+      "word": "论",
+      "type": "实词",
+      "pinyin": "lùn",
+      "meanings": [
+        {
+          "id": "m_052_01",
+          "definition": "议论，谈论",
+          "examples": [
+            {
+              "sentence": "与儿女讲论文义",
+              "source": "咏雪（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "及鲁肃过寻阳，与蒙论议",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "曹刿论战",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "先帝在时,每与臣论此事",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_052_02",
+          "definition": "评定，判定",
+          "examples": [
+            {
+              "sentence": "宜付有司论其刑赏",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "众服为确论",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_052_03",
+          "definition": "言论",
+          "examples": [
+            {
+              "sentence": "乃不知有汉，无论魏晋",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "讲论文义（谈论），论其刑赏（评定），无论魏晋（言论）"
+    },
+    {
+      "id": "word_053",
+      "word": "漫",
+      "type": "实词",
+      "pinyin": "màn",
+      "meanings": [
+        {
+          "id": "m_053_01",
+          "definition": "遍，到处都是",
+          "examples": [
+            {
+              "sentence": "惟解漫天作雪飞",
+              "source": "晚春（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_053_02",
+          "definition": "长",
+          "examples": [
+            {
+              "sentence": "故园东望路漫漫",
+              "source": "逢入京使（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "漫天飞（遍），路漫漫（长）"
+    },
+    {
+      "id": "word_054",
+      "word": "明",
+      "type": "实词",
+      "pinyin": "míng",
+      "meanings": [
+        {
+          "id": "m_054_01",
+          "definition": "明亮，光明 （透明） （普照，明媚）",
+          "examples": [
+            {
+              "sentence": "斗折蛇行，明灭可见",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "晦明变化者，山间之朝暮也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "庭下如积水空明",
+              "source": "记承天寺夜游（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "春和景明",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_054_02",
+          "definition": "英明",
+          "examples": [
+            {
+              "sentence": "以昭陛下平明之理",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "恐托付不效,以伤先帝之明",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_054_03",
+          "definition": "次,下一个",
+          "examples": [
+            {
+              "sentence": "越明年，政通人和",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_054_04",
+          "definition": "明确，坚定",
+          "examples": [
+            {
+              "sentence": "非淡泊无以明志",
+              "source": "诫子书（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "明灭可见（明亮），平明之理（英明），越明年（次），明志（明确）"
+    },
+    {
+      "id": "word_055",
+      "word": "名",
+      "type": "实词",
+      "pinyin": "míng",
+      "meanings": [
+        {
+          "id": "m_055_01",
+          "definition": "名字，名称",
+          "examples": [
+            {
+              "sentence": "卷卷有爷名",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "北冥有鱼，其名为鲲",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "其船背稍夷，则题名其上",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_055_02",
+          "definition": "命名，给……取名",
+          "examples": [
+            {
+              "sentence": "名之者谁",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_055_03",
+          "definition": "有名，出名",
+          "examples": [
+            {
+              "sentence": "山不在高，有仙则名",
+              "source": "陋室铭（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "爷名鲲名（名字），名之者谁（命名），有仙则名（有名）"
+    },
+    {
+      "id": "word_056",
+      "word": "命",
+      "type": "实词",
+      "pinyin": "mìng",
+      "meanings": [
+        {
+          "id": "m_056_01",
+          "definition": "命令，号令",
+          "examples": [
+            {
+              "sentence": "五十而知天命",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_056_02",
+          "definition": "任命，委派",
+          "examples": [
+            {
+              "sentence": "命夸娥氏二子负二山",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "受命以来，夙夜忧叹",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_056_03",
+          "definition": "生命，性命",
+          "examples": [
+            {
+              "sentence": "苟全性命于乱世",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_056_04",
+          "definition": "文章体裁之一",
+          "examples": [
+            {
+              "sentence": "《兑命》曰“学学半”",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "知天命（命令），命夸娥（任命），苟全性命（生命），《兑命》（体裁）"
+    },
+    {
+      "id": "word_057",
+      "word": "难",
+      "type": "实词",
+      "pinyin": "nán",
+      "meanings": [
+        {
+          "id": "m_057_01",
+          "definition": "不容易，困难",
+          "examples": [
+            {
+              "sentence": "夫大国，难测也，惧有伏焉",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_057_02",
+          "definition": "灾难",
+          "examples": [
+            {
+              "sentence": "奉命于危难之间",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "大国难测（困难），危难之间（灾难）"
+    },
+    {
+      "id": "word_058",
+      "word": "平",
+      "type": "实词",
+      "pinyin": "píng",
+      "meanings": [
+        {
+          "id": "m_058_01",
+          "definition": "平坦",
+          "examples": [
+            {
+              "sentence": "土地平旷，屋舍俨然",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_058_02",
+          "definition": "填平，铲平",
+          "examples": [
+            {
+              "sentence": "吾与汝毕力平险",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_058_03",
+          "definition": "公平，公正",
+          "examples": [
+            {
+              "sentence": "以昭陛下平明之理",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "土地平旷（平坦），毕力平险（铲平），平明之理（公平）"
+    },
+    {
+      "id": "word_059",
+      "word": "戚",
+      "type": "实词",
+      "pinyin": "qī",
+      "meanings": [
+        {
+          "id": "m_059_01",
+          "definition": "亲属（指族外）",
+          "examples": [
+            {
+              "sentence": "寡助之至，亲戚畔之",
+              "source": "得道多助，失道寡助 （八上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "亲戚畔之（族外亲属）"
+    },
+    {
+      "id": "word_060",
+      "word": "强",
+      "type": "实词",
+      "pinyin": "qiáng",
+      "meanings": [
+        {
+          "id": "m_060_01",
+          "definition": "强悍，强大",
+          "examples": [
+            {
+              "sentence": "知困,然后能自强也",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_060_02",
+          "definition": "（qiǎng）竭力，尽力 （勉强，硬要）",
+          "examples": [
+            {
+              "sentence": "余强饮三大白而别",
+              "source": "湖心亭看雪（九上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_060_03",
+          "definition": "有余",
+          "examples": [
+            {
+              "sentence": "赏赐百千强",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "自强（强悍），强饮三大白（竭力），百千强（有余）"
+    },
+    {
+      "id": "word_061",
+      "word": "窃",
+      "type": "实词",
+      "pinyin": "qiè",
+      "meanings": [
+        {
+          "id": "m_061_01",
+          "definition": "偷取",
+          "examples": [
+            {
+              "sentence": "盗窃乱贼而不作",
+              "source": "大道之行也（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "盗窃乱贼不作→偷取"
+    },
+    {
+      "id": "word_062",
+      "word": "请",
+      "type": "实词",
+      "pinyin": "qǐng",
+      "meanings": [
+        {
+          "id": "m_062_01",
+          "definition": "请求",
+          "examples": [
+            {
+              "sentence": "曹刿请见",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_062_02",
+          "definition": "请允许我（做某事）",
+          "examples": [
+            {
+              "sentence": "战则请从",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_062_03",
+          "definition": "请你（做某事）",
+          "examples": [
+            {
+              "sentence": "请循其本",
+              "source": "庄子与惠子游于濠梁之上（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "请见请求，请从允许，请循请你"
+    },
+    {
+      "id": "word_063",
+      "word": "穷",
+      "type": "实词",
+      "pinyin": "qióng",
+      "meanings": [
+        {
+          "id": "m_063_01",
+          "definition": "穷困（生活困难）",
+          "examples": [
+            {
+              "sentence": "悲守穷庐，将复何及",
+              "source": "诫子书（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_063_02",
+          "definition": "穷尽，完结（尽,走完）",
+          "examples": [
+            {
+              "sentence": "所识穷乏者得我与",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "子子孙孙无穷匮也",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "四时之景不同，而乐亦无穷也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "复前行，欲穷其林",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_063_03",
+          "definition": "极",
+          "examples": [
+            {
+              "sentence": "穷冬烈风",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "穷庐穷困，穷匮穷尽，穷冬极冷"
+    },
+    {
+      "id": "word_064",
+      "word": "求",
+      "type": "实词",
+      "pinyin": "qiú",
+      "meanings": [
+        {
+          "id": "m_064_01",
+          "definition": "寻找，寻求",
+          "examples": [
+            {
+              "sentence": "求二石兽于水中",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "沿河求之，不亦颠乎",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_064_02",
+          "definition": "探求，探索，追求，谋求，奢求",
+          "examples": [
+            {
+              "sentence": "予尝求古仁人之心",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "不求闻达于诸侯",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_064_03",
+          "definition": "索取，要求，需求",
+          "examples": [
+            {
+              "sentence": "安求其能千里也",
+              "source": "马说（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "求石兽寻，求仁心探，求千里索"
+    },
+    {
+      "id": "word_065",
+      "word": "取",
+      "type": "实词",
+      "pinyin": "qǔ",
+      "meanings": [
+        {
+          "id": "m_065_01",
+          "definition": "拿",
+          "examples": [
+            {
+              "sentence": "乃取一葫芦置于地",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_065_02",
+          "definition": "获得，讨取（开辟）",
+          "examples": [
+            {
+              "sentence": "伐竹取道，下见小潭,水尤清冽",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_065_03",
+          "definition": "选取，采用",
+          "examples": [
+            {
+              "sentence": "舍鱼而取熊掌者也",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "取葫芦拿，取道获，取熊掌选"
+    },
+    {
+      "id": "word_066",
+      "word": "去",
+      "type": "实词",
+      "pinyin": "qù",
+      "meanings": [
+        {
+          "id": "m_066_01",
+          "definition": "离开（消逝，丧失）",
+          "examples": [
+            {
+              "sentence": "一狼径去",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "睨之久而不去",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "旦辞爷娘去，暮宿黄河边",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "是非木柿，岂能为暴涨携之去",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "委而去之",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "去以六月息者也",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "乃记之而去",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "停数日，辞去",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "则有去国怀乡",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "游人去而禽鸟乐也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "意与日去，遂成枯落",
+              "source": "诫子书（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_066_02",
+          "definition": "距，距离",
+          "examples": [
+            {
+              "sentence": "我以日始出时去人近",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "狼去卖油去，辞爷去携去，委去去息去，记去辞去去国去，游人去（离开）；意与日去（消逝），去人近（距）"
+    },
+    {
+      "id": "word_067",
+      "word": "全",
+      "type": "实词",
+      "pinyin": "quán",
+      "meanings": [
+        {
+          "id": "m_067_01",
+          "definition": "完整，整个",
+          "examples": [
+            {
+              "sentence": "全石以为底",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_067_02",
+          "definition": "完全，完备",
+          "examples": [
+            {
+              "sentence": "子之不知鱼之乐，全矣",
+              "source": "庄子与惠子游于濠梁之上（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_067_03",
+          "definition": "保全",
+          "examples": [
+            {
+              "sentence": "苟全性命于乱世",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "全石完整，全矣完全，苟全保全"
+    },
+    {
+      "id": "word_068",
+      "word": "任",
+      "type": "实词",
+      "pinyin": "rèn",
+      "meanings": [
+        {
+          "id": "m_068_01",
+          "definition": "责任，职责",
+          "examples": [
+            {
+              "sentence": "故天将降大任于是人也",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "进尽忠言,则攸之、祎、允之任也",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_068_02",
+          "definition": "委任，任用",
+          "examples": [
+            {
+              "sentence": "受任于败军之际",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_068_03",
+          "definition": "听凭，任凭",
+          "examples": [
+            {
+              "sentence": "从流飘荡，任意东西",
+              "source": "与朱元思书（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "大任责任，攸之任职责，受任委任，任意任凭"
+    },
+    {
+      "id": "word_069",
+      "word": "入",
+      "type": "实词",
+      "pinyin": "rù",
+      "meanings": [
+        {
+          "id": "m_069_01",
+          "definition": "进入，与“出”相对（注入、插入）",
+          "examples": [
+            {
+              "sentence": "元方入门不顾",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "意将隧入以攻其后也",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "身已半入",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "草色入帘青",
+              "source": "陋室铭（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "月色入户",
+              "source": "记承天寺夜游（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "惩山北之塞，出入之迂也",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "自钱孔入，而钱不湿",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "高峰入云，清流见底",
+              "source": "答谢中书书（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_069_02",
+          "definition": "在国内",
+          "examples": [
+            {
+              "sentence": "便舍船，从口入",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "故五月渡泸，深入不毛",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "入则无法家拂士",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_069_03",
+          "definition": "进入朝廷",
+          "examples": [
+            {
+              "sentence": "于是入朝见威王",
+              "source": "邹忌讽齐王纳谏（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "乃入见",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "入门隧入半入帘，月色入户出入迂，钱孔入云进入；舍船入不毛在国内；入朝见威王乃入见进入朝廷"
+    },
+    {
+      "id": "word_070",
+      "word": "若",
+      "type": "实词",
+      "pinyin": "ruò",
+      "meanings": [
+        {
+          "id": "m_070_01",
+          "definition": "像，如，似，比得上",
+          "examples": [
+            {
+              "sentence": "巍巍乎若太山",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "弗若之矣",
+              "source": "学弈（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "未若柳絮因风起",
+              "source": "咏雪（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "求闻之若此，不若无闻也",
+              "source": "穿井得一人（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "孰若孤",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "万里赴戎机，关山度若飞",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "固不可彻，曾不若孀妻弱子",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "怒而飞，其翼若垂天之云",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "其视下也,亦若是则已矣",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "仿佛若有光",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "细若蚊足",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "皆若空游无所依",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_070_02",
+          "definition": "假如，如果",
+          "examples": [
+            {
+              "sentence": "至若春和景明",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "若夫日出而林霏开",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "若有作奸犯科及为忠善者",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "若无兴德之言",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_070_03",
+          "definition": "你",
+          "examples": [
+            {
+              "sentence": "若屈伸呼吸，终日在天中行止",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "若太山像，若之矣比，未若柳絮似，求闻若此比，孰若孤比，度若飞像，曾不若比，翼若垂天像，亦若是像，仿佛若有光像，细若蚊足像，皆若空游像（义项1）；至若若夫若有若无假如（义项2）；若屈伸呼吸你（义项3）"
+    },
+    {
+      "id": "word_071",
+      "word": "善",
+      "type": "实词",
+      "pinyin": "shàn",
+      "meanings": [
+        {
+          "id": "m_071_01",
+          "definition": "好，好的，善良的，好处",
+          "examples": [
+            {
+              "sentence": "善哉乎鼓琴",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "择其善者而从之",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "弗学，不知其善也",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "咨谏善道",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "若有作奸犯科及为忠善者",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_071_02",
+          "definition": "善于，擅长",
+          "examples": [
+            {
+              "sentence": "通国之善弈者也",
+              "source": "学弈（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "陈康肃公善射，当世无双",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "善哉好鼓琴，择善者从，善道忠善好，善是不知好处；善弈善射善于"
+    },
+    {
+      "id": "word_072",
+      "word": "少",
+      "type": "实词",
+      "pinyin": "shǎo",
+      "meanings": [
+        {
+          "id": "m_072_01",
+          "definition": "不多，数量小（时间短）",
+          "examples": [
+            {
+              "sentence": "饮少辄醉，而年又最高",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "少选之间而志在流水",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "少时,一狼径去",
+              "source": "狼（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_072_02",
+          "definition": "缺少",
+          "examples": [
+            {
+              "sentence": "但少闲人如吾两人者耳",
+              "source": "记承天寺夜游（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_072_03",
+          "definition": "（shào）年轻，少年，年纪小",
+          "examples": [
+            {
+              "sentence": "陈涉少时，尝与人佣耕",
+              "source": "陈涉世家（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "饮少不多，少选时间短，少时片刻（义项1）；但少闲人缺少（义项2）；陈涉少时年轻（义项3）"
+    },
+    {
+      "id": "word_073",
+      "word": "舍",
+      "type": "实词",
+      "pinyin": "shè/shě",
+      "meanings": [
+        {
+          "id": "m_073_01",
+          "definition": "（shè）房屋，房舍",
+          "examples": [
+            {
+              "sentence": "土地平旷，屋舍俨然",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_073_02",
+          "definition": "（shě）舍弃，丢弃（同“释”，解除,消除）",
+          "examples": [
+            {
+              "sentence": "过中不至，太丘舍去",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "逝者如斯夫，不舍昼夜",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "便舍船，从口入",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "舍鱼而取熊掌者也",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "其人舍然大喜",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "屋舍房舍（shè），舍去舍船舍鱼舍然大喜（shě）"
+    },
+    {
+      "id": "word_074",
+      "word": "涉",
+      "type": "实词",
+      "pinyin": "shè",
+      "meanings": [
+        {
+          "id": "m_074_01",
+          "definition": "浏览，阅读",
+          "examples": [
+            {
+              "sentence": "但当涉猎，见往事耳",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "涉猎浏览阅读"
+    },
+    {
+      "id": "word_075",
+      "word": "生",
+      "type": "实词",
+      "pinyin": "shēng",
+      "meanings": [
+        {
+          "id": "m_075_01",
+          "definition": "（草木）生长，出生，诞生",
+          "examples": [
+            {
+              "sentence": "绝巘多生怪柏",
+              "source": "三峡（八上）（非考试篇目）",
+              "level": "secondary"
+            },
+            {
+              "sentence": "夹岸高山，皆生寒树",
+              "source": "与朱元思书（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_075_02",
+          "definition": "生存，活着",
+          "examples": [
+            {
+              "sentence": "然后知生于忧患而死于安乐也",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_075_03",
+          "definition": "生命",
+          "examples": [
+            {
+              "sentence": "生物之以息相吹也",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "生，亦我所欲也",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_075_04",
+          "definition": "后生，晚辈",
+          "examples": [
+            {
+              "sentence": "隶而从者，崔氏二小生",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "生怪柏生寒树生长，生于忧患生存，生物生所欲生命，二小生后生"
+    },
+    {
+      "id": "word_076",
+      "word": "胜",
+      "type": "实词",
+      "pinyin": "shèng",
+      "meanings": [
+        {
+          "id": "m_076_01",
+          "definition": "胜利",
+          "examples": [
+            {
+              "sentence": "然而不胜者，是天时不如地利也",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "射者中，弈者胜，觥筹交错",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_076_02",
+          "definition": "尽，完",
+          "examples": [
+            {
+              "sentence": "臣不胜受恩感激",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_076_03",
+          "definition": "美好",
+          "examples": [
+            {
+              "sentence": "予观夫巴陵胜状，在洞庭一湖",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "不胜胜利，不胜感激尽，胜状美好"
+    },
+    {
+      "id": "word_077",
+      "word": "师",
+      "type": "实词",
+      "pinyin": "shī",
+      "meanings": [
+        {
+          "id": "m_077_01",
+          "definition": "军队",
+          "examples": [
+            {
+              "sentence": "十年春，齐师伐我",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_077_02",
+          "definition": "老师",
+          "examples": [
+            {
+              "sentence": "温故而知新，可以为师矣",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_077_03",
+          "definition": "首都，京城",
+          "examples": [
+            {
+              "sentence": "余朝京师，生以乡人子谒余",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "齐师军队，为师老师，朝京师首都"
+    },
+    {
+      "id": "word_078",
+      "word": "施",
+      "type": "实词",
+      "pinyin": "shī",
+      "meanings": [
+        {
+          "id": "m_078_01",
+          "definition": "实施，实行",
+          "examples": [
+            {
+              "sentence": "悉以咨之，然后施行",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "施行实施实行"
+    },
+    {
+      "id": "word_079",
+      "word": "实",
+      "type": "实词",
+      "pinyin": "shí",
+      "meanings": [
+        {
+          "id": "m_079_01",
+          "definition": "实际，事实（实在）",
+          "examples": [
+            {
+              "sentence": "实是欲界之仙都",
+              "source": "答谢中书书（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_079_02",
+          "definition": "诚实，真实",
+          "examples": [
+            {
+              "sentence": "此皆良实",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "实是实际，良实诚实"
+    },
+    {
+      "id": "word_080",
+      "word": "食",
+      "type": "实词",
+      "pinyin": "shí/sì",
+      "meanings": [
+        {
+          "id": "m_080_01",
+          "definition": "吃，吃饭",
+          "examples": [
+            {
+              "sentence": "身亡所寄，废寝食者",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "弗食，不知其旨也",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "肉食者谋之，又何间焉",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "饭疏食，饮水，曲肱而枕之",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "便要还家,设酒杀鸡作食",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "一箪食，一豆羹",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_080_02",
+          "definition": "粮食，食物",
+          "examples": [
+            {
+              "sentence": "一箪食，一瓢饮,在陋巷",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "衣食所安，弗敢专也，必以分人",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_080_03",
+          "definition": "供养，给……吃",
+          "examples": [
+            {
+              "sentence": "食之不能尽其材",
+              "source": "马说（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "废寝食吃，弗食吃，肉食者吃，饭疏食吃，作食吃，食羹吃（义项1）；箪食瓢饮粮，衣食所安粮（义项2）；食之不能尽其材供养（义项3）"
+    },
+    {
+      "id": "word_081",
+      "word": "使",
+      "type": "实词",
+      "pinyin": "shǐ",
+      "meanings": [
+        {
+          "id": "m_081_01",
+          "definition": "使唤，派遣",
+          "examples": [
+            {
+              "sentence": "得一人之使，非得一人于井中也",
+              "source": "穿井得一人（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_081_02",
+          "definition": "让，叫，令；使得，致使",
+          "examples": [
+            {
+              "sentence": "使弈秋诲二人弈",
+              "source": "学弈（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "必能使行阵和睦，优劣得所",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "不宜偏私,使内外异法也",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_081_03",
+          "definition": "出使",
+          "examples": [
+            {
+              "sentence": "安陵君因使唐雎使于秦",
+              "source": "唐雎不辱使命（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_081_04",
+          "definition": "使节",
+          "examples": [
+            {
+              "sentence": "于是上乃使使持节诏将军",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            },
+            {
+              "sentence": "于是上乃使使持节诏将军",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_081_05",
+          "definition": "假使，纵使，即使",
+          "examples": [
+            {
+              "sentence": "只使坠，亦不能有所中伤",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "使人之所恶莫甚于死者",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "得一人使唤派遣，使弈秋诲让，使唐雎出使，使使持节使节，只使坠假使"
+    },
+    {
+      "id": "word_082",
+      "word": "释",
+      "type": "实词",
+      "pinyin": "shì",
+      "meanings": [
+        {
+          "id": "m_082_01",
+          "definition": "放下",
+          "examples": [
+            {
+              "sentence": "有卖油翁释担而立",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "释担放下"
+    },
+    {
+      "id": "word_083",
+      "word": "市",
+      "type": "实词",
+      "pinyin": "shì",
+      "meanings": [
+        {
+          "id": "m_083_01",
+          "definition": "市场，集市",
+          "examples": [
+            {
+              "sentence": "东市买骏马，西市买鞍鞯",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "百里奚举于市",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_083_02",
+          "definition": "买",
+          "examples": [
+            {
+              "sentence": "愿为市鞍马，从此替爷征",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "东市西市市场，举于市市场，愿为市鞍马买"
+    },
+    {
+      "id": "word_084",
+      "word": "恃",
+      "type": "实词",
+      "pinyin": "shì",
+      "meanings": [
+        {
+          "id": "m_084_01",
+          "definition": "依赖，倚仗",
+          "examples": [
+            {
+              "sentence": "子何恃而往",
+              "source": "为学（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "恃而往依赖"
+    },
+    {
+      "id": "word_085",
+      "word": "数",
+      "type": "实词",
+      "pinyin": "shù/shǔ",
+      "meanings": [
+        {
+          "id": "m_085_01",
+          "definition": "几，几个",
+          "examples": [
+            {
+              "sentence": "如其言，果得于数里外",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "夹岸数百步，中无杂树",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_085_02",
+          "definition": "计算，点数",
+          "examples": [
+            {
+              "sentence": "以刀劈狼首，又数刀毙之",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "棹数小舟,曳铁钯",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "所宝以百数",
+              "source": "书戴嵩画牛（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "珠可历历数也",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "数里数百几，数刀数舟数宝数珠计算"
+    },
+    {
+      "id": "word_086",
+      "word": "属",
+      "type": "实词",
+      "pinyin": "zhǔ/shǔ",
+      "meanings": [
+        {
+          "id": "m_086_01",
+          "definition": "（zhǔ）同“嘱”，嘱托",
+          "examples": [
+            {
+              "sentence": "属予作文以记之",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_086_02",
+          "definition": "部属，隶属，归属",
+          "examples": [
+            {
+              "sentence": "壁门士吏谓从属车骑曰",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_086_03",
+          "definition": "类，一类",
+          "examples": [
+            {
+              "sentence": "有良田、美池、桑竹之属",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "忠之属也",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_086_04",
+          "definition": "像，类似",
+          "examples": [
+            {
+              "sentence": "神情与苏、黄不属",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_086_05",
+          "definition": "连接",
+          "examples": [
+            {
+              "sentence": "属引凄异，空谷传响",
+              "source": "三峡（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "属予嘱托，从属部属，之属忠之属类，不属类似，属引连接"
+    },
+    {
+      "id": "word_087",
+      "word": "说",
+      "type": "实词",
+      "pinyin": "shuō/yuè",
+      "meanings": [
+        {
+          "id": "m_087_01",
+          "definition": "陈述，解说，讲",
+          "examples": [
+            {
+              "sentence": "及郡下，诣太守,说如此",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "莫说相公痴，更有痴似相公者",
+              "source": "湖心亭看雪（九上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_087_02",
+          "definition": "古代的一种文体",
+          "examples": [
+            {
+              "sentence": "爱莲说",
+              "source": "爱莲说（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_087_03",
+          "definition": "（yuè）同“悦”，愉快，高兴",
+          "examples": [
+            {
+              "sentence": "学而时习之，不亦说乎",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "秦王不说",
+              "source": "唐雎不辱使命（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "说如此解说，爱莲说文體，不亦说乎悦"
+    },
+    {
+      "id": "word_088",
+      "word": "素",
+      "type": "实词",
+      "pinyin": "sù",
+      "meanings": [
+        {
+          "id": "m_088_01",
+          "definition": "白的，白色的",
+          "examples": [
+            {
+              "sentence": "春冬之时，则素湍绿潭",
+              "source": "三峡（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_088_02",
+          "definition": "朴素，不加装饰",
+          "examples": [
+            {
+              "sentence": "可以调素琴,阅金经",
+              "source": "陋室铭（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "素湍白色，素琴朴素"
+    },
+    {
+      "id": "word_089",
+      "word": "汤",
+      "type": "实词",
+      "pinyin": "tāng/shāng",
+      "meanings": [
+        {
+          "id": "m_089_01",
+          "definition": "热水，开水",
+          "examples": [
+            {
+              "sentence": "日初出沧沧凉凉，及其日中如探汤",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "媵人持汤沃灌",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_089_02",
+          "definition": "（shāng）水流大而急的样子",
+          "examples": [
+            {
+              "sentence": "汤汤乎若流水",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "浩浩汤汤，横无际涯",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "探汤持汤热水，汤汤浩浩汤汤水流急"
+    },
+    {
+      "id": "word_090",
+      "word": "徒",
+      "type": "实词",
+      "pinyin": "tú",
+      "meanings": [
+        {
+          "id": "m_090_01",
+          "definition": "空，光",
+          "examples": [
+            {
+              "sentence": "亦免冠徒跣，以头抢地尔",
+              "source": "唐雎不辱使命（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "徒跣空脚"
+    },
+    {
+      "id": "word_091",
+      "word": "亡",
+      "type": "实词",
+      "pinyin": "wáng/wú",
+      "meanings": [
+        {
+          "id": "m_091_01",
+          "definition": "灭亡，死亡",
+          "examples": [
+            {
+              "sentence": "出则无敌国外患者，国恒亡",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "此诚危急存亡之秋也",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_091_02",
+          "definition": "（wú）无，没有",
+          "examples": [
+            {
+              "sentence": "身亡所寄，废寝食者",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "天,积气耳，亡处亡气",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "河曲智叟亡以应",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "国恒亡（灭亡），存亡之秋（灭亡）；身亡所寄（无），亡处亡气（无），智叟亡以应（无）"
+    },
+    {
+      "id": "word_092",
+      "word": "为",
+      "type": "实词",
+      "pinyin": "wéi",
+      "meanings": [
+        {
+          "id": "m_092_01",
+          "definition": "做，干（雕刻，制作，制造）",
+          "examples": [
+            {
+              "sentence": "行拂乱其所为",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "则凡可以辟患者何不为也",
+              "source": "鱼我所欲也（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "若有作奸犯科及为忠善者",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "能以径寸之木,为宫室、器皿、人物",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "通计一舟,为人五",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "盖简桃核修狭者为之",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_092_02",
+          "definition": "作为，当作（担任，充当）",
+          "examples": [
+            {
+              "sentence": "全石以为底",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "武陵人捕鱼为业",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "温故而知新，可以为师矣",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "孤岂欲卿治经为博士邪",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "是以众议举宠为督",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_092_03",
+          "definition": "是（叫作，称为）",
+          "examples": [
+            {
+              "sentence": "中峨冠而多髯者为东坡",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "中轩敞者为舱",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "宫中府中，俱为一体",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "北冥有鱼，其名为鲲",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_092_04",
+          "definition": "变成，成为（形成）",
+          "examples": [
+            {
+              "sentence": "必于石下迎水处啮沙为坎穴",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "化而为鸟",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "酿泉为酒",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "为坻，为屿，为嵁，为岩",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_092_05",
+          "definition": "为了，给,替",
+          "examples": [
+            {
+              "sentence": "为人谋而不忠乎",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_092_06",
+          "definition": "被",
+          "examples": [
+            {
+              "sentence": "岂能为暴涨携之去",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "天子为动，改容式车",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_092_07",
+          "definition": "同“谓”认为",
+          "examples": [
+            {
+              "sentence": "自以为大有所益",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "以为顺流下矣",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "以为世无足复为鼓琴者",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "孰为汝多知乎",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "众服为确论",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "为所为做，为忠善做；为宫室雕刻，为人五制作；全石为底作为，捕鱼为业当作；中峨冠是为东坡，俱为一体是；啮沙为坎穴变成，化而为鸟成为；为人谋为了；为暴涨携被；自以为谓认为"
+    },
+    {
+      "id": "word_093",
+      "word": "委",
+      "type": "实词",
+      "pinyin": "wěi",
+      "meanings": [
+        {
+          "id": "m_093_01",
+          "definition": "抛弃，舍弃",
+          "examples": [
+            {
+              "sentence": "与人期行，相委而去",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "委而去之，是地利不如人和也",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "相委而去（抛弃），委而去之（舍弃）"
+    },
+    {
+      "id": "word_094",
+      "word": "务",
+      "type": "实词",
+      "pinyin": "wù",
+      "meanings": [
+        {
+          "id": "m_094_01",
+          "definition": "事务，事情",
+          "examples": [
+            {
+              "sentence": "蒙辞以军中多务",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "经纶世务者，窥谷忘反",
+              "source": "与朱元思书（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "军中多务（事务），经纶世务（事情）"
+    },
+    {
+      "id": "word_095",
+      "word": "鲜",
+      "type": "实词",
+      "pinyin": "xiān/xiǎn",
+      "meanings": [
+        {
+          "id": "m_095_01",
+          "definition": "新鲜，鲜艳",
+          "examples": [
+            {
+              "sentence": "芳草鲜美，落英缤纷",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_095_02",
+          "definition": "鲜美",
+          "examples": [
+            {
+              "sentence": "无鲜肥滋味之享",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_095_03",
+          "definition": "（xiǎn）少",
+          "examples": [
+            {
+              "sentence": "菊之爱，陶后鲜有闻",
+              "source": "爱莲说（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "芳草鲜美（新鲜），鲜肥滋味（鲜美），陶后鲜有闻（少）"
+    },
+    {
+      "id": "word_096",
+      "word": "向",
+      "type": "实词",
+      "pinyin": "xiàng",
+      "meanings": [
+        {
+          "id": "m_096_01",
+          "definition": "对着，朝着",
+          "examples": [
+            {
+              "sentence": "狼不敢前，眈眈相向",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "磨刀霍霍向猪羊",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_096_02",
+          "definition": "过去的，先前的，原来的",
+          "examples": [
+            {
+              "sentence": "便扶向路，处处志之",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "寻向所志",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "眈眈相向（对着），霍霍向猪羊（朝着）；扶向路（先前），寻向所志（原来）"
+    },
+    {
+      "id": "word_097",
+      "word": "效",
+      "type": "实词",
+      "pinyin": "xiào",
+      "meanings": [
+        {
+          "id": "m_097_01",
+          "definition": "功效",
+          "examples": [
+            {
+              "sentence": "愿陛下托臣以讨贼兴复之效",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_097_02",
+          "definition": "效果，见效，奏效",
+          "examples": [
+            {
+              "sentence": "夙夜忧叹，恐托付不效",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "不效，则治臣之罪",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "讨贼兴复之效（功效），托付不效（效果），不效治罪（奏效）"
+    },
+    {
+      "id": "word_098",
+      "word": "谢",
+      "type": "实词",
+      "pinyin": "xiè",
+      "meanings": [
+        {
+          "id": "m_098_01",
+          "definition": "问候",
+          "examples": [
+            {
+              "sentence": "使人称谢",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_098_02",
+          "definition": "道歉",
+          "examples": [
+            {
+              "sentence": "秦王色挠,长跪而谢之曰",
+              "source": "唐雎不辱使命（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "使人称谢（问候），长跪而谢（道歉）"
+    },
+    {
+      "id": "word_099",
+      "word": "信",
+      "type": "实词",
+      "pinyin": "xìn",
+      "meanings": [
+        {
+          "id": "m_099_01",
+          "definition": "信用，诚信（讲信用）",
+          "examples": [
+            {
+              "sentence": "日中不至，则是无信",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "与朋友交而不信乎",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_099_02",
+          "definition": "（实情）",
+          "examples": [
+            {
+              "sentence": "牺牲玉帛，弗敢加也,必以信",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "小信未孚，神弗福也",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_099_03",
+          "definition": "相信，信任",
+          "examples": [
+            {
+              "sentence": "愿陛下亲之信之",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "日中不至无信（信用），与友交不信（诚信）；必以信（实情），小信未孚（实情）；亲之信之（信任）"
+    },
+    {
+      "id": "word_100",
+      "word": "行",
+      "type": "实词",
+      "pinyin": "xíng/háng",
+      "meanings": [
+        {
+          "id": "m_100_01",
+          "definition": "行走（行动）（爬行）（通行，出行）（划船，划行）",
+          "examples": [
+            {
+              "sentence": "陈太丘与友期行",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "三人行，必有我师焉",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "途中两狼，缀行甚远",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "方欲行",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "月色入户，欣然起行",
+              "source": "记承天寺夜游（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "从小丘西行百二十步",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "复行数十步",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "行者休于树",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "终日在天中行止,奈何忧崩坠乎",
+              "source": "杞人忧天（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "斗折蛇行",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "商旅不行",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "缘溪行",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_100_02",
+          "definition": "做，实行，实施（做事）",
+          "examples": [
+            {
+              "sentence": "行拂乱其所为",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "悉以咨之，然后施行",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_100_03",
+          "definition": "品德，品行",
+          "examples": [
+            {
+              "sentence": "夫君子之行，静以修身，俭以养德",
+              "source": "诫子书（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "将军向宠，性行淑均",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_100_04",
+          "definition": "（háng）行列，指队伍，部队",
+          "examples": [
+            {
+              "sentence": "必能使行阵和睦，优劣得所",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "期行三人行（行走），缀行方欲行（爬行），起行西行复行（出行），斗折蛇行缘溪行（划行）；行拂乱所为（实行），施行（实施）；君子之行性行淑均（品行）；行阵和睦（行列）"
+    },
+    {
+      "id": "word_101",
+      "word": "形",
+      "type": "实词",
+      "pinyin": "xíng",
+      "meanings": [
+        {
+          "id": "m_101_01",
+          "definition": "形体，躯体",
+          "examples": [
+            {
+              "sentence": "无案牍之劳形",
+              "source": "陋室铭（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_101_02",
+          "definition": "形状，样子（形迹，踪迹，踪影）",
+          "examples": [
+            {
+              "sentence": "罔不因势象形",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "日星隐曜，山岳潜形",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "无案牍劳形（形体），罔不因势象形（形状），山岳潜形（踪影）"
+    },
+    {
+      "id": "word_102",
+      "word": "兴",
+      "type": "实词",
+      "pinyin": "xīng",
+      "meanings": [
+        {
+          "id": "m_102_01",
+          "definition": "起，兴起",
+          "examples": [
+            {
+              "sentence": "清风徐来，水波不兴",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "是故谋闭而不兴",
+              "source": "大道之行也（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_102_02",
+          "definition": "兴办，创办",
+          "examples": [
+            {
+              "sentence": "越明年，政通人和，百废具兴",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_102_03",
+          "definition": "兴盛，振兴，复兴",
+          "examples": [
+            {
+              "sentence": "此先汉所以兴隆也",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "攘除奸凶，兴复汉室",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "水波不兴（兴起），谋闭不兴（兴起）；百废具兴（兴办）；先汉兴隆（兴盛），兴复汉室（复兴）"
+    },
+    {
+      "id": "word_103",
+      "word": "修",
+      "type": "实词",
+      "pinyin": "xiū",
+      "meanings": [
+        {
+          "id": "m_103_01",
+          "definition": "修建，建造",
+          "examples": [
+            {
+              "sentence": "阅十余岁，僧募金重修",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "乃重修岳阳楼",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_103_02",
+          "definition": "长，高",
+          "examples": [
+            {
+              "sentence": "盖简桃核修狭者为之",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_103_03",
+          "definition": "培养",
+          "examples": [
+            {
+              "sentence": "静以修身，俭以养德",
+              "source": "诫子书（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "僧募金重修（修建），重修岳阳楼（建造）；桃核修狭（长）；静以修身（培养）"
+    },
+    {
+      "id": "word_104",
+      "word": "徐",
+      "type": "实词",
+      "pinyin": "xú",
+      "meanings": [
+        {
+          "id": "m_104_01",
+          "definition": "缓缓地,慢慢地",
+          "examples": [
+            {
+              "sentence": "徐以杓酌油沥之",
+              "source": "卖油翁（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "清风徐来，水波不兴",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "徐以杓酌油（缓缓），清风徐来（慢慢）"
+    },
+    {
+      "id": "word_105",
+      "word": "许",
+      "type": "实词",
+      "pinyin": "xǔ",
+      "meanings": [
+        {
+          "id": "m_105_01",
+          "definition": "表约数，上下，光景",
+          "examples": [
+            {
+              "sentence": "高可二黍许",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "潭中鱼可百许头",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_105_02",
+          "definition": "赞同，答应，应允",
+          "examples": [
+            {
+              "sentence": "杂然相许",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "遂许先帝以驱驰",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "高可二黍许（约数），潭中鱼百许头（约数）；杂然相许（赞同），遂许先帝（应允）"
+    },
+    {
+      "id": "word_106",
+      "word": "寻",
+      "type": "实词",
+      "pinyin": "xún",
+      "meanings": [
+        {
+          "id": "m_106_01",
+          "definition": "寻找，寻求，探求",
+          "examples": [
+            {
+              "sentence": "寻十余里无迹",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "寻向所志，遂迷，不复得路",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_106_02",
+          "definition": "不久，随即",
+          "examples": [
+            {
+              "sentence": "遂至承天寺，寻张怀民",
+              "source": "记承天寺夜游（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "未果,寻病终",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "寻十余里（寻找），寻向所志（寻求）；寻张怀民（不久），未果寻病终（随即）"
+    },
+    {
+      "id": "word_107",
+      "word": "业",
+      "type": "实词",
+      "pinyin": "yè",
+      "meanings": [
+        {
+          "id": "m_107_01",
+          "definition": "事业，功业",
+          "examples": [
+            {
+              "sentence": "先帝创业未半而中道崩殂",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_107_02",
+          "definition": "职业（学业，学习的功课）",
+          "examples": [
+            {
+              "sentence": "晋太元中，武陵人捕鱼为业",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "其业有不精、德有不成者",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "创业未半（事业），捕鱼为业（职业），其业不精（学业）"
+    },
+    {
+      "id": "word_108",
+      "word": "遗",
+      "type": "实词",
+      "pinyin": "yí/wèi",
+      "meanings": [
+        {
+          "id": "m_108_01",
+          "definition": "遗留，留下",
+          "examples": [
+            {
+              "sentence": "邻人京城氏之孀妻有遗男",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "以光先帝遗德",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "深追先帝遗诏",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_108_02",
+          "definition": "（wèi）留给，给予，赠送",
+          "examples": [
+            {
+              "sentence": "是以先帝简拔以遗陛下",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "父母岁有裘葛之遗",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "有遗男（遗留），先帝遗德（留下），先帝遗诏（留下）；简拔以遗陛下（给予），裘葛之遗（赠送）"
+    },
+    {
+      "id": "word_109",
+      "word": "贻",
+      "type": "实词",
+      "pinyin": "yí",
+      "meanings": [
+        {
+          "id": "m_109_01",
+          "definition": "赠",
+          "examples": [
+            {
+              "sentence": "尝贻余核舟一",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "尝贻余核舟（赠）"
+    },
+    {
+      "id": "word_110",
+      "word": "夷",
+      "type": "实词",
+      "pinyin": "yí",
+      "meanings": [
+        {
+          "id": "m_110_01",
+          "definition": "平坦",
+          "examples": [
+            {
+              "sentence": "其船背稍夷",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_110_02",
+          "definition": "平易",
+          "examples": [
+            {
+              "sentence": "言和而色夷",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "船背稍夷（平坦），言和色夷（平易）"
+    },
+    {
+      "id": "word_111",
+      "word": "异",
+      "type": "实词",
+      "pinyin": "yì",
+      "meanings": [
+        {
+          "id": "m_111_01",
+          "definition": "不同，不同的（特别的，奇特的，奇异的）",
+          "examples": [
+            {
+              "sentence": "览物之情，得无异乎",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "或异二者之为，何哉",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "陟罚臧否，不宜异同",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "不宜偏私,使内外异法也",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "属引凄异",
+              "source": "三峡（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_111_02",
+          "definition": "惊异，诧异，奇怪",
+          "examples": [
+            {
+              "sentence": "渔人甚异之",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "得无异乎（不同），或异二者（不同），不宜异同（不同），内外异法（不同），属引凄异（奇特）；渔人甚异之（惊异）"
+    },
+    {
+      "id": "word_112",
+      "word": "易",
+      "type": "实词",
+      "pinyin": "yì",
+      "meanings": [
+        {
+          "id": "m_112_01",
+          "definition": "更替",
+          "examples": [
+            {
+              "sentence": "寒暑易节，始一反焉",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_112_02",
+          "definition": "交换",
+          "examples": [
+            {
+              "sentence": "寡人欲以五百里之地易安陵",
+              "source": "唐雎不辱使命（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "寒暑易节（更替），易安陵（交换）"
+    },
+    {
+      "id": "word_113",
+      "word": "诣",
+      "type": "实词",
+      "pinyin": "yì",
+      "meanings": [
+        {
+          "id": "m_113_01",
+          "definition": "到，到达，到……去（拜访、谒见）",
+          "examples": [
+            {
+              "sentence": "及郡下，诣太守,说如此",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "诣太守（到……去）"
+    },
+    {
+      "id": "word_114",
+      "word": "益",
+      "type": "实词",
+      "pinyin": "yì",
+      "meanings": [
+        {
+          "id": "m_114_01",
+          "definition": "增长，增加",
+          "examples": [
+            {
+              "sentence": "所以动心忍性，曾益其所不能",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_114_02",
+          "definition": "好处，益处（帮助）",
+          "examples": [
+            {
+              "sentence": "至于斟酌损益，进尽忠言",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "孤常读书，自以为大有所益",
+              "source": "孙权劝学（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "必能裨补阙漏，有所广益",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_114_03",
+          "definition": "更加",
+          "examples": [
+            {
+              "sentence": "香远益清",
+              "source": "爱莲说（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "益慕圣贤之道",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "曾益其所不能（增长），斟酌损益（好处），大有所益（益处），有所广益（帮助）；香远益清（更加），益慕圣贤（更加）"
+    },
+    {
+      "id": "word_115",
+      "word": "阴",
+      "type": "实词",
+      "pinyin": "yīn",
+      "meanings": [
+        {
+          "id": "m_115_01",
+          "definition": "山之北,水之南",
+          "examples": [
+            {
+              "sentence": "达于汉阴，可乎",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_115_02",
+          "definition": "阴沉，阴冷",
+          "examples": [
+            {
+              "sentence": "朝晖夕阴，气象万千",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "阴风怒号",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_115_03",
+          "definition": "树阴，阴影",
+          "examples": [
+            {
+              "sentence": "野芳发而幽香，佳木秀而繁阴",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "树林阴翳",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "达于汉阴（山北水南），朝晖夕阴（阴沉），阴风怒号（阴冷）；繁阴（树阴），树林阴翳（阴影）"
+    },
+    {
+      "id": "word_116",
+      "word": "引",
+      "type": "实词",
+      "pinyin": "yǐn",
+      "meanings": [
+        {
+          "id": "m_116_01",
+          "definition": "称引，譬喻",
+          "examples": [
+            {
+              "sentence": "不宜妄自菲薄，引喻失义",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_116_02",
+          "definition": "拉，牵引",
+          "examples": [
+            {
+              "sentence": "友人惭，下车引之",
+              "source": "陈太丘与友期行（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_116_03",
+          "definition": "延长",
+          "examples": [
+            {
+              "sentence": "属引凄异",
+              "source": "三峡（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "引喻失义（称引），下车引之（拉），属引凄异（延长）"
+    },
+    {
+      "id": "word_117",
+      "word": "盈",
+      "type": "实词",
+      "pinyin": "yíng",
+      "meanings": [
+        {
+          "id": "m_117_01",
+          "definition": "满，充满（旺盛）",
+          "examples": [
+            {
+              "sentence": "而计其长曾不盈寸",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "彼竭我盈,故克之",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "计其长不盈寸（满），彼竭我盈（旺盛）"
+    },
+    {
+      "id": "word_118",
+      "word": "余",
+      "type": "实词",
+      "pinyin": "yú",
+      "meanings": [
+        {
+          "id": "m_118_01",
+          "definition": "我，我的",
+          "examples": [
+            {
+              "sentence": "尝贻余核舟一",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "余弟宗玄",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_118_02",
+          "definition": "剩下，多余",
+          "examples": [
+            {
+              "sentence": "以残年余力",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_118_03",
+          "definition": "多，表示整数后不定的零数",
+          "examples": [
+            {
+              "sentence": "阅十余岁",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "寻十余里无迹",
+              "source": "河中石兽（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_118_04",
+          "definition": "其他，其余",
+          "examples": [
+            {
+              "sentence": "余人各复延至其家，皆出酒食",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "尝贻余核舟（我），余弟宗玄（我的）；残年余力（剩下）；阅十余岁（零数），寻十余里（零数）；余人各复延（其他）"
+    },
+    {
+      "id": "word_119",
+      "word": "狱",
+      "type": "实词",
+      "pinyin": "yù",
+      "meanings": [
+        {
+          "id": "m_119_01",
+          "definition": "诉讼案件",
+          "examples": [
+            {
+              "sentence": "小大之狱",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "小大之狱（诉讼案件）"
+    },
+    {
+      "id": "word_120",
+      "word": "御",
+      "type": "实词",
+      "pinyin": "yù",
+      "meanings": [
+        {
+          "id": "m_120_01",
+          "definition": "驾驭",
+          "examples": [
+            {
+              "sentence": "虽乘奔御风，不以疾也",
+              "source": "三峡（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "乘奔御风（驾驭）"
+    },
+    {
+      "id": "word_121",
+      "word": "缘",
+      "type": "实词",
+      "pinyin": "yuán",
+      "meanings": [
+        {
+          "id": "m_121_01",
+          "definition": "沿着，顺着",
+          "examples": [
+            {
+              "sentence": "缘溪行，忘路之远近",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "缘溪行（沿着）"
+    },
+    {
+      "id": "word_122",
+      "word": "远",
+      "type": "实词",
+      "pinyin": "yuǎn",
+      "meanings": [
+        {
+          "id": "m_122_01",
+          "definition": "遥远（指空间距离大）（高远）（偏僻之地）",
+          "examples": [
+            {
+              "sentence": "而日中时远也",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            },
+            {
+              "sentence": "有朋自远方来，不亦乐乎",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "途中两狼，缀行甚远",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "可远观而不可亵玩焉",
+              "source": "爱莲说（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "香远益清",
+              "source": "爱莲说（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "俶尔远逝，往来翕忽",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "忘路之远近",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "衔远山，吞长江",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "今当远离，临表涕零",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "处江湖之远则忧其君",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "肉食者鄙，未能远谋",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_122_02",
+          "definition": "深远",
+          "examples": [
+            {
+              "sentence": "非宁静无以致远",
+              "source": "诫子书（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "其远而无所至极邪",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_122_03",
+          "definition": "疏远，不亲近,不接近",
+          "examples": [
+            {
+              "sentence": "亲贤臣，远小人",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "日中时远（遥远），致远（深远），远小人（疏远）"
+    },
+    {
+      "id": "word_123",
+      "word": "云",
+      "type": "实词",
+      "pinyin": "yún",
+      "meanings": [
+        {
+          "id": "m_123_01",
+          "definition": "说",
+          "examples": [
+            {
+              "sentence": "古语有云",
+              "source": "书戴嵩画牛（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "孔子云:何陋之有",
+              "source": "陋室铭（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "自云先世避秦时乱",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "子曰“汝安知鱼乐”云者",
+              "source": "庄子与惠子游于濠梁之上（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_123_02",
+          "definition": "句末语气词，无实义",
+          "examples": [
+            {
+              "sentence": "盖大苏泛赤壁云",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_123_03",
+          "definition": "天空的云，云彩（像云一样的）",
+          "examples": [
+            {
+              "sentence": "不义而富且贵，于我如浮云",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "高峰入云，清流见底",
+              "source": "答谢中书书（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "怒而飞，其翼若垂天之云",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "若夫日出而林霏开，云归而岩穴暝",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "当窗理云鬓",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_123_04",
+          "definition": "如此，这样",
+          "examples": []
+        }
+      ],
+      "mnemonics": "古语有云（说），盖大苏泛赤壁云（语气词），如浮云（云彩），云鬓（像云）"
+    },
+    {
+      "id": "word_124",
+      "word": "章",
+      "type": "实词",
+      "pinyin": "zhāng",
+      "meanings": [
+        {
+          "id": "m_124_01",
+          "definition": "图章",
+          "examples": [
+            {
+              "sentence": "又用篆章一",
+              "source": "核舟记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "又用篆章一（图章）"
+    },
+    {
+      "id": "word_125",
+      "word": "知",
+      "type": "实词",
+      "pinyin": "zhī",
+      "meanings": [
+        {
+          "id": "m_125_01",
+          "definition": "知道，明白（懂得）",
+          "examples": [
+            {
+              "sentence": "以我酌油知之",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "然后知生于忧患而死于安乐也",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "鹏之背，不知其几千里也",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "弗食，不知其旨也",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "乃不知有汉，无论魏晋",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "然而禽鸟知山林之乐",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            },
+            {
+              "sentence": "临表涕零，不知所言",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "汝亦知射乎",
+              "source": "卖油翁（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_125_02",
+          "definition": "同“智”，智慧",
+          "examples": [
+            {
+              "sentence": "两小儿笑曰：“孰为汝多知乎?”",
+              "source": "两小儿辩日（六下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "酌油知之（知道），多知乎（智慧）"
+    },
+    {
+      "id": "word_126",
+      "word": "止",
+      "type": "实词",
+      "pinyin": "zhǐ",
+      "meanings": [
+        {
+          "id": "m_126_01",
+          "definition": "停止",
+          "examples": [
+            {
+              "sentence": "一狼得骨止，一狼仍从",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "后狼止而前狼又至",
+              "source": "狼（七上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_126_02",
+          "definition": "制止，阻止",
+          "examples": [
+            {
+              "sentence": "河曲智叟笑而止之曰",
+              "source": "愚公移山（八上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_126_03",
+          "definition": "仅，只是",
+          "examples": [
+            {
+              "sentence": "担中肉尽，止有剩骨",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "身已半入，止露尻尾",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "止增笑耳",
+              "source": "狼（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "一狼得骨止（停止），止之曰（制止），止有剩骨（仅）"
+    },
+    {
+      "id": "word_127",
+      "word": "志",
+      "type": "实词",
+      "pinyin": "zhì",
+      "meanings": [
+        {
+          "id": "m_127_01",
+          "definition": "标记，记号",
+          "examples": [
+            {
+              "sentence": "寻向所志，遂迷，不复得路",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_127_02",
+          "definition": "做标记,做记号",
+          "examples": [
+            {
+              "sentence": "便扶向路，处处志之",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_127_03",
+          "definition": "记载",
+          "examples": [
+            {
+              "sentence": "《齐谐》者，志怪者也",
+              "source": "北冥有鱼（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_127_04",
+          "definition": "心志，情志，志向",
+          "examples": [
+            {
+              "sentence": "方鼓琴而志在太山",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "吾十有五而志于学",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "博学而笃志",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "匹夫不可夺志也",
+              "source": "《论语》十二章（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "非淡泊无以明志",
+              "source": "诫子书（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "非志无以成学",
+              "source": "诫子书（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "恢弘志士之气",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_127_05",
+          "definition": "志气，意志",
+          "examples": [
+            {
+              "sentence": "必先苦其心志，劳其筋骨",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "寻向所志（标记），处处志之（做标记），志怪者（记载），志在太山（志向），苦其心志（意志）"
+    },
+    {
+      "id": "word_128",
+      "word": "致",
+      "type": "实词",
+      "pinyin": "zhì",
+      "meanings": [
+        {
+          "id": "m_128_01",
+          "definition": "取得，得到",
+          "examples": [
+            {
+              "sentence": "家贫,无以致书以观",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_128_02",
+          "definition": "达到，实现",
+          "examples": [
+            {
+              "sentence": "非宁静无以致远",
+              "source": "诫子书（七上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "无以致书（取得），致远（达到）"
+    },
+    {
+      "id": "word_129",
+      "word": "质",
+      "type": "实词",
+      "pinyin": "zhì",
+      "meanings": [
+        {
+          "id": "m_129_01",
+          "definition": "询问",
+          "examples": [
+            {
+              "sentence": "余立侍左右，援疑质理",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_129_02",
+          "definition": "资质",
+          "examples": [
+            {
+              "sentence": "德有不成者，非天质之卑",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "援疑质理（询问），天质之卑（资质）"
+    },
+    {
+      "id": "word_130",
+      "word": "专",
+      "type": "实词",
+      "pinyin": "zhuān",
+      "meanings": [
+        {
+          "id": "m_130_01",
+          "definition": "独有，独自专享",
+          "examples": [
+            {
+              "sentence": "衣食所安，弗敢专也，必以分人",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_130_02",
+          "definition": "专门，专一",
+          "examples": [
+            {
+              "sentence": "则心不若余之专耳，岂他人之过哉",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "弗敢专也（独享），心不若余之专耳（专一）"
+    },
+    {
+      "id": "word_131",
+      "word": "走",
+      "type": "实词",
+      "pinyin": "zǒu",
+      "meanings": [
+        {
+          "id": "m_131_01",
+          "definition": "跑，逃跑",
+          "examples": [
+            {
+              "sentence": "双兔傍地走",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "双兔傍地走（跑）"
+    },
+    {
+      "id": "word_132",
+      "word": "足",
+      "type": "实词",
+      "pinyin": "zú",
+      "meanings": [
+        {
+          "id": "m_132_01",
+          "definition": "脚",
+          "examples": [
+            {
+              "sentence": "细若蚊足，钩画了了",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "愿驰千里足，送儿还故乡",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_132_02",
+          "definition": "足够，充足",
+          "examples": [
+            {
+              "sentence": "是故学然后知不足",
+              "source": "虽有嘉肴（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "今南方已定，兵甲已足",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_132_03",
+          "definition": "值得，够得上",
+          "examples": [
+            {
+              "sentence": "以为世无足复为鼓琴者",
+              "source": "伯牙鼓琴（六上）",
+              "level": "core"
+            },
+            {
+              "sentence": "不足为外人道也",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "细若蚊足（脚），知不足（足够），无足复为鼓琴者（值得）"
+    },
+    {
+      "id": "word_133",
+      "word": "卒",
+      "type": "实词",
+      "pinyin": "zú",
+      "meanings": [
+        {
+          "id": "m_133_01",
+          "definition": "最后，终于",
+          "examples": [
+            {
+              "sentence": "故余虽愚，卒获有所闻",
+              "source": "送东阳马生序（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "卒获有所闻（终于）"
+    },
+    {
+      "id": "word_134",
+      "word": "作",
+      "type": "实词",
+      "pinyin": "zuò",
+      "meanings": [
+        {
+          "id": "m_134_01",
+          "definition": "振作，奋起（鼓起）",
+          "examples": [
+            {
+              "sentence": "困于心，衡于虑,而后作",
+              "source": "生于忧患，死于安乐（八上）",
+              "level": "core"
+            },
+            {
+              "sentence": "一鼓作气，再而衰,三而竭",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_134_02",
+          "definition": "发出，出现",
+          "examples": [
+            {
+              "sentence": "泉水激石，泠泠作响",
+              "source": "与朱元思书（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "m_134_03",
+          "definition": "写作，创作",
+          "examples": [
+            {
+              "sentence": "属予作文以记之",
+              "source": "岳阳楼记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_134_04",
+          "definition": "建造，建筑",
+          "examples": [
+            {
+              "sentence": "作亭者谁",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_134_05",
+          "definition": "做，制作",
+          "examples": [
+            {
+              "sentence": "便要还家,设酒杀鸡作食",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "若有作奸犯科及为忠善者",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_134_06",
+          "definition": "劳作，劳动",
+          "examples": [
+            {
+              "sentence": "其中往来种作，男女衣着，悉如外人",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_134_07",
+          "definition": "兴起",
+          "examples": [
+            {
+              "sentence": "盗窃乱贼而不作",
+              "source": "大道之行也（八下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "而后作（振作），一鼓作气（鼓起），泠泠作响（发出），作文以记之（写作），作亭者谁（建造），设酒杀鸡作食（做），往来种作（劳作），盗窃乱贼而不作（兴起）"
+    },
+    {
+      "id": "word_135",
+      "word": "坐",
+      "type": "实词",
+      "pinyin": "zuò",
+      "meanings": [
+        {
+          "id": "m_135_01",
+          "definition": "坐着，坐下（古人双膝着地,臀部压在脚后跟上）",
+          "examples": [
+            {
+              "sentence": "少时，一狼径去,其一犬坐于前",
+              "source": "狼（七上）",
+              "level": "core"
+            },
+            {
+              "sentence": "天子坐明堂",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "坐我西阁床",
+              "source": "木兰诗（七下）",
+              "level": "core"
+            },
+            {
+              "sentence": "船头坐三人",
+              "source": "核舟记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "坐潭上，四面竹树环合",
+              "source": "小石潭记（八下）",
+              "level": "core"
+            },
+            {
+              "sentence": "起坐而喧哗者，众宾欢也",
+              "source": "醉翁亭记（九上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "犬坐于前（坐着），天子坐明堂（坐下）"
+    },
+    {
+      "id": "word_136",
+      "word": "卑鄙",
+      "type": "实词",
+      "pinyin": "bēi bǐ",
+      "meanings": [
+        {
+          "id": "m_136_01",
+          "definition": "社会地位低微，见识短浅",
+          "examples": [
+            {
+              "sentence": "先帝不以臣卑鄙",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "先帝不以臣卑鄙（地位低微见识短浅）"
+    },
+    {
+      "id": "word_137",
+      "word": "布衣",
+      "type": "实词",
+      "pinyin": "bù yī",
+      "meanings": [
+        {
+          "id": "m_137_01",
+          "definition": "平民",
+          "examples": [
+            {
+              "sentence": "臣本布衣，躬耕于南阳",
+              "source": "出师表（九下）",
+              "level": "core"
+            },
+            {
+              "sentence": "大王尝闻布衣之怒乎",
+              "source": "唐雎不辱使命（九下）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "臣本布衣（平民）"
+    },
+    {
+      "id": "word_138",
+      "word": "菲薄",
+      "type": "实词",
+      "pinyin": "fěi bó",
+      "meanings": [
+        {
+          "id": "m_138_01",
+          "definition": "轻视，看轻",
+          "examples": [
+            {
+              "sentence": "不宜妄自菲薄，引喻失义",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "不宜妄自菲薄（轻视）"
+    },
+    {
+      "id": "word_139",
+      "word": "其实",
+      "type": "实词",
+      "pinyin": "qí shí",
+      "meanings": [
+        {
+          "id": "m_139_01",
+          "definition": "其,它的。实，果实",
+          "examples": [
+            {
+              "sentence": "叶徒相似，其实味不同",
+              "source": "橘逾淮为枳（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "其实味不同（它的果实）"
+    },
+    {
+      "id": "word_140",
+      "word": "亲戚",
+      "type": "实词",
+      "pinyin": "qīn qī",
+      "meanings": [
+        {
+          "id": "m_140_01",
+          "definition": "内外亲属，包括父系亲属和母系亲属",
+          "examples": [
+            {
+              "sentence": "寡助之至，亲戚畔之",
+              "source": "得道多助，失道寡助（八上）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "亲戚畔之（内外亲属）"
+    },
+    {
+      "id": "word_141",
+      "word": "驱驰",
+      "type": "实词",
+      "pinyin": "qū chí",
+      "meanings": [
+        {
+          "id": "m_141_01",
+          "definition": "奔走效劳",
+          "examples": [
+            {
+              "sentence": "由是感激，遂许先帝以驱驰",
+              "source": "出师表（九下）",
+              "level": "core"
+            }
+          ]
+        },
+        {
+          "id": "m_141_02",
+          "definition": "策马快奔",
+          "examples": [
+            {
+              "sentence": "将军曰，军中不得驱驰",
+              "source": "周亚夫军细柳（八上）（非考试篇目）",
+              "level": "secondary"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "许先帝以驱驰（奔走效劳），军中不得驱驰（策马快奔）"
+    },
+    {
+      "id": "word_142",
+      "word": "无论",
+      "type": "实词",
+      "pinyin": "wú lùn",
+      "meanings": [
+        {
+          "id": "m_142_01",
+          "definition": "不要说，更不必说",
+          "examples": [
+            {
+              "sentence": "乃不知有汉，无论魏晋",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "无论魏晋（更不必说）"
+    },
+    {
+      "id": "word_143",
+      "word": "牺牲",
+      "type": "实词",
+      "pinyin": "xī shēng",
+      "meanings": [
+        {
+          "id": "m_143_01",
+          "definition": "指祭祀用的纯色全体牲畜",
+          "examples": [
+            {
+              "sentence": "牺牲玉帛，弗敢加也,必以信",
+              "source": "曹刿论战（九下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "牺牲玉帛（祭祀牲畜）"
+    },
+    {
+      "id": "word_144",
+      "word": "鸿儒",
+      "type": "实词",
+      "pinyin": "hóng rú",
+      "meanings": [
+        {
+          "id": "m_144_01",
+          "definition": "博学的人",
+          "examples": [
+            {
+              "sentence": "谈笑有鸿儒，往来无白丁",
+              "source": "陋室铭（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "鸿儒（博学的人）"
+    },
+    {
+      "id": "word_145",
+      "word": "白丁",
+      "type": "实词",
+      "pinyin": "bái dīng",
+      "meanings": [
+        {
+          "id": "m_145_01",
+          "definition": "平民，指没有功名的人",
+          "examples": [
+            {
+              "sentence": "谈笑有鸿儒，往来无白丁",
+              "source": "陋室铭（七下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "白丁（无功名平民）"
+    },
+    {
+      "id": "word_146",
+      "word": "阡陌",
+      "type": "实词",
+      "pinyin": "qiān mò",
+      "meanings": [
+        {
+          "id": "m_146_01",
+          "definition": "田间小路",
+          "examples": [
+            {
+              "sentence": "阡陌交通，鸡犬相闻",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "阡陌交通（田间小路）"
+    },
+    {
+      "id": "word_147",
+      "word": "交通",
+      "type": "实词",
+      "pinyin": "jiāo tōng",
+      "meanings": [
+        {
+          "id": "m_147_01",
+          "definition": "交错相通",
+          "examples": [
+            {
+              "sentence": "阡陌交通，鸡犬相闻",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "交通（交错相通）"
+    },
+    {
+      "id": "word_148",
+      "word": "问津",
+      "type": "实词",
+      "pinyin": "wèn jīn",
+      "meanings": [
+        {
+          "id": "m_148_01",
+          "definition": "询问渡口，探求，访求",
+          "examples": [
+            {
+              "sentence": "后遂无问津者",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "无问津者（访求）"
+    },
+    {
+      "id": "word_149",
+      "word": "绝境",
+      "type": "实词",
+      "pinyin": "jué jìng",
+      "meanings": [
+        {
+          "id": "m_149_01",
+          "definition": "与人世隔绝的地方",
+          "examples": [
+            {
+              "sentence": "率妻子邑人来此绝境",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "绝境（隔绝之地）"
+    },
+    {
+      "id": "word_150",
+      "word": "妻子",
+      "type": "实词",
+      "pinyin": "qī zi",
+      "meanings": [
+        {
+          "id": "m_150_01",
+          "definition": "妻子儿女",
+          "examples": [
+            {
+              "sentence": "率妻子邑人来此绝境",
+              "source": "桃花源记（八下）",
+              "level": "core"
+            }
+          ]
+        }
+      ],
+      "mnemonics": "妻子邑人（妻子儿女）"
     }
   ],
   "metadata": {
-    "version": "2.0",
-    "total_words": 10,
-    "last_updated": "2025-01-21",
-    "description": "文言文实词虚词词库 - 天级间隔重复版本"
+    "version": "1.0",
+    "total_words": 150,
+    "last_updated": "2026-02-21",
+    "description": "文言文实词虚词词库"
   }
 }
