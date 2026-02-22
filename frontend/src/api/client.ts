@@ -8,8 +8,21 @@ import type {
   APIResponse,
 } from '@/types'
 
+// 根据环境确定 API baseURL
+// 开发环境: 通过 Vite proxy 代理到后端
+// 生产环境: 直接使用完整路径
+const getBaseURL = () => {
+  // 开发环境使用相对路径，由 Vite proxy 处理
+  if (import.meta.env.DEV) {
+    return '/api/v1'
+  }
+  // 生产环境使用完整 URL
+  const apiBase = import.meta.env.VITE_API_BASE_URL || ''
+  return apiBase ? `${apiBase}/v1` : '/api/v1'
+}
+
 const api = axios.create({
-  baseURL: '/api/v1',
+  baseURL: getBaseURL(),
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
