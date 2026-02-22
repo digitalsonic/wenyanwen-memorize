@@ -8,17 +8,26 @@ import type {
   APIResponse,
 } from '@/types'
 
-// 根据环境确定 API baseURL
-// 开发环境: 通过 Vite proxy 代理到后端
-// 生产环境: 直接使用完整路径
+/**
+ * 根据环境变量确定 API baseURL
+ *
+ * VITE_API_BASE_URL 支持三种格式：
+ * 1. 完整 URL: "https://example.com/api" → "https://example.com/api/v1"
+ * 2. 相对路径: "/wenyanwen/api" → "/wenyanwen/api/v1"
+ * 3. 空值或未设置: "" → "/api/v1" (默认)
+ */
 const getBaseURL = () => {
-  // 开发环境使用相对路径，由 Vite proxy 处理
-  if (import.meta.env.DEV) {
+  // 读取环境变量
+  const apiBase = import.meta.env.VITE_API_BASE_URL || ''
+
+  if (!apiBase) {
+    // 空值：使用默认路径
     return '/api/v1'
   }
-  // 生产环境使用完整 URL
-  const apiBase = import.meta.env.VITE_API_BASE_URL || ''
-  return apiBase ? `${apiBase}/v1` : '/api/v1'
+
+  // 完整 URL (https://...) 或相对路径 (/path/to/api)
+  // 统一追加 /v1 后缀
+  return apiBase.endsWith('/') ? `${apiBase}v1` : `${apiBase}/v1`
 }
 
 const api = axios.create({
