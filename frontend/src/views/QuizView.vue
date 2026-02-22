@@ -230,6 +230,13 @@ function getQuestionTitle(question: QuizQuestion): string {
             <span v-else class="wrong-text">回答错误</span>
           </div>
 
+          <!-- 答错时显示正确释义 -->
+          <div v-if="feedback.feedbackState.value.status === 'showing_wrong'" class="correct-meaning-box">
+            <span class="correct-meaning-icon">✓</span>
+            <span class="correct-meaning-label">正确释义：</span>
+            <span class="correct-meaning-text">{{ currentQuestion.correct_meaning }}</span>
+          </div>
+
           <div class="options">
             <button
               class="option-btn correct-option"
@@ -534,6 +541,36 @@ function getQuestionTitle(question: QuizQuestion): string {
   padding: 2px 6px;
   border-radius: 8px;
   font-weight: 600;
+}
+
+/* 正确释义提示框 */
+.correct-meaning-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #e8f5e9;
+  border: 1px solid #4caf50;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.correct-meaning-icon {
+  color: #4caf50;
+  font-weight: 700;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.correct-meaning-label {
+  font-weight: 600;
+  color: #4caf50;
+  flex-shrink: 0;
+}
+
+.correct-meaning-text {
+  color: #2e7d32;
+  line-height: 1.5;
 }
 
 .flashcard-actions {

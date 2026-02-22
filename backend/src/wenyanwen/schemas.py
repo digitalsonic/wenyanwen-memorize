@@ -66,6 +66,7 @@ class TrueFalseQuestion(BaseModel):
     example_source: str
     given_meaning: str
     is_correct: bool  # Whether the given meaning is correct
+    correct_meaning: str  # The actual correct meaning for this example
 
 
 class CardQuestion(BaseModel):

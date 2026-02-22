@@ -104,6 +104,7 @@ def generate_true_false(word_data) -> TrueFalseQuestion:
         example_source=selected_example.source,
         given_meaning=given_meaning,
         is_correct=is_correct,
+        correct_meaning=selected_meaning.definition,  # The actual correct meaning
     )
 
 

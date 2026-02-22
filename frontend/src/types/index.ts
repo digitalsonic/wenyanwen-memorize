@@ -52,6 +52,7 @@ export interface TrueFalseQuestion {
   example_source: string
   given_meaning: string
   is_correct: boolean
+  correct_meaning: string  // The actual correct meaning for the example
 }
 
 export interface CardQuestion {
