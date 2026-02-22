@@ -27,6 +27,16 @@ const sessionQuestions = ref<QuizQuestion[]>([])
 // 闪卡翻转状态
 const flashcardFlipped = ref(false)
 
+// Get mode from query param
+const mode = computed(() => route.query.mode as string | null)
+const level = computed(() => {
+  const levelParam = route.query.level
+  return levelParam ? Number(levelParam) : null
+})
+
+const currentQuestion = computed(() => quizStore.currentQuestion)
+const progress = computed(() => quizStore.progress)
+
 onMounted(() => {
   quizStore.startReview(level.value)
 })
@@ -43,20 +53,6 @@ watch(session, (newSession) => {
 watch(currentQuestion, () => {
   flashcardFlipped.value = false
 })
-
-// Get mode from query param
-const mode = computed(() => route.query.mode as string | null)
-const level = computed(() => {
-  const levelParam = route.query.level
-  return levelParam ? Number(levelParam) : null
-})
-
-onMounted(() => {
-  quizStore.startReview(level.value)
-})
-
-const currentQuestion = computed(() => quizStore.currentQuestion)
-const progress = computed(() => quizStore.progress)
 
 const title = computed(() => {
   return mode.value === 'review' ? '今日复习' : '复习'
