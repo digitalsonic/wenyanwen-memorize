@@ -24,6 +24,9 @@ const wrongAnswers = ref<WrongAnswer[]>([])
 // 保存会话中的题目，用于错题展示
 const sessionQuestions = ref<QuizQuestion[]>([])
 
+// 闪卡翻转状态
+const flashcardFlipped = ref(false)
+
 onMounted(() => {
   quizStore.startReview(level.value)
 })
@@ -35,6 +38,11 @@ watch(session, (newSession) => {
     sessionQuestions.value = newSession.questions
   }
 }, { immediate: true })
+
+// 监听题目变化，重置闪卡翻转状态
+watch(currentQuestion, () => {
+  flashcardFlipped.value = false
+})
 
 // Get mode from query param
 const mode = computed(() => route.query.mode as string | null)
@@ -59,7 +67,7 @@ function goBack() {
 }
 
 // 提交答案到 store
-function submitAnswer(answer: string | boolean, isCorrect: boolean) {
+function submitAnswer(answer: string | boolean | number, isCorrect: boolean) {
   const q = currentQuestion.value
   if (!q) return
 
@@ -91,6 +99,16 @@ function submitAnswer(answer: string | boolean, isCorrect: boolean) {
         correct_answer: correctAnswer,
         example_sentence: `${q.example_sentence}（释义：${tfq.given_meaning}）`,
       })
+    } else if (q.question_type === 'flashcard') {
+      const fc = q as any
+      const assessmentLabels = ['模糊', '清晰', '不确定']
+      wrongAnswers.value.push({
+        word_id: q.word_id,
+        word: q.word,
+        user_answer: assessmentLabels[answer as number] || String(answer),
+        correct_answer: fc.correct_meaning,
+        example_sentence: q.example_sentence,
+      })
     }
   }
 }
@@ -121,12 +139,8 @@ const feedback = useQuizFeedbackWithIndex(
   }
 )
 
-// 调试：打印反馈状态
-console.log('feedback.feedbackState:', feedback.feedbackState.value)
-
 // 处理选项点击
 function selectAnswer(answer: string | boolean) {
-  console.log('selectAnswer called:', answer, 'feedback status:', feedback.feedbackState.value.status)
   const q = currentQuestion.value
   if (!q) return
 
@@ -141,12 +155,21 @@ function selectAnswer(answer: string | boolean) {
     const tfq = q as any
     isCorrect = (answer as boolean) === tfq.is_correct
     feedback.handleAnswer(answer, isCorrect)
-  } else if (q.question_type === 'flashcard') {
-    isCorrect = true
-    // 闪卡：直接提交并进入下一题
-    submitAnswer(answer, isCorrect)
-    goToNext()
   }
+}
+
+// 闪卡翻转
+function flipFlashcard() {
+  flashcardFlipped.value = true
+}
+
+// 闪卡评估选择（0=模糊/答错, 1=清晰/答对, 2=不确定/答错）
+function selectFlashcardAnswer(assessment: number) {
+  const q = currentQuestion.value
+  if (!q || q.question_type !== 'flashcard') return
+
+  const isCorrect = assessment === 1  // 只有"清晰"算对
+  feedback.handleAnswer(assessment, isCorrect)
 }
 
 function getQuestionTitle(question: QuizQuestion): string {
@@ -155,7 +178,7 @@ function getQuestionTitle(question: QuizQuestion): string {
   } else if (question.question_type === 'true_false') {
     return '判断题'
   } else if (question.question_type === 'flashcard') {
-    return '闪卡'
+    return '闪卡回忆'
   }
   return '复习'
 }
@@ -284,20 +307,88 @@ function getQuestionTitle(question: QuizQuestion): string {
       <!-- Flashcard Question -->
       <div
         v-else-if="currentQuestion && currentQuestion.question_type === 'flashcard'"
-        class="question flashcard"
+        class="question-wrapper flashcard-enhanced"
       >
-        <div class="question-title">{{ getQuestionTitle(currentQuestion) }}</div>
-        <div class="word">{{ currentQuestion.word }}</div>
-        <div class="example">
-          {{ currentQuestion.example_sentence }}
-        </div>
-        <div class="source">{{ currentQuestion.example_source }}</div>
+        <!-- 正面（未翻转） -->
+        <div v-if="!flashcardFlipped" class="flashcard-front">
+          <div class="question-title">{{ getQuestionTitle(currentQuestion) }}</div>
+          <div class="word">{{ currentQuestion.word }}</div>
+          <div class="example">{{ currentQuestion.example_sentence }}</div>
+          <div class="source">{{ currentQuestion.example_source }}</div>
 
-        <div class="flashcard-actions">
-          <button class="option-btn" @click="selectAnswer(true)">
-            我想起来了
+          <button class="show-answer-btn" @click="flipFlashcard">
+            显示答案 →
           </button>
         </div>
+
+        <!-- 背面（已翻转 + 评估选项） -->
+        <div v-else class="flashcard-back">
+          <div class="question-title">{{ getQuestionTitle(currentQuestion) }}</div>
+          <div class="word">{{ currentQuestion.word }}</div>
+          <div class="example">{{ currentQuestion.example_sentence }}</div>
+          <div class="source">{{ currentQuestion.example_source }}</div>
+
+          <!-- 答案区域 -->
+          <div class="answer-section">
+            <div class="answer-label">正确释义</div>
+            <div class="answer-text">{{ currentQuestion.correct_meaning }}</div>
+
+            <!-- 助记口诀（可选） -->
+            <div v-if="currentQuestion.mnemonics" class="mnemonics-box">
+              <span class="mnemonics-icon">💡</span>
+              {{ currentQuestion.mnemonics }}
+            </div>
+          </div>
+
+          <!-- 评估选项 -->
+          <div class="assessment-options">
+            <button
+              class="assessment-btn fuzzy"
+              :class="{
+                'disabled': feedback.feedbackState.value.status !== 'waiting',
+                'selected': feedback.feedbackState.value.selectedOption === 0
+              }"
+              @click="selectFlashcardAnswer(0)"
+            >
+              <span class="assessment-icon">😕</span>
+              <span class="assessment-text">模糊</span>
+              <span class="assessment-hint">完全没想起</span>
+            </button>
+            <button
+              class="assessment-btn clear"
+              :class="{
+                'disabled': feedback.feedbackState.value.status !== 'waiting',
+                'selected': feedback.feedbackState.value.selectedOption === 1
+              }"
+              @click="selectFlashcardAnswer(1)"
+            >
+              <span class="assessment-icon">😊</span>
+              <span class="assessment-text">清晰</span>
+              <span class="assessment-hint">立即想起</span>
+            </button>
+            <button
+              class="assessment-btn uncertain"
+              :class="{
+                'disabled': feedback.feedbackState.value.status !== 'waiting',
+                'selected': feedback.feedbackState.value.selectedOption === 2
+              }"
+              @click="selectFlashcardAnswer(2)"
+            >
+              <span class="assessment-icon">🤔</span>
+              <span class="assessment-text">不确定</span>
+              <span class="assessment-hint">犹豫/看到才想起</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 下一题按钮，只在答错时显示 -->
+        <button
+          v-if="feedback.feedbackState.value.status === 'showing_wrong'"
+          class="next-btn"
+          @click="feedback.advanceToNext"
+        >
+          下一题 →
+        </button>
       </div>
 
       <!-- Finished -->
@@ -571,6 +662,168 @@ function getQuestionTitle(question: QuizQuestion): string {
 .correct-meaning-text {
   color: #2e7d32;
   line-height: 1.5;
+}
+
+/* 闪卡增强样式 */
+.flashcard-enhanced {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flashcard-front,
+.flashcard-back {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show-answer-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 32px;
+  border: 2px dashed #667eea;
+  border-radius: 12px;
+  background: #f8f9ff;
+  color: #667eea;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.show-answer-btn:hover {
+  background: #667eea;
+  color: white;
+  border-style: solid;
+}
+
+.answer-section {
+  background: #e8f5e9;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+  border-left: 4px solid #4caf50;
+}
+
+.answer-label {
+  font-size: 12px;
+  color: #4caf50;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.answer-text {
+  font-size: 18px;
+  color: #2e7d32;
+  line-height: 1.6;
+}
+
+.mnemonics-box {
+  margin-top: 16px;
+  padding: 12px;
+  background: #fff9c4;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #827717;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mnemonics-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.assessment-options {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.assessment-btn {
+  flex: 1;
+  min-width: 90px;
+  padding: 16px 12px;
+  border: 2px solid;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.assessment-btn:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-btn.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.assessment-btn.selected {
+  opacity: 1;
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+.assessment-btn.selected.disabled {
+  transform: scale(1);
+}
+
+.assessment-btn.fuzzy {
+  border-color: #f44336;
+}
+
+.assessment-btn.fuzzy:hover:not(.disabled) {
+  background: #ffebee;
+}
+
+.assessment-btn.clear {
+  border-color: #4caf50;
+}
+
+.assessment-btn.clear:hover:not(.disabled) {
+  background: #e8f5e9;
+}
+
+.assessment-btn.uncertain {
+  border-color: #ff9800;
+}
+
+.assessment-btn.uncertain:hover:not(.disabled) {
+  background: #fff3e0;
+}
+
+.assessment-icon {
+  font-size: 24px;
+}
+
+.assessment-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.assessment-hint {
+  font-size: 11px;
+  opacity: 0.7;
+  text-align: center;
 }
 
 .flashcard-actions {

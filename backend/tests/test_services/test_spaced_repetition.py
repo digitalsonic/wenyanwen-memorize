@@ -72,6 +72,26 @@ class TestCalculateNextReview:
         assert not is_mastered
         assert next_review is not None  # Still has next review
 
+    def test_wrong_answer_at_level_6_downgrades_to_5(self):
+        """Test that wrong answer at level 6 downgrades to level 5 for re-consolidation."""
+        next_review, new_level, is_mastered = calculate_next_review(
+            current_level=6,
+            is_correct=False,
+        )
+        assert new_level == 5  # Downgrade to level 5
+        assert not is_mastered
+        assert next_review is not None  # Has next review (15 days)
+
+    def test_correct_answer_at_level_6_stays_mastered(self):
+        """Test that correct answer at level 6 keeps mastered status."""
+        next_review, new_level, is_mastered = calculate_next_review(
+            current_level=6,
+            is_correct=True,
+        )
+        assert new_level == 6  # Stay at level 6
+        assert is_mastered
+        assert next_review is None  # No next review for mastered words
+
     def test_wrong_answer_resets_error_count_track(self):
         """Test that wrong answer allows retry at same level."""
         _, new_level, _ = calculate_next_review(

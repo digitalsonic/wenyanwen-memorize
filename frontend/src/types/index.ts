@@ -77,6 +77,8 @@ export interface FlashcardQuestion {
   example_sentence: string
   example_source: string
   correct_meaning: string
+  meaning_id: string
+  mnemonics?: string | null
 }
 
 export type QuizQuestion = MultipleChoiceQuestion | TrueFalseQuestion | CardQuestion | FlashcardQuestion
@@ -92,7 +94,7 @@ export interface QuizSession {
 export interface QuizAnswer {
   word_id: string
   question_type: QuizType
-  user_answer: string | boolean
+  user_answer: string | boolean | number  // number for flashcard assessment (0=fuzzy, 1=clear, 2=uncertain)
   is_correct: boolean
   time_spent_seconds?: number
 }

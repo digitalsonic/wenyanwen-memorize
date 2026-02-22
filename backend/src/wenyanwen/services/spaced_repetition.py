@@ -64,8 +64,9 @@ def calculate_next_review(
         # Check if mastered (reached level 6)
         is_mastered = (new_level == 6 and current_level == 6) or (current_level == 6)
     else:
-        # Wrong answer: stay at current level, just increment error count
-        new_level = current_level
+        # Wrong answer: downgrade level 6 to 5 for re-consolidation, others stay at current level
+        # Level 6 drops to 5 to force re-testing with objective quiz types
+        new_level = max(5, current_level - 1) if current_level == 6 else current_level
         is_mastered = False
 
     # Calculate next review time

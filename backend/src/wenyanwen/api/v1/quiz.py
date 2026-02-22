@@ -147,6 +147,8 @@ def generate_flashcard(word_data) -> FlashcardQuestion:
         example_sentence=selected_example.sentence,
         example_source=selected_example.source,
         correct_meaning=selected_meaning.definition,
+        meaning_id=selected_meaning.id,
+        mnemonics=word_data.mnemonics,
     )
 
 

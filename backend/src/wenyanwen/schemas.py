@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 # Import enums from models
 from wenyanwen.models import QuizType
@@ -81,7 +81,7 @@ class CardQuestion(BaseModel):
 
 
 class FlashcardQuestion(BaseModel):
-    """Flashcard quiz question (active recall)."""
+    """Flashcard quiz question (active recall with three-state assessment)."""
 
     word_id: str
     word: str
@@ -89,6 +89,8 @@ class FlashcardQuestion(BaseModel):
     example_sentence: str
     example_source: str
     correct_meaning: str
+    meaning_id: str  # For tracing specific meaning
+    mnemonics: str | None = None  # Memory aid tips (optional)
 
 
 # Union type for all question types
@@ -110,9 +112,24 @@ class QuizAnswer(BaseModel):
 
     word_id: str
     question_type: QuizType
-    user_answer: str | bool  # str for multiple_choice, bool for true_false
+    user_answer: str | bool | int  # str for multiple_choice, bool for true_false, int for flashcard (0=fuzzy, 1=clear, 2=uncertain)
     is_correct: bool
     time_spent_seconds: int | None = None
+
+    @field_validator('user_answer')
+    @classmethod
+    def validate_flashcard_answer(cls, v, info):
+        """Validate flashcard assessment values."""
+        # Get question_type from the validation context
+        question_type = None
+        if hasattr(info, 'data') and isinstance(info.data, dict):
+            question_type = info.data.get('question_type')
+
+        # If this is a flashcard answer, validate the range
+        if question_type == QuizType.FLASHCARD and isinstance(v, int):
+            if v not in (0, 1, 2):
+                raise ValueError('Flashcard assessment must be 0 (fuzzy), 1 (clear), or 2 (uncertain)')
+        return v
 
 
 class AnswerSubmission(BaseModel):
