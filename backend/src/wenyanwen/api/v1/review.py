@@ -7,7 +7,7 @@ from sqlmodel import Session, select
 
 from ...database import get_session
 from ...models import LearningProgress, QuizType
-from ...schemas import ReviewItem, ReviewList
+from ...schemas import APIResponse, ReviewItem, ReviewList
 from ...services.spaced_repetition import get_level_name, get_quiz_type
 from ...services.word_loader import word_loader
 
@@ -125,3 +125,46 @@ def get_learning_progress(
         "current_level_counts": level_counts,
         "level_names": {i: get_level_name(i) for i in range(7)},
     }
+
+
+@router.post("/reset-progress", response_model=APIResponse)
+def reset_progress(
+    user_id: int = 1,  # TODO: Replace with auth
+    session: Session = Depends(get_session),
+):
+    """
+    Reset all learning progress for the current cycle.
+
+    Args:
+        user_id: User ID
+        session: Database session
+
+    Returns:
+        API response with deleted count
+    """
+    # Get current cycle
+    cycle_stmt = select(LearningProgress).where(
+        LearningProgress.user_id == user_id,
+    )
+    all_progress = session.exec(cycle_stmt).all()
+
+    current_cycle = 1 if not all_progress else max(p.cycle for p in all_progress)
+
+    # Delete all progress records for current cycle
+    delete_stmt = select(LearningProgress).where(
+        LearningProgress.user_id == user_id,
+        LearningProgress.cycle == current_cycle,
+    )
+    records_to_delete = session.exec(delete_stmt).all()
+    deleted_count = len(records_to_delete)
+
+    for record in records_to_delete:
+        session.delete(record)
+
+    session.commit()
+
+    return APIResponse(
+        success=True,
+        message=f"已重置学习进度, 删除了 {deleted_count} 条记录",
+        data={"deleted_count": deleted_count},
+    )

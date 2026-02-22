@@ -56,6 +56,11 @@ export const progressApi = {
     const { data } = await api.get<LearningProgressSummary>('/review/progress')
     return data
   },
+
+  reset: async () => {
+    const { data } = await api.post<APIResponse>('/review/reset-progress')
+    return data
+  },
 }
 
 export default api

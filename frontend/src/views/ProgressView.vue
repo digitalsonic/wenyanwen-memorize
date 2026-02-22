@@ -1,20 +1,39 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProgressStore } from '@/stores/progress'
+import { progressApi } from '@/api/client'
 
 const router = useRouter()
 const progressStore = useProgressStore()
+const isResetting = ref(false)
 
 onMounted(() => {
   progressStore.fetchProgress()
 })
 
-function goBack() {
-  router.push('/')
+async function handleResetProgress() {
+  if (!confirm('确定要重置学习进度吗？这将删除当前轮次的所有学习记录，且无法恢复。')) {
+    return
+  }
+
+  isResetting.value = true
+  try {
+    const response = await progressApi.reset()
+    if (response.success) {
+      // 刷新进度数据
+      await progressStore.fetchProgress()
+      alert(response.message || '学习进度已重置')
+    }
+  } catch (error) {
+    console.error('重置进度失败:', error)
+    alert('重置进度失败，请稍后重试')
+  } finally {
+    isResetting.value = false
+  }
 }
 
-function startReview() {
+function goBack() {
   router.push('/')
 }
 </script>
@@ -89,11 +108,12 @@ function startReview() {
 
         <!-- Actions -->
         <div class="actions">
-          <button class="action-btn primary" @click="router.push('/learn')">
-            学新词
-          </button>
-          <button class="action-btn secondary" @click="startReview">
-            今日复习
+          <button
+            class="action-btn danger"
+            :disabled="isResetting"
+            @click="handleResetProgress"
+          >
+            {{ isResetting ? '重置中...' : '重置学习进度' }}
           </button>
         </div>
       </div>
@@ -253,32 +273,32 @@ function startReview() {
 }
 
 .actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display: flex;
+  justify-content: center;
 }
 
 .action-btn {
-  padding: 16px;
+  min-width: 200px;
+  padding: 16px 32px;
   border: none;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
-.action-btn:hover {
+.action-btn:hover:not(:disabled) {
   transform: scale(1.02);
 }
 
-.action-btn.primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.action-btn.secondary {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+.action-btn.danger {
+  background: #f5576c;
   color: white;
 }
 </style>
