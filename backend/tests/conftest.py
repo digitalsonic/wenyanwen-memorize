@@ -31,7 +31,7 @@ def verify_test_database():
     if db_url and not db_url.startswith("sqlite:///:memory:"):
         raise RuntimeError(
             f"Tests must use in-memory database, but DATABASE_URL={db_url}"
-    )
+        )
     yield
 
 
@@ -40,6 +40,9 @@ def test_db():
     """Create a test database."""
     SQLModel.metadata.create_all(test_engine)
     session = Session(test_engine)
+    # Force a connection to ensure the database is initialized
+    from sqlmodel import text
+    session.exec(text("SELECT 1"))
     try:
         yield session
     finally:
@@ -53,7 +56,7 @@ def client(test_db):
     from wenyanwen.main import create_app
 
     def override_get_session():
-        return test_db
+        yield test_db
 
     app = create_app()
     app.dependency_overrides[get_session] = override_get_session

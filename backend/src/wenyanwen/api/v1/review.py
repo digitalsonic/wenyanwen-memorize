@@ -1,6 +1,6 @@
 """Review API endpoints."""
 
-from datetime import datetime
+from datetime import date, datetime
 
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
@@ -37,12 +37,13 @@ def get_review_list(
     )
     progress_list = session.exec(stmt).all()
 
-    # Filter due items
-    now = datetime.now()
+    # Filter due items by date (not precise time)
+    today = date.today()
     due_items = []
 
     for progress in progress_list:
-        if progress.next_review_at is None or progress.next_review_at <= now:
+        review_date = progress.next_review_at.date() if progress.next_review_at else None
+        if review_date is None or review_date <= today:
             word_data = word_loader.get_word_by_id(progress.word_id)
             if not word_data:
                 continue
