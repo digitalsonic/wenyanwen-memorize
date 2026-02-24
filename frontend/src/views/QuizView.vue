@@ -243,19 +243,6 @@ function getQuestionTitle(question: QuizQuestion): string {
             {{ currentQuestion.given_meaning }}
           </div>
 
-          <!-- 反馈状态提示 -->
-          <div v-if="feedback.feedbackState.value.status !== 'waiting'" class="feedback-message">
-            <span v-if="feedback.feedbackState.value.status === 'showing_correct'" class="correct-text">回答正确！</span>
-            <span v-else class="wrong-text">回答错误</span>
-          </div>
-
-          <!-- 答错时显示正确释义 -->
-          <div v-if="feedback.feedbackState.value.status === 'showing_wrong'" class="correct-meaning-box">
-            <span class="correct-meaning-icon">✓</span>
-            <span class="correct-meaning-label">正确释义：</span>
-            <span class="correct-meaning-text">{{ currentQuestion.correct_meaning }}</span>
-          </div>
-
           <div class="options">
             <button
               class="option-btn correct-option"
@@ -287,6 +274,19 @@ function getQuestionTitle(question: QuizQuestion): string {
               错误
               <span v-if="feedback.feedbackState.value.status !== 'waiting' && currentQuestion.is_correct === false" class="correct-answer-badge">正确答案</span>
             </button>
+          </div>
+
+          <!-- 反馈状态提示 -->
+          <div v-if="feedback.feedbackState.value.status !== 'waiting'" class="feedback-message">
+            <span v-if="feedback.feedbackState.value.status === 'showing_correct'" class="correct-text">回答正确！</span>
+            <span v-else class="wrong-text">回答错误</span>
+          </div>
+
+          <!-- 答错时显示正确释义 -->
+          <div v-if="feedback.feedbackState.value.status === 'showing_wrong'" class="correct-meaning-box">
+            <span class="correct-meaning-icon">✓</span>
+            <span class="correct-meaning-label">正确释义：</span>
+            <span class="correct-meaning-text">{{ currentQuestion.correct_meaning }}</span>
           </div>
         </div>
 
@@ -575,7 +575,7 @@ function getQuestionTitle(question: QuizQuestion): string {
 /* 判断题专用样式 */
 .feedback-message {
   text-align: center;
-  margin-bottom: 16px;
+  margin-top: 16px;
   font-size: 16px;
   font-weight: 600;
 }
@@ -639,7 +639,7 @@ function getQuestionTitle(question: QuizQuestion): string {
   border: 1px solid #4caf50;
   border-radius: 12px;
   padding: 16px;
-  margin-bottom: 20px;
+  margin-top: 12px;
 }
 
 .correct-meaning-icon {

@@ -66,12 +66,6 @@ function isUserWrong(option: string): boolean {
     <div class="example">{{ exampleSentence }}</div>
     <div class="source">{{ exampleSource }}</div>
 
-    <!-- 反馈状态提示 -->
-    <div v-if="feedback && feedback.status !== 'waiting'" class="feedback-message">
-      <span v-if="feedback.status === 'showing_correct'" class="correct-text">回答正确！</span>
-      <span v-else class="wrong-text">回答错误</span>
-    </div>
-
     <div class="options">
       <button
         v-for="(option, index) in options"
@@ -91,6 +85,12 @@ function isUserWrong(option: string): boolean {
         <!-- 正确答案徽章 -->
         <span v-if="shouldShowCorrectBadge(option)" class="correct-answer-badge">正确答案</span>
       </button>
+    </div>
+
+    <!-- 反馈状态提示 -->
+    <div v-if="feedback && feedback.status !== 'waiting'" class="feedback-message">
+      <span v-if="feedback.status === 'showing_correct'" class="correct-text">回答正确！</span>
+      <span v-else class="wrong-text">回答错误</span>
     </div>
   </div>
 </template>
@@ -136,7 +136,7 @@ function isUserWrong(option: string): boolean {
 /* 反馈消息 */
 .feedback-message {
   text-align: center;
-  margin-bottom: 16px;
+  margin-top: 16px;
   font-size: 16px;
   font-weight: 600;
 }
