@@ -31,8 +31,13 @@ router = APIRouter()
 
 def generate_multiple_choice(word_data) -> MultipleChoiceQuestion:
     """Generate a multiple choice question."""
+    # Filter meanings that have examples
+    meanings_with_examples = [m for m in word_data.meanings if m.examples]
+    if not meanings_with_examples:
+        raise ValueError(f"Word {word_data.word} has no meanings with examples")
+
     # Pick a random meaning as the correct answer
-    correct_meaning = random.choice(word_data.meanings)
+    correct_meaning = random.choice(meanings_with_examples)
     correct_example = random.choice(correct_meaning.examples)
 
     # Generate distractors from other meanings of the same word
@@ -75,8 +80,13 @@ def generate_multiple_choice(word_data) -> MultipleChoiceQuestion:
 
 def generate_true_false(word_data) -> TrueFalseQuestion:
     """Generate a true/false question."""
+    # Filter meanings that have examples
+    meanings_with_examples = [m for m in word_data.meanings if m.examples]
+    if not meanings_with_examples:
+        raise ValueError(f"Word {word_data.word} has no meanings with examples")
+
     # Pick a random meaning
-    selected_meaning = random.choice(word_data.meanings)
+    selected_meaning = random.choice(meanings_with_examples)
     selected_example = random.choice(selected_meaning.examples)
 
     # 50% chance to make it true or false
@@ -136,8 +146,13 @@ def generate_card(word_data) -> CardQuestion:
 
 def generate_flashcard(word_data) -> FlashcardQuestion:
     """Generate a flashcard question for active recall."""
+    # Filter meanings that have examples
+    meanings_with_examples = [m for m in word_data.meanings if m.examples]
+    if not meanings_with_examples:
+        raise ValueError(f"Word {word_data.word} has no meanings with examples")
+
     # Pick a random meaning
-    selected_meaning = random.choice(word_data.meanings)
+    selected_meaning = random.choice(meanings_with_examples)
     selected_example = random.choice(selected_meaning.examples)
 
     return FlashcardQuestion(
@@ -242,15 +257,19 @@ def start_review(
 
         quiz_type = get_quiz_type(progress.current_level)
 
-        if quiz_type == "multiple_choice":
-            q = generate_multiple_choice(word_data)
-            questions.append(q)
-        elif quiz_type == "true_false":
-            q = generate_true_false(word_data)
-            questions.append(q)
-        elif quiz_type == "flashcard":
-            q = generate_flashcard(word_data)
-            questions.append(q)
+        try:
+            if quiz_type == "multiple_choice":
+                q = generate_multiple_choice(word_data)
+                questions.append(q)
+            elif quiz_type == "true_false":
+                q = generate_true_false(word_data)
+                questions.append(q)
+            elif quiz_type == "flashcard":
+                q = generate_flashcard(word_data)
+                questions.append(q)
+        except ValueError:
+            # Skip words with no examples
+            continue
 
     return QuizSession(
         session_id=str(uuid.uuid4()),
