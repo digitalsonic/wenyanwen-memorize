@@ -2,7 +2,7 @@
 
 import random
 import uuid
-from datetime import datetime
+from datetime import date, datetime
 
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
@@ -214,7 +214,6 @@ def start_review(
     """
 
     # Query due words for review
-    now = datetime.now()
     stmt = select(LearningProgress).where(
         LearningProgress.user_id == user_id,
         LearningProgress.current_level > 0,
@@ -227,10 +226,11 @@ def start_review(
     if level is not None:
         progress_list = [p for p in progress_list if p.current_level == level]
 
-    # Filter by due time
+    # Filter by due date (consistent with review/list endpoint)
+    today = date.today()
     due_progress = [
         p for p in progress_list
-        if p.next_review_at is not None and p.next_review_at <= now
+        if p.next_review_at is None or p.next_review_at.date() <= today
     ]
 
     # Generate questions based on level
