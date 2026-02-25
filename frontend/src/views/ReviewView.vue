@@ -49,7 +49,6 @@ function getQuizTypeName(type: string): string {
 
 function getLevelName(level: number): string {
   const names: Record<number, string> = {
-    0: '初学',
     1: '等待第1次复习',
     2: '等待第2次复习',
     3: '等待第3次复习',
