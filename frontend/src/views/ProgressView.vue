@@ -97,10 +97,11 @@ function goBack() {
           <div class="level-list">
             <div
               v-for="(count, level) in progressStore.levelCounts"
+              v-show="level > 0"
               :key="level"
               class="level-item"
             >
-              <span class="level-name">{{ progressStore.levelNames[level] }}</span>
+              <span class="level-name">{{ progressStore.levelNames[level] || `等待第${level}次复习` }}</span>
               <span class="level-count">{{ count }}</span>
             </div>
           </div>
