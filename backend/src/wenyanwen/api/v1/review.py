@@ -124,7 +124,7 @@ def get_learning_progress(
         "mastered_words": mastered_words,
         "completion_percentage": round(completion, 2),
         "current_level_counts": level_counts,
-        "level_names": {i: get_level_name(i) for i in range(7)},
+        "level_names": {i: get_level_name(i) for i in range(1, 7)},
     }
 
 

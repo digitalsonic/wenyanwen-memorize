@@ -148,13 +148,14 @@ class TestGetLevelName:
 
     def test_level_names(self):
         """Test that level names are correct."""
-        assert get_level_name(0) == "初学"
-        assert get_level_name(1) == "第1天复习"
-        assert get_level_name(2) == "第2天复习"
-        assert get_level_name(3) == "第4天复习"
-        assert get_level_name(4) == "第7天复习"
-        assert get_level_name(5) == "第15天复习"
-        assert get_level_name(6) == "第30天复习"
+        assert get_level_name(1) == "等待第1次复习"
+        assert get_level_name(2) == "等待第2次复习"
+        assert get_level_name(3) == "等待第3次复习"
+        assert get_level_name(4) == "等待第4次复习"
+        assert get_level_name(5) == "等待第5次复习"
+        assert get_level_name(6) == "等待第6次复习"
+        # Level 0 is not used in practice (no progress records at level 0)
+        assert get_level_name(0) == "等待第0次复习"
 
 
 class TestIsDueForReview:

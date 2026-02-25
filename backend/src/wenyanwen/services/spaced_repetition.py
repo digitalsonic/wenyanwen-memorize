@@ -107,12 +107,11 @@ def get_level_name(level: ReviewLevel) -> str:
         Human-readable level name
     """
     level_names = {
-        0: "初学",
-        1: "第1天复习",
-        2: "第2天复习",
-        3: "第4天复习",
-        4: "第7天复习",
-        5: "第15天复习",
-        6: "第30天复习",
+        1: "等待第1次复习",
+        2: "等待第2次复习",
+        3: "等待第3次复习",
+        4: "等待第4次复习",
+        5: "等待第5次复习",
+        6: "等待第6次复习",
     }
-    return level_names.get(level, "未知")
+    return level_names.get(level, f"等待第{level}次复习")
