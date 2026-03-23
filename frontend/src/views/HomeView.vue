@@ -18,7 +18,16 @@ const remainingCount = computed(() => {
 
 const hasNewWords = computed(() => remainingCount.value > 0)
 
+const allMastered = computed(() => {
+  return progressStore.masteredCount >= progressStore.totalCount
+})
+
 const currentCycle = computed(() => progressStore.currentCycle)
+
+// 未掌握的词数（用于提示）
+const unmasteredCount = computed(() => {
+  return progressStore.totalCount - progressStore.masteredCount
+})
 
 function goToLearn() {
   router.push('/learn')
@@ -65,7 +74,16 @@ async function startNewCycle() {
           </div>
         </button>
 
-        <!-- 当所有词学完时显示"开始新轮次" -->
+        <!-- 当没有新词但还有未掌握的词时，显示禁用按钮 -->
+        <button v-else-if="!allMastered" class="action-btn primary disabled" disabled>
+          <div class="icon">🔒</div>
+          <div class="text">
+            <div class="title">开始新轮次</div>
+            <div class="description">请先完成 {{ unmasteredCount }} 个词的复习</div>
+          </div>
+        </button>
+
+        <!-- 当所有词都掌握后显示"开始新轮次" -->
         <button v-else class="action-btn primary" @click="startNewCycle">
           <div class="icon">🔄</div>
           <div class="text">
@@ -150,6 +168,17 @@ async function startNewCycle() {
 .action-btn.primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+}
+
+.action-btn.primary.disabled {
+  background: linear-gradient(135deg, #a0a0a0 0%, #808080 100%);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.action-btn.primary.disabled:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 .action-btn.secondary {
