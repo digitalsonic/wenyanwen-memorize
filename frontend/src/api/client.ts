@@ -83,6 +83,11 @@ export const progressApi = {
     const { data } = await api.post<APIResponse>('/review/reset-progress')
     return data
   },
+
+  startNewCycle: async () => {
+    const { data } = await api.post<APIResponse>('/review/start-new-cycle')
+    return data
+  },
 }
 
 export default api

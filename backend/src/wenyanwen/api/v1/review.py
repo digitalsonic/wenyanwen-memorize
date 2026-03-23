@@ -8,7 +8,7 @@ from sqlmodel import Session, select
 from ...database import get_session
 from ...models import LearningProgress, QuizType
 from ...schemas import APIResponse, ReviewItem, ReviewList
-from ...services.spaced_repetition import get_level_name, get_quiz_type
+from ...services.spaced_repetition import get_current_cycle, get_level_name, get_quiz_type
 from ...services.word_loader import word_loader
 
 router = APIRouter()
@@ -29,9 +29,13 @@ def get_review_list(
     Returns:
         List of review items grouped by level
     """
-    # Get all progress records
+    # Get current cycle
+    current_cycle = get_current_cycle(session, user_id)
+
+    # Get all progress records for current cycle
     stmt = select(LearningProgress).where(
         LearningProgress.user_id == user_id,
+        LearningProgress.cycle == current_cycle,
         LearningProgress.current_level > 0,
         LearningProgress.is_mastered == False,
     )
@@ -168,4 +172,35 @@ def reset_progress(
         success=True,
         message=f"已重置学习进度, 删除了 {deleted_count} 条记录",
         data={"deleted_count": deleted_count},
+    )
+
+
+@router.post("/start-new-cycle", response_model=APIResponse)
+def start_new_cycle(
+    user_id: int = 1,  # TODO: Replace with auth
+    session: Session = Depends(get_session),
+):
+    """
+    Start a new learning cycle.
+
+    This doesn't create any records - it just returns the new cycle number.
+    When the user starts learning, records will be created with the new cycle.
+
+    Args:
+        user_id: User ID
+        session: Database session
+
+    Returns:
+        API response with new cycle number
+    """
+    # Get current cycle
+    current_cycle = get_current_cycle(session, user_id)
+
+    # New cycle is current + 1
+    new_cycle = current_cycle + 1
+
+    return APIResponse(
+        success=True,
+        message=f"已开始第 {new_cycle} 轮学习",
+        data={"new_cycle": new_cycle},
     )

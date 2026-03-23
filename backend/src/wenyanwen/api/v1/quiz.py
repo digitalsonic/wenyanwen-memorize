@@ -22,6 +22,7 @@ from ...schemas import (
 )
 from ...services.spaced_repetition import (
     calculate_next_review,
+    get_current_cycle,
     get_quiz_type,
 )
 from ...services.word_loader import word_loader
@@ -184,9 +185,13 @@ def learn_new_words(
     Returns:
         A learning session with card questions
     """
+    # Get current cycle
+    current_cycle = get_current_cycle(session, user_id)
+
     # Get already learned word IDs for current cycle
     progress_stmt = select(LearningProgress).where(
         LearningProgress.user_id == user_id,
+        LearningProgress.cycle == current_cycle,
         LearningProgress.current_level > 0,
     )
     progress_result = session.exec(progress_stmt)
@@ -227,10 +232,13 @@ def start_review(
     Returns:
         A quiz session with questions
     """
+    # Get current cycle
+    current_cycle = get_current_cycle(session, user_id)
 
     # Query due words for review
     stmt = select(LearningProgress).where(
         LearningProgress.user_id == user_id,
+        LearningProgress.cycle == current_cycle,
         LearningProgress.current_level > 0,
         LearningProgress.is_mastered == False,
     )
@@ -362,11 +370,15 @@ def complete_learning(
     Returns:
         API response
     """
+    # Get current cycle
+    current_cycle = get_current_cycle(session, user_id)
+
     for word_id in word_ids:
-        # Check if progress already exists
+        # Check if progress already exists for this cycle
         stmt = select(LearningProgress).where(
             LearningProgress.user_id == user_id,
             LearningProgress.word_id == word_id,
+            LearningProgress.cycle == current_cycle,
         )
         existing = session.exec(stmt).first()
 
@@ -379,7 +391,7 @@ def complete_learning(
         progress = LearningProgress(
             user_id=user_id,
             word_id=word_id,
-            cycle=1,
+            cycle=current_cycle,
             current_level=1,  # Move to level 1 after learning
             error_count=0,
             is_mastered=False,

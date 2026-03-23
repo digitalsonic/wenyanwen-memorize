@@ -1,7 +1,12 @@
 """Spaced repetition algorithm implementation (Ebbinghaus forgetting curve)."""
 
 from datetime import datetime, timedelta
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
+
+from sqlmodel import select
+
+if TYPE_CHECKING:
+    from sqlmodel import Session
 
 # Level definitions
 # Level 0: New word (just learned with card)
@@ -115,3 +120,22 @@ def get_level_name(level: ReviewLevel) -> str:
         6: "等待第6次复习",
     }
     return level_names.get(level, f"等待第{level}次复习")
+
+
+def get_current_cycle(session: "Session", user_id: int) -> int:
+    """
+    Get the current learning cycle for a user.
+
+    Args:
+        session: Database session
+        user_id: User ID
+
+    Returns:
+        Current cycle number (1 if no progress exists)
+    """
+    from ..models import LearningProgress
+
+    all_progress = session.exec(
+        select(LearningProgress).where(LearningProgress.user_id == user_id)
+    ).all()
+    return 1 if not all_progress else max(p.cycle for p in all_progress)

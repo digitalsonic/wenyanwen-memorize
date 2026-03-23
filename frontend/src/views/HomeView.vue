@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProgressStore } from '@/stores/progress'
+import { progressApi } from '@/api/client'
 import ProgressCard from '@/components/ProgressCard.vue'
 
 const router = useRouter()
@@ -10,6 +11,14 @@ const progressStore = useProgressStore()
 onMounted(() => {
   progressStore.fetchProgress()
 })
+
+const remainingCount = computed(() => {
+  return progressStore.totalCount - progressStore.learnedCount
+})
+
+const hasNewWords = computed(() => remainingCount.value > 0)
+
+const currentCycle = computed(() => progressStore.currentCycle)
 
 function goToLearn() {
   router.push('/learn')
@@ -21,6 +30,18 @@ function goToReview() {
 
 function goToProgress() {
   router.push('/progress')
+}
+
+async function startNewCycle() {
+  try {
+    const response = await progressApi.startNewCycle()
+    if (response.success) {
+      await progressStore.fetchProgress()
+      router.push('/learn')
+    }
+  } catch (e) {
+    console.error('开始新轮次失败:', e)
+  }
 }
 </script>
 
@@ -35,16 +56,26 @@ function goToProgress() {
       <ProgressCard v-if="progressStore.progress" @detail="goToProgress" />
 
       <div class="action-grid">
-        <button class="action-btn primary" @click="goToLearn">
+        <!-- 当还有新词时显示"学新词" -->
+        <button v-if="hasNewWords" class="action-btn primary" @click="goToLearn">
           <div class="icon">📖</div>
           <div class="text">
             <div class="title">学新词</div>
-            <div class="description">学习新的文言文词语</div>
+            <div class="description">剩余 {{ remainingCount }} 个新词</div>
+          </div>
+        </button>
+
+        <!-- 当所有词学完时显示"开始新轮次" -->
+        <button v-else class="action-btn primary" @click="startNewCycle">
+          <div class="icon">🔄</div>
+          <div class="text">
+            <div class="title">开始新轮次</div>
+            <div class="description">已完成第 {{ currentCycle }} 轮，点击开始下一轮</div>
           </div>
         </button>
 
         <button class="action-btn secondary" @click="goToReview">
-          <div class="icon">🔄</div>
+          <div class="icon">📝</div>
           <div class="text">
             <div class="title">今日复习</div>
             <div class="description">复习到期的词语</div>
